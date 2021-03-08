@@ -11,8 +11,7 @@ class Origins extends Component {
     }
 
     getAllOrigins = async () => {
-        const response = await axios.get("http://localhost:3000/origins");
-        console.log(response.data)
+        const response = await axios.get("http://localhost:3005/origin");
         this.setState({
           beerOrigins: response.data,
         })
@@ -26,8 +25,9 @@ class Origins extends Component {
         const beerOrigins = this.state.beerOrigins.map((origin) => {
             return (
               <div>
-                  <h2>Origin: {origin.origin}</h2>
-                <h3>Style: {origin.style}</h3>
+                    <h2>Origin: {origin.origin}</h2>
+                    <h3>Style: {origin.style}</h3>
+                    <p>{origin.description}</p>
               </div>
             )
           })

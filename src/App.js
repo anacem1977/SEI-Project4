@@ -3,8 +3,9 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link, Route } from "react-router-dom"
 
-import Origins from "./components/Origins";
-import Substyles from "./components/Substyles";
+import Origin from "./components/Origin";
+import Substyle from "./components/Substyle";
+import Login from "./components/Login";
 
 class App extends Component {
   constructor(props) {
@@ -18,16 +19,19 @@ class App extends Component {
     return (
       <div className="App">
         <h1> BEER ENCICLOPEDIA </h1>
-
+        <h2> A LOT OF INFORMATION ABOUT BEERS </h2>
+        
         <nav>
           {/* <Link to = "/">Home Page</Link> */}
-          <Link to = "/origins">Beer Origins</Link>
-          <Link to = "/substyles">Beer Susbtyles</Link>
+          <Link to = "/origin">Beer Origins</Link>
+          <Link to = "/substyle">Beer Susbtyles</Link>
+          <Link to = "/user/login">Login</Link>
         </nav>
 
         {/* <Route exact path="/" render={() => (<HomePage />)} /> */}
-        <Route path="/origins" render={() => (<Origins/>)} />
-        <Route path="/substyles" render={() => (<Substyles/>)} />
+        <Route path="/origin" render={() => (<Origin/>)} />
+        <Route path="/substyle" render={() => (<Substyle/>)} />
+        <Route path="/user/login" render={() => (<Login/>)} />
           
       </div>
     );

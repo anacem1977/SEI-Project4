@@ -11,8 +11,7 @@ class Substyles extends Component {
     }
 
     getAllSubstyles = async () => {
-        const response = await axios.get("http://localhost:3000/substyles");
-        console.log(response.data)
+        const response = await axios.get("http://localhost:3005/substyle");
         this.setState({
             beerSubstyles: response.data,
         })
