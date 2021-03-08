@@ -27,7 +27,7 @@ class App extends Component {
 
         {/* <Route exact path="/" render={() => (<HomePage />)} /> */}
         <Route path="/origins" render={() => (<Origins/>)} />
-        <Route path="/origins" render={() => (<Substyles/>)} />
+        <Route path="/substyles" render={() => (<Substyles/>)} />
           
       </div>
     );
