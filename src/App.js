@@ -1,37 +1,34 @@
 import './App.css';
 import React, { Component } from "react";
 import axios from "axios";
+import { Link, Route } from "react-router-dom"
+
+import Origins from "./components/Origins";
+import Substyles from "./components/Substyles";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      beers: [],
+
     }
-  }
-  getBeers = async () => {
-    const response = await axios.get("http://localhost:3000/origins");
-    console.log(response)
-    this.setState({
-      beers: response.data,
-    })
-  };
-  componentDidMount = () => {
-    this.getBeers();
   }
 
   render() {
-    const beers = this.state.beers.map((beer) => {
-      return (
-        <div>
-          <h3>Style: {beer.style}</h3>
-        </div>
-      )
-    })
     return (
       <div className="App">
         <h1> BEER ENCICLOPEDIA </h1>
-        {beers}
+
+        <nav>
+          {/* <Link to = "/">Home Page</Link> */}
+          <Link to = "/origins">Beer Origins</Link>
+          <Link to = "/substyles">Beer Susbtyles</Link>
+        </nav>
+
+        {/* <Route exact path="/" render={() => (<HomePage />)} /> */}
+        <Route path="/origins" render={() => (<Origins/>)} />
+        <Route path="/origins" render={() => (<Substyles/>)} />
+          
       </div>
     );
   }
