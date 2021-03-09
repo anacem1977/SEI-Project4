@@ -4,6 +4,7 @@ import { Link, Route } from "react-router-dom"
 
 import Origin from "./components/Origin";
 import Substyle from "./components/Substyle";
+import Brand from "./components/Brand";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import HomePage from "./components/HomePage";
@@ -31,6 +32,7 @@ class App extends Component {
         {<Route exact path="/" render={() => (<HomePage />)} />}
         <Route path="/origin" render={() => (<Origin/>)} />
         <Route path="/substyle/:index" render = {(routerProps) => ( <Substyle {...routerProps} />)} />
+        <Route path="/brand/:index" render = {(routerProps) => ( <Brand {...routerProps} />)} />
         <Route path="/user/login" render={() => (<Login/>)} />
         <Route path="/user/signup" render={() => (<Signup/>)} />
           

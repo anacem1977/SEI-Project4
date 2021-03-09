@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Origin from "./Origin";
+import { Link } from "react-router-dom"
+
 
 class Substyles extends Component {
     constructor(props) {
@@ -29,7 +30,11 @@ class Substyles extends Component {
           return (
             console.log(subStyle),
             <div>
-                  <h2>Substyle: {subStyle.substyle}</h2>
+                  <h2>
+                    <Link to = {"/brand/" + subStyle.id}>
+                      Substyle: {subStyle.substyle}
+                      </Link>
+                    </h2>
                   <h3>Glassware: {subStyle.glassware}</h3>
                   <p>{subStyle.description}</p>
                   <p><b>Pairing: </b>{subStyle.pairing}</p>
