@@ -13,7 +13,6 @@ class Substyles extends Component {
 
     getAllSubstyles = async () => {
         const response = await axios.get("http://localhost:3005/substyle");
-        console.log(response.data)
         this.setState({
             allBeerSubstyles: response.data,
         })
@@ -26,13 +25,20 @@ class Substyles extends Component {
     render () {
         const currentStyle = this.props.match.params.index
         const styleId = parseInt(currentStyle)
-        console.log(styleId)
         const beerStyles = this.state.allBeerSubstyles.filter(oneBeerStyle => oneBeerStyle.styleId === styleId).map((subStyle) => {
           return (
             console.log(subStyle),
             <div>
                   <h2>Substyle: {subStyle.substyle}</h2>
-                  <h3>Style: {subStyle.glassware}</h3>
+                  <h3>Glassware: {subStyle.glassware}</h3>
+                  <p>{subStyle.description}</p>
+                  <p><b>Pairing: </b>{subStyle.pairing}</p>
+                  <ul>
+                    <li><b>ABV: </b>{subStyle.abv}</li>
+                    <li><b>IBU: </b>{subStyle.ibu}</li>
+                    <li><b>Color: </b>{subStyle.color}</li>
+                    <li><b>Flavor: </b>{subStyle.flavor}</li>
+                  </ul>
             </div>
           )
         })
