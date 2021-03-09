@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+
+body {
+    background-color: #fffdff;
+    color: #333333;
+}
+
+header {
+    background-color: #1f2c3d;
+    padding: 1rem;
+}
+
+.mainTitle {
+    font-family: 'Fascinate', cursive;
+    text-align: center;
+    font-size: 52px;
+    color: #f6b31b;
+}
+
+.subTitle {
+    font-size: 34px;
+    text-align: center;
+    padding: 1rem;
+}
+
+.navBar {
+    background-color: #f6b31b;
+    font-size: 22px;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+    color: #1f2c3d;
+    text-decoration: none;
+    padding: 0.75rem;
+    border: 3px solid #f6b31b;
+}
+
+a.topLinks:hover {
+    background-color: #1f2c3d;
+    color:#f6b31b;
+    text-decoration: none;
+    border: 3px solid #fffdff;
+    border-radius: 10px;
+
+}
+
+.nav-link:hover {
+
+    color:#f6b31b;
+}

@@ -24,33 +24,37 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1> BEER ENCICLOPEDIA </h1>
+        <header>
+          <h1 className="mainTitle"> BEER ENCYCLOPEDIA </h1>
+        </header>
         
-        <Nav variant="tabs" defaultActiveKey="/">
+        <div className="navBar">
+        <Nav className="justify-content-center" defaultActiveKey="/">
           <Nav.Item>
             <Nav.Link>
-              <Link to = "/">Home Page</Link>
+              <Link to = "/" className="topLinks">Home Page</Link>
             </Nav.Link>
           </Nav.Item>
           
           <Nav.Item>
             <Nav.Link>
-              <Link to = "/origin" eventKey="link-1">Beer Origins</Link>
+              <Link to = "/origin" eventKey="link-1" className="topLinks">Beer Origins</Link>
             </Nav.Link>
           </Nav.Item>
           
           <Nav.Item>
             <Nav.Link>
-              <Link to = "/user/login">Login</Link>
+              <Link to = "/user/login" className="topLinks">Login</Link>
             </Nav.Link>
           </Nav.Item>
 
           <Nav.Item>
             <Nav.Link>
-              <Link to = "/user/signup">Signup</Link>
+              <Link to = "/user/signup" className="topLinks">Signup</Link>
             </Nav.Link>
           </Nav.Item>
         </Nav>
+        </div>
 
         {<Route exact path="/" render={() => (<HomePage />)} />}
         <Route path="/origin" render={() => (<Origin/>)} />

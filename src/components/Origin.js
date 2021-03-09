@@ -42,7 +42,7 @@ class Origins extends Component {
 
         return (
             <div className="origins">
-                <h1> Where was your favorite beer created? </h1>
+                <h1 className="subTitle"> Where was your favorite beer created? </h1>
                 {beerOrigins}
             </div>
         )
