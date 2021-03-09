@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
-import { Link, Route } from "react-router-dom"
+
 
 class Login extends Component {
     constructor(props) {
@@ -25,9 +25,10 @@ class Login extends Component {
             password: this.state.password,
         };
         console.log(userDetails);
-        const response = await axios.post("http://localhost:3005/user/login", userDetails);
+        const response = await axios.get("http://localhost:3005/user/login", userDetails);
         console.log(response)
     }
+
     render () {
         return (
             <div className="login">
