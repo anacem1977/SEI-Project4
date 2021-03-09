@@ -29,7 +29,10 @@ class Brands extends Component {
             return (
                 console.log(brand),
                 <div>
-                    <h2>Brand: {brand.brand}</h2>
+                    <h2>Beer: {brand.brand}</h2>
+                    <h3>{brand.breweryId}</h3>
+                    <p><b>ABV: </b>{brand.abv}</p>
+                    <p><b>Likes: </b>{brand.likes}</p>
                 </div>
             )
         })
@@ -41,7 +44,6 @@ class Brands extends Component {
             </div>
         )
     }
-
 }
 
 export default Brands;
