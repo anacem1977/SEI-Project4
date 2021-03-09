@@ -23,10 +23,21 @@ class Brands extends Component {
     }
 
     render () {
+        const currentSubstyle = this.props.match.params.index
+        const substyleId = parseInt(currentSubstyle)
+        const beerSubstyles = this.state.allBrands.filter(oneBeerSubstyle => oneBeerSubstyle.substyleId === substyleId).map((brand) => {
+            return (
+                console.log(brand),
+                <div>
+                    <h2>Brand: {brand.brand}</h2>
+                </div>
+            )
+        })
 
         return (
             <div className="bands">
                 <h1>Brands</h1>
+                {beerSubstyles}
             </div>
         )
     }
