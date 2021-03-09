@@ -34,7 +34,7 @@ class App extends Component {
         <Route path="/origin" render={() => (<Origin/>)} />
         <Route path="/substyle/:index" render = {(routerProps) => ( <Substyle {...routerProps} />)} />
         <Route path="/brand/:index" render = {(routerProps) => ( <Brand {...routerProps} />)} />
-        <Route path="/brewery/:index" render = {(routerProps) => ( <Brewery {...routerProps} />)} />
+        <Route path="/brewery/:index" render = {(routerProps) => ( <Brewery {...routerProps}/>)} />
         <Route path="/user/login" render={() => (<Login/>)} />
         <Route path="/user/signup" render={() => (<Signup/>)} />
           

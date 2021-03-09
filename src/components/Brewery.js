@@ -4,9 +4,10 @@ import axios from "axios";
 class Brewery extends Component {
     constructor(props) {
         super(props);
-
+        console.log(props)
         this.state = {
-            allBreweries: []
+            allBreweries: [],
+            allBrands: []
         }
     }
 
@@ -18,8 +19,17 @@ class Brewery extends Component {
         })
     };
 
+    getAllBrands = async () => {
+        const responseBrands = await axios.get("http://localhost:3005/brand");
+        console.log(responseBrands.data)
+        this.setState({
+            allBrands: responseBrands.data
+        })
+    };
+
     componentDidMount = () => {
         this.getAllBreweries();
+        this.getAllBrands();
     }
 
     render () {
@@ -27,7 +37,6 @@ class Brewery extends Component {
         const breweryId = parseInt(currentBrewery)
         const breweries = this.state.allBreweries.filter(oneBrewery => oneBrewery.id === breweryId).map((brewery) => {
             return (
-                console.log(brewery),
                 <div>
                     <h2>Brewery: {brewery.name}</h2>
                     <h3>{brewery.address}</h3>
@@ -36,10 +45,21 @@ class Brewery extends Component {
             )
         })
 
+        const brands = this.state.allBrands.filter(oneBrand => oneBrand.breweryId === breweryId).map((brand) => {
+            return (
+                <div>
+                    <ul>
+                        <li>{brand.brand}</li>
+                    </ul>
+                </div>
+            )
+        })
+
         return (
             <div className="brewery">
                 <h1>Brewery</h1>
                 {breweries}
+                {brands}
             </div>
         )
     }
