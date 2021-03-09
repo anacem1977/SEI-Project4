@@ -24,7 +24,7 @@ class Origins extends Component {
     render () {
         const beerOrigins = this.state.beerOrigins.map((origin) => {
             return (
-              <div>
+              <div key={origin.id}>
                     <h2>Origin: {origin.origin}</h2>
                     <h3>Style: {origin.style}</h3>
                     <p>{origin.description}</p>
@@ -34,7 +34,7 @@ class Origins extends Component {
 
         return (
             <div className="origins">
-                <h1> Origins </h1>
+                <h1> Where was your favorite beer created? </h1>
                 {beerOrigins}
             </div>
         )
