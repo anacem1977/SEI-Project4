@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom"
 
 class Brands extends Component {
     constructor(props) {
@@ -30,7 +31,11 @@ class Brands extends Component {
                 console.log(brand),
                 <div>
                     <h2>Beer: {brand.brand}</h2>
-                    <h3>{brand.breweryId}</h3>
+                    <h3>
+                        <Link to = {"/brewery/" + brand.breweryId}>
+                        {brand.breweryId}
+                        </Link>
+                    </h3>
                     <p><b>ABV: </b>{brand.abv}</p>
                     <p><b>Likes: </b>{brand.likes}</p>
                 </div>
