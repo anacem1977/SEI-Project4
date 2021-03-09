@@ -11,6 +11,7 @@ class Login extends Component {
         }
     }
 
+    //This function records the changes being made to the fields where it is applied
     handleLogin = (event) => {
         event.preventDefault();
         this.setState({
@@ -18,6 +19,7 @@ class Login extends Component {
         })
     }
 
+    //This function changes the state and makes the axios request with the information from the updated state
     handleSubmit = async (event) => {
         event.preventDefault();
         const userDetails = {

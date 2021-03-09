@@ -1,17 +1,21 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link, Route } from "react-router-dom";
+import Substyle from "./Substyle";
 
 class Origins extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            beerOrigins: []
+            beerOrigins: [],
+            substyleId: ""
         }
     }
 
     getAllOrigins = async () => {
         const response = await axios.get("http://localhost:3005/origin");
+        console.log(response.data)
         this.setState({
           beerOrigins: response.data,
         })
@@ -26,8 +30,13 @@ class Origins extends Component {
             return (
               <div key={origin.id}>
                     <h2>Origin: {origin.origin}</h2>
-                    <h3>Style: {origin.style}</h3>
+                    <h2>
+                      <Link to= {"/substyle/" + origin.id}> 
+                      Style: {origin.style}
+                      </Link>
+                    </h2>
                     <p>{origin.description}</p>
+
               </div>
             )
           })

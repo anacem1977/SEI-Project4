@@ -24,14 +24,13 @@ class App extends Component {
         <nav>
           {<Link to = "/">Home Page</Link>}
           <Link to = "/origin">Beer Origins</Link>
-          <Link to = "/substyle">Beer Susbtyles</Link>
           <Link to = "/user/login">Login</Link>
           <Link to = "/user/signup">Signup</Link>
         </nav>
 
         {<Route exact path="/" render={() => (<HomePage />)} />}
         <Route path="/origin" render={() => (<Origin/>)} />
-        <Route path="/substyle" render={() => (<Substyle/>)} />
+        <Route path="/substyle/:index" render = {(routerProps) => ( <Substyle {...routerProps} />)} />
         <Route path="/user/login" render={() => (<Login/>)} />
         <Route path="/user/signup" render={() => (<Signup/>)} />
           
