@@ -7,20 +7,28 @@ class Brands extends Component {
         super(props);
 
         this.state = {
-            allBrands : []
+            allBrands : [],
+            allBreweries: []
         }
     }
 
     getAllBrands = async () => {
         const response = await axios.get("http://localhost:3005/brand");
-        console.log(response.data)
         this.setState({
             allBrands: response.data
         })
     };
 
+    getAllBreweries = async () => {
+        const responseBrew = await axios.get("http://localhost:3005/brewery");
+        this.setState({
+            allBreweries: responseBrew.data
+        })
+    };
+
     componentDidMount = () => {
         this.getAllBrands();
+        this.getAllBreweries();
     }
 
     render () {

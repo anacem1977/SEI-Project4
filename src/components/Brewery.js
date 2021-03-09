@@ -40,7 +40,7 @@ class Brewery extends Component {
                 <div>
                     <h2>Brewery: {brewery.name}</h2>
                     <h3>{brewery.address}</h3>
-                    <a href={`https://${brewery.url}`}target="_blank">{brewery.url}</a>
+                    <a href={`https://${brewery.url}`}target="_blank" rel="noreferrer">{brewery.url}</a>
                 </div>
             )
         })

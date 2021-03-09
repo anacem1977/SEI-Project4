@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Link, Route } from "react-router-dom";
-import Substyle from "./Substyle";
+import { Link } from "react-router-dom";
 
 class Origins extends Component {
     constructor(props) {
