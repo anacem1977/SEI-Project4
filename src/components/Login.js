@@ -1,6 +1,9 @@
 import axios from "axios";
 import React, { Component } from "react";
+import { FormControl } from "react-bootstrap";
 
+import InputGroup from "react-bootstrap/InputGroup"
+import Button from "react-bootstrap/Button"
 
 class Login extends Component {
     constructor(props) {
@@ -36,26 +39,35 @@ class Login extends Component {
             <div className="login">
                 <h1>Login</h1>
                 <form onSubmit={this.handleSubmit}>
-                    <label for="username">Userame: </label>
-                    <input 
-                        type="text" 
-                        className="inputBox" 
-                        name="username" 
-                        value={this.state.username} 
-                        onChange={this.handleLogin}/>
-                    <br></br>
-                    <label for="password">Password: </label>
-                    <input 
-                        type="text" 
-                        className="inputBox" 
-                        name="password" 
-                        value={this.state.password} 
-                        onChange={this.handleLogin}/>
-                    <br></br>
-                    <input 
-                        type="submit" 
-                        className="submit" 
-                        value="Log In"/>
+                    <InputGroup className="mb-3">
+                        <FormControl
+                            type="text"
+                            name="username"
+                            placeholder="Username"
+                            aria-label="username"
+                            aria-describedby="basic-addon1"
+                            value={this.state.username} 
+                            onChange={this.handleLogin}
+                        />
+                    </InputGroup>
+
+                    <InputGroup className="mb-3">
+                        <FormControl
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            aria-label="password"
+                            aria-describedby="basic-addon1"
+                            value={this.state.password} 
+                            onChange={this.handleLogin}
+                        />
+                    </InputGroup>
+
+                    <InputGroup>
+                        <Button variant="outline-success"
+                            type="submit"
+                        >Log In </Button>
+                    </InputGroup>
                 </form>
             </div>
         )

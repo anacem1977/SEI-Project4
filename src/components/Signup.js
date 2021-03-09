@@ -1,5 +1,9 @@
 import axios from "axios";
 import React, { Component } from "react";
+import { FormControl } from "react-bootstrap";
+
+import InputGroup from "react-bootstrap/InputGroup"
+import Button from "react-bootstrap/Button"
 
 class Signup extends Component {
     constructor(props) {
@@ -37,42 +41,60 @@ class Signup extends Component {
             <div className="signup">
                 <h1>Sign Up</h1>
                 <form onSubmit={this.handleSubmit}>
-                <label for="username">Userame: </label>
-                    <input 
-                        type="text" 
-                        className="inputBox" 
-                        name="username" 
-                        value={this.state.username} 
-                        onChange={this.handleSignup}/>
-                    <br></br>
-                    <label for="password">Password: </label>
-                    <input 
-                        type="text" 
-                        className="inputBox" 
-                        name="password" 
-                        value={this.state.password} 
-                        onChange={this.handleSignup}/>
-                    <br></br>
-                    <label for="name">Name: </label>
-                    <input 
-                        type="text" 
-                        className="inputBox" 
-                        name="name" 
-                        value={this.state.name} 
-                        onChange={this.handleSignup}/>
-                    <br></br>
-                    <label for="email">e-mail: </label>
-                    <input 
-                        type="text" 
-                        className="inputBox" 
-                        name="email" 
-                        value={this.state.email} 
-                        onChange={this.handleSignup}/>
-                    <br></br>
-                    <input 
-                        type="submit" 
-                        className="submit" 
-                        value="Sign Up"/>
+                <InputGroup className="mb-3">
+                        <FormControl
+                            type="text"
+                            name="username"
+                            placeholder="Username"
+                            aria-label="username"
+                            aria-describedby="basic-addon1"
+                            value={this.state.username} 
+                            onChange={this.handleSignup}
+                        />
+                    </InputGroup>
+                    
+                    <InputGroup className="mb-3">
+                        <FormControl
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            aria-label="password"
+                            aria-describedby="basic-addon1"
+                            value={this.state.password} 
+                            onChange={this.handleSignup}
+                        />
+                    </InputGroup>
+
+                    <InputGroup className="mb-3">
+                        <FormControl
+                            type="text"
+                            name="name"
+                            placeholder="Your Name"
+                            aria-label="name"
+                            aria-describedby="basic-addon1"
+                            value={this.state.name} 
+                            onChange={this.handleSignup}
+                        />
+                    </InputGroup>
+
+                    <InputGroup className="mb-3">
+                        <FormControl
+                            type="email"
+                            name="email"
+                            placeholder="Your e-mail"
+                            aria-label="e-mail"
+                            aria-describedby="basic-addon1"
+                            value={this.state.email} 
+                            onChange={this.handleSignup}
+                        />
+                    </InputGroup>
+
+                    <InputGroup>
+                        <Button variant="outline-success"
+                            type="submit"
+                        >Log In </Button>
+                    </InputGroup>
+
                 </form>
             </div>
         )

@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Component } from "react";
-import { Link, Route } from "react-router-dom"
+import { Link, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css"
 
 import Origin from "./components/Origin";
 import Substyle from "./components/Substyle";
@@ -9,6 +10,8 @@ import Brewery from "./components/Brewery";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import HomePage from "./components/HomePage";
+
+import Nav from "react-bootstrap/Nav"
 
 class App extends Component {
   constructor(props) {
@@ -23,12 +26,31 @@ class App extends Component {
       <div className="App">
         <h1> BEER ENCICLOPEDIA </h1>
         
-        <nav>
-          {<Link to = "/">Home Page</Link>}
-          <Link to = "/origin">Beer Origins</Link>
-          <Link to = "/user/login">Login</Link>
-          <Link to = "/user/signup">Signup</Link>
-        </nav>
+        <Nav variant="tabs" defaultActiveKey="/">
+          <Nav.Item>
+            <Nav.Link>
+              <Link to = "/">Home Page</Link>
+            </Nav.Link>
+          </Nav.Item>
+          
+          <Nav.Item>
+            <Nav.Link>
+              <Link to = "/origin" eventKey="link-1">Beer Origins</Link>
+            </Nav.Link>
+          </Nav.Item>
+          
+          <Nav.Item>
+            <Nav.Link>
+              <Link to = "/user/login">Login</Link>
+            </Nav.Link>
+          </Nav.Item>
+
+          <Nav.Item>
+            <Nav.Link>
+              <Link to = "/user/signup">Signup</Link>
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
 
         {<Route exact path="/" render={() => (<HomePage />)} />}
         <Route path="/origin" render={() => (<Origin/>)} />
