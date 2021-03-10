@@ -104,25 +104,15 @@ class App extends Component {
         <header>
           <h1 className="mainTitle"> BEER ENCYCLOPEDIA </h1>
         </header>
-        
-        <div className="navBar">
-        <Nav className="justify-content-center" defaultActiveKey="/">
-          <Nav.Item>
-            <Nav.Link>
-              <Link to = "/" className="topLinks">Home Page</Link>
-            </Nav.Link>
-          </Nav.Item>
-
-          <Nav.Item>
-            <Nav.Link>
-              <Link to = "/user/signup" className="topLinks">Signup</Link>
-            </Nav.Link>
-          </Nav.Item>
-
           <div className="login">
                 {this.state.loggedIn ?
-                <div>
-                    <h1>Welcome!</h1>
+                <div className="navBar">
+                  <Nav className="justify-content-center" defaultActiveKey="/">
+                      <Nav.Item>
+                        <Nav.Link>
+                          <Link to = "/" className="topLinks">Home Page</Link>
+                        </Nav.Link>
+                      </Nav.Item>  
 
                     <Nav.Item>
                       <Nav.Link>
@@ -130,6 +120,14 @@ class App extends Component {
                       </Nav.Link>
                     </Nav.Item>
 
+                    <Nav.Item>
+                      <Nav.Link>
+                        <Link to = "/profile" eventKey="link-1" className="topLinks">Profile</Link>
+                      </Nav.Link>
+                    </Nav.Item>
+                    </Nav>
+
+                    <h5>Welcome!</h5>
                 </div>
                 
                 : <div>
@@ -167,11 +165,25 @@ class App extends Component {
                             size="sm"
                           >Log In </Button>
                         </InputGroup>
-                  </Form>         
+                  </Form> 
+                  
+                  <div className="navBar">
+                    <Nav className="justify-content-center" defaultActiveKey="/">
+                      <Nav.Item>
+                        <Nav.Link>
+                          <Link to = "/" className="topLinks">Home Page</Link>
+                        </Nav.Link>
+                      </Nav.Item>  
+                  
+                      <Nav.Item>
+                        <Nav.Link>
+                          <Link to = "/user/signup" className="topLinks">Signup</Link>
+                        </Nav.Link>
+                      </Nav.Item>  
+                    </Nav>   
+                  </div>
                 </div>
                 }
-            </div>
-        </Nav>
         </div>
 
         {<Route exact path="/" render={(props) => (<HomePage logged={this.state.loggedIn}/>)} />}
@@ -188,10 +200,8 @@ class App extends Component {
         <Route path="/brewery/:index" render = {(props) => (
            <Brewery id={props.match.params.index} brands={this.state.allBrands} breweries={this.state.allBreweries} logged={this.state.loggedIn}/>)} />
 
-        <Route path="/user/login" render={(props) => (
-        <Login logged={this.state.loggedIn} />)} />
-
         <Route path="/user/signup" render={() => (<Signup/>)} />
+        
         <Route path="user/profile" render = {(props) => ( <Profile loggedUser={this.state.loggedUser} logged={this.state.loggedIn}/>)} />
           
       </div>
