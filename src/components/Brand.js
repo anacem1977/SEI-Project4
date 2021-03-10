@@ -1,36 +1,9 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom"
 import { ListGroup } from "react-bootstrap";
 
 class Brands extends Component {
-    constructor(props) {
-        super(props);
         //console.log(props.breweries)
-        this.state = {
-            // allBrands : [],
-            // allBreweries: []
-        }
-    }
-
-    // getAllBrands = async () => {
-    //     const response = await axios.get("http://localhost:3005/brand");
-    //     this.setState({
-    //         allBrands: response.data
-    //     })
-    // };
-
-    // getAllBreweries = async () => {
-    //     const responseBrew = await axios.get("http://localhost:3005/brewery");
-    //     this.setState({
-    //         allBreweries: responseBrew.data
-    //     })
-    // };
-
-    // componentDidMount = () => {
-    //     this.getAllBrands();
-    //     this.getAllBreweries();
-    // }
 
     render () {
         const currentSubstyle = this.props.id

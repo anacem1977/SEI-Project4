@@ -1,15 +1,11 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom"
 import { ListGroup } from "react-bootstrap";
-import Origins from "./Origin"
 
 
 class Substyles extends Component {
-    constructor(props) {
-        super(props);
         //console.log(props.beers)
-    }
+
 
     render () {
         const currentStyle = this.props.id

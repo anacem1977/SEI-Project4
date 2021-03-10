@@ -1,36 +1,7 @@
 import React, { Component } from "react";
-import axios from "axios";
 
 class Brewery extends Component {
-    constructor(props) {
-        super(props);
-        console.log(props.brands)
-        this.state = {
-            // allBreweries: [],
-            // allBrands: []
-        }
-    }
-
-    // getAllBreweries = async () => {
-    //     const response = await axios.get("http://localhost:3005/brewery");
-    //     console.log(response.data)
-    //     this.setState({
-    //         allBreweries: response.data
-    //     })
-    // };
-
-    // getAllBrands = async () => {
-    //     const responseBrands = await axios.get("http://localhost:3005/brand");
-    //     console.log(responseBrands.data)
-    //     this.setState({
-    //         allBrands: responseBrands.data
-    //     })
-    // };
-
-    // componentDidMount = () => {
-    //     this.getAllBreweries();
-    //     this.getAllBrands();
-    // }
+        //console.log(props.brands)
 
     render () {
         const currentBrewery = this.props.id

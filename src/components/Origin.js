@@ -1,16 +1,12 @@
 import React, { Component } from "react";
-import axios from "axios";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import ListGroup from "react-bootstrap/ListGroup"
 import { ListGroupItem } from "react-bootstrap";
-import Substyle from "./Substyle";
+
 
 class Origins extends Component {
-    constructor(props) {
-        super(props);
         //console.log(props)
-    }
 
     render () {
         const beerOrigins = this.props.beers.map((origin) => {
