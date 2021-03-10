@@ -10,7 +10,7 @@ class Profile extends Component {
         console.log("anace")
         return(
             <div className="profile">
-                <h1>Profile</h1>
+                <h1>Profile anance</h1>
             </div>
         )
     }

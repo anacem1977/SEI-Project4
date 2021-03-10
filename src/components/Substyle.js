@@ -51,6 +51,7 @@ class Substyles extends Component {
         return (
             <div className="substyles">
                 <h1> Substyles</h1>
+                <p>Ana{this.props.style}</p>
                 {beerStyles}
             </div>
         )

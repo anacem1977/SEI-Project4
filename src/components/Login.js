@@ -1,10 +1,10 @@
 import axios from "axios";
 import React, { Component } from "react";
 import { FormControl } from "react-bootstrap";
-
+import { Route, Switch} from "react-router-dom";
 import InputGroup from "react-bootstrap/InputGroup"
 import Button from "react-bootstrap/Button"
-import {Redirect} from "react-router"
+import Profile from "./Profile";
 
 class Login extends Component {
     constructor(props) {
@@ -12,7 +12,8 @@ class Login extends Component {
         this.state= {
             username: "",
             password: "",
-            loggedIn: [],
+            loggedIn: false,
+            loggedUser: []
         }
     }
 
@@ -31,28 +32,74 @@ class Login extends Component {
             username: this.state.username,
             password: this.state.password,
         };
-        console.log(userDetails);
+        //console.log(userDetails);
         const response = await axios.post("http://localhost:3005/user/login", userDetails);
         console.log(response.data)
         this.setState({
-            loggedIn: response.data,
+            loggedUser: response.data,
+            loggedIn: true
         })
-        return this.state.loggedIn ? (
-            <p>Welcome</p>
-            )
-            : (
-                <p>You are not logged in</p>
-            )
     }
 
-
-    componentDidUpdate = () => {
-        console.log(this.state.loggedIn)
-    }
-    
     render () {
         return (
             <div className="login">
+                {this.state.loggedIn ?
+                <div>
+                    <h1>Welcome!</h1>
+                    <InputGroup className="mb-3">
+                        <InputGroup.Prepend>
+                            <InputGroup.Text id="basic-addon1">Username</InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <FormControl
+                            value= {this.state.loggedUser.username}
+                            aria-label="username"
+                            aria-describedby="basic-addon1"
+                        />
+                    </InputGroup>
+
+                    <InputGroup className="mb-3">
+                        <InputGroup.Prepend>
+                            <InputGroup.Text id="basic-addon1">Password</InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <FormControl
+                            value= {this.state.loggedUser.password}
+                            aria-label="password"
+                            aria-describedby="basic-addon1"
+                            type= "password"
+                        />
+                    </InputGroup>
+
+                    <InputGroup className="mb-3">
+                        <InputGroup.Prepend>
+                            <InputGroup.Text id="basic-addon1">Your name</InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <FormControl
+                            value= {this.state.loggedUser.name}
+                            aria-label="name"
+                            aria-describedby="basic-addon1"
+                        />
+                    </InputGroup>
+
+                    <InputGroup className="mb-3">
+                        <InputGroup.Prepend>
+                            <InputGroup.Text id="basic-addon1">e-mail</InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <FormControl
+                            value= {this.state.loggedUser.email}
+                            aria-label="email"
+                            aria-describedby="basic-addon1"
+                        />
+                    </InputGroup>
+
+                    <InputGroup>
+                        <Button variant="outline-success">Edit</Button>
+                        <Button variant="outline-danger">Delete</Button>
+                        <Button variant="outline-warning">Sign Out</Button>
+                    </InputGroup>
+
+                </div>
+                : <div>  
                 <h1>Login</h1>
                 <form onSubmit={this.handleSubmit}>
                     <InputGroup className="mb-3">
@@ -85,6 +132,8 @@ class Login extends Component {
                         >Log In </Button>
                     </InputGroup>
                 </form>
+                </div>
+                }
             </div>
         )
     }

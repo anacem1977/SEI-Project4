@@ -64,7 +64,7 @@ class App extends Component {
         <Route path="/brewery/:index" render = {(routerProps) => ( <Brewery {...routerProps}/>)} />
         <Route path="/user/login" render={() => (<Login/>)} />
         <Route path="/user/signup" render={() => (<Signup/>)} />
-        <Route path="/profile" render = {(routerProps) => ( <Profile {...routerProps}/>)} />
+        <Route path="user/profile" render = {(routerProps) => ( <Profile {...routerProps}/>)} />
           
       </div>
     );
