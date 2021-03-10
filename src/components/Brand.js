@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom"
+import { ListGroup } from "react-bootstrap";
 
 class Brands extends Component {
     constructor(props) {
@@ -38,14 +39,16 @@ class Brands extends Component {
             return (
                 console.log(brand),
                 <div>
-                    <h2>Beer: {brand.brand}</h2>
-                    <h3>
-                        <Link to = {"/brewery/" + brand.breweryId}>
-                        {brand.breweryId}
-                        </Link>
-                    </h3>
-                    <p><b>ABV: </b>{brand.abv}</p>
-                    <p><b>Likes: </b>{brand.likes}</p>
+                    <ListGroup>
+                        <ListGroup.Item className="substyle">
+                            <h2>{brand.brand}</h2>
+                            <h3><Link to = {"/brewery/" + brand.breweryId}>{brand.breweryId}</Link></h3>
+                        </ListGroup.Item>
+                        <ListGroup.Item>
+                            <p><b>ABV: </b>{brand.abv}</p>
+                            <p><b>Likes: </b>{brand.likes}</p>
+                    </ListGroup.Item>
+                    </ListGroup>
                 </div>
             )
         })
