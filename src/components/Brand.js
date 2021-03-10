@@ -6,43 +6,43 @@ import { ListGroup } from "react-bootstrap";
 class Brands extends Component {
     constructor(props) {
         super(props);
-
+        //console.log(props.breweries)
         this.state = {
-            allBrands : [],
-            allBreweries: []
+            // allBrands : [],
+            // allBreweries: []
         }
     }
 
-    getAllBrands = async () => {
-        const response = await axios.get("http://localhost:3005/brand");
-        this.setState({
-            allBrands: response.data
-        })
-    };
+    // getAllBrands = async () => {
+    //     const response = await axios.get("http://localhost:3005/brand");
+    //     this.setState({
+    //         allBrands: response.data
+    //     })
+    // };
 
-    getAllBreweries = async () => {
-        const responseBrew = await axios.get("http://localhost:3005/brewery");
-        this.setState({
-            allBreweries: responseBrew.data
-        })
-    };
+    // getAllBreweries = async () => {
+    //     const responseBrew = await axios.get("http://localhost:3005/brewery");
+    //     this.setState({
+    //         allBreweries: responseBrew.data
+    //     })
+    // };
 
-    componentDidMount = () => {
-        this.getAllBrands();
-        this.getAllBreweries();
-    }
+    // componentDidMount = () => {
+    //     this.getAllBrands();
+    //     this.getAllBreweries();
+    // }
 
     render () {
-        const currentSubstyle = this.props.match.params.index
+        const currentSubstyle = this.props.id
         const substyleId = parseInt(currentSubstyle)
-        const beerSubstyles = this.state.allBrands.filter(oneBeerSubstyle => oneBeerSubstyle.substyleId === substyleId).map((brand) => {
+        const beerBrands = this.props.brands.filter(oneBeerSubstyle => oneBeerSubstyle.substyleId === substyleId).map((brand) => {
             return (
-                console.log(brand),
+                //console.log(this.state.brewery),
                 <div>
                     <ListGroup>
                         <ListGroup.Item className="substyle">
                             <h2>{brand.brand}</h2>
-                            <h3><Link to = {"/brewery/" + brand.breweryId}>{brand.breweryId}</Link></h3>
+                            <h3><Link to = {"/brewery/" + brand.breweryId}>Brewery</Link></h3>
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <p><b>ABV: </b>{brand.abv}</p>
@@ -56,7 +56,7 @@ class Brands extends Component {
         return (
             <div className="bands">
                 <h1>Brands</h1>
-                {beerSubstyles}
+                {beerBrands}
             </div>
         )
     }
