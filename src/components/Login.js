@@ -4,6 +4,7 @@ import { FormControl } from "react-bootstrap";
 
 import InputGroup from "react-bootstrap/InputGroup"
 import Button from "react-bootstrap/Button"
+import {Redirect} from "react-router"
 
 class Login extends Component {
     constructor(props) {
@@ -11,6 +12,7 @@ class Login extends Component {
         this.state= {
             username: "",
             password: "",
+            loggedIn: [],
         }
     }
 
@@ -30,10 +32,24 @@ class Login extends Component {
             password: this.state.password,
         };
         console.log(userDetails);
-        const response = await axios.get("http://localhost:3005/user/login", userDetails);
-        console.log(response)
+        const response = await axios.post("http://localhost:3005/user/login", userDetails);
+        console.log(response.data)
+        this.setState({
+            loggedIn: response.data,
+        })
+        return this.state.loggedIn ? (
+            <p>Welcome</p>
+            )
+            : (
+                <p>You are not logged in</p>
+            )
     }
 
+
+    componentDidUpdate = () => {
+        console.log(this.state.loggedIn)
+    }
+    
     render () {
         return (
             <div className="login">

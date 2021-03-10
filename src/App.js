@@ -10,6 +10,7 @@ import Brewery from "./components/Brewery";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import HomePage from "./components/HomePage";
+import Profile from "./components/Profile";
 
 import Nav from "react-bootstrap/Nav"
 
@@ -63,6 +64,7 @@ class App extends Component {
         <Route path="/brewery/:index" render = {(routerProps) => ( <Brewery {...routerProps}/>)} />
         <Route path="/user/login" render={() => (<Login/>)} />
         <Route path="/user/signup" render={() => (<Signup/>)} />
+        <Route path="/profile" render = {(routerProps) => ( <Profile {...routerProps}/>)} />
           
       </div>
     );
