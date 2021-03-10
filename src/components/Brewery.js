@@ -4,38 +4,38 @@ import axios from "axios";
 class Brewery extends Component {
     constructor(props) {
         super(props);
-        console.log(props)
+        console.log(props.brands)
         this.state = {
-            allBreweries: [],
-            allBrands: []
+            // allBreweries: [],
+            // allBrands: []
         }
     }
 
-    getAllBreweries = async () => {
-        const response = await axios.get("http://localhost:3005/brewery");
-        console.log(response.data)
-        this.setState({
-            allBreweries: response.data
-        })
-    };
+    // getAllBreweries = async () => {
+    //     const response = await axios.get("http://localhost:3005/brewery");
+    //     console.log(response.data)
+    //     this.setState({
+    //         allBreweries: response.data
+    //     })
+    // };
 
-    getAllBrands = async () => {
-        const responseBrands = await axios.get("http://localhost:3005/brand");
-        console.log(responseBrands.data)
-        this.setState({
-            allBrands: responseBrands.data
-        })
-    };
+    // getAllBrands = async () => {
+    //     const responseBrands = await axios.get("http://localhost:3005/brand");
+    //     console.log(responseBrands.data)
+    //     this.setState({
+    //         allBrands: responseBrands.data
+    //     })
+    // };
 
-    componentDidMount = () => {
-        this.getAllBreweries();
-        this.getAllBrands();
-    }
+    // componentDidMount = () => {
+    //     this.getAllBreweries();
+    //     this.getAllBrands();
+    // }
 
     render () {
-        const currentBrewery = this.props.match.params.index
+        const currentBrewery = this.props.id
         const breweryId = parseInt(currentBrewery)
-        const breweries = this.state.allBreweries.filter(oneBrewery => oneBrewery.id === breweryId).map((brewery) => {
+        const breweries = this.props.breweries.filter(oneBrewery => oneBrewery.id === breweryId).map((brewery) => {
             return (
                 <div>
                     <h2>Brewery: {brewery.name}</h2>
@@ -45,7 +45,7 @@ class Brewery extends Component {
             )
         })
 
-        const brands = this.state.allBrands.filter(oneBrand => oneBrand.breweryId === breweryId).map((brand) => {
+        const brands = this.props.brands.filter(oneBrand => oneBrand.breweryId === breweryId).map((brand) => {
             return (
                 <div>
                     <ul>

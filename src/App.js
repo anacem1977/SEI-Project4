@@ -112,7 +112,9 @@ class App extends Component {
         <Route path="/brand/:index" render = {(props) => (
            <Brand id={props.match.params.index} brands={this.state.allBrands} breweries={this.state.allBreweries} />)} />
 
-        <Route path="/brewery/:index" render = {(routerProps) => ( <Brewery {...routerProps}/>)} />
+        <Route path="/brewery/:index" render = {(props) => (
+           <Brewery id={props.match.params.index} brands={this.state.allBrands} breweries={this.state.allBreweries}/>)} />
+
         <Route path="/user/login" render={() => (<Login/>)} />
         <Route path="/user/signup" render={() => (<Signup/>)} />
         <Route path="user/profile" render = {(routerProps) => ( <Profile {...routerProps}/>)} />
