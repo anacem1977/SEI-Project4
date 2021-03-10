@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component } from "react";
-import { Link, Route } from "react-router-dom";
+import { Link, Route, Redirect } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css"
 
@@ -51,7 +51,7 @@ class App extends Component {
       };
       //console.log(userDetails);
       const response = await axios.post("http://localhost:3005/user/login", userDetails);
-      console.log(response.data)
+      console.log(response.data);
       this.setState({
           loggedUser: response.data,
           loggedIn: true
@@ -102,6 +102,8 @@ class App extends Component {
     this.setState({
       loggedIn: false,
       loggedUser: [],
+      username: "",
+      password: "",
     })
   }
 

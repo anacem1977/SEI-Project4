@@ -2,15 +2,25 @@ import React, {Component} from "react";
 import InputGroup from "react-bootstrap/InputGroup"
 import Button from "react-bootstrap/Button"
 import { FormControl } from "react-bootstrap";
+import axios from "axios";
 
 class Profile extends Component {
     constructor(props) {
         super(props)
         console.log(props)
+        this.state = {
+            
+        }
+    }
+
+    deleteUser = async (event) => {
+        event.preventDefault();
+        console.log(this.props.loggedUser.id)
+        const response = await axios.delete("http://localhost:3005/user/:index", this.props.loggedUser.id);
+        console.log(response)
     }
 
     render() {
-        console.log("anace")
         return(
             <div className="profile">
                 <h1>Profile</h1>
@@ -61,8 +71,7 @@ class Profile extends Component {
 
                     <InputGroup>
                         <Button variant="outline-success">Edit</Button>
-                        <Button variant="outline-danger">Delete</Button>
-                        <Button variant="outline-warning">Sign Out</Button>
+                        <Button variant="outline-danger" onClick={this.deleteUser}>Delete</Button>
                     </InputGroup>
             </div>
         )
