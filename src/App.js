@@ -16,6 +16,7 @@ import Profile from "./components/Profile";
 import Nav from "react-bootstrap/Nav"
 import InputGroup from "react-bootstrap/InputGroup"
 import Button from "react-bootstrap/Button"
+import Form from "react-bootstrap/Form"
 import { FormControl } from "react-bootstrap";
 
 class App extends Component {
@@ -111,72 +112,44 @@ class App extends Component {
               <Link to = "/" className="topLinks">Home Page</Link>
             </Nav.Link>
           </Nav.Item>
-          
-          <Nav.Item>
-            <Nav.Link>
-              <Link to = "/origin" eventKey="link-1" className="topLinks">Beer Origins</Link>
-            </Nav.Link>
-          </Nav.Item>
-          
-          <Nav.Item>
-            <Nav.Link>
-              <Link to = "/user/login" className="topLinks">Login</Link>
-            </Nav.Link>
-          </Nav.Item>
 
           <Nav.Item>
             <Nav.Link>
               <Link to = "/user/signup" className="topLinks">Signup</Link>
             </Nav.Link>
           </Nav.Item>
-        </Nav>
-        </div>
 
-        {<Route exact path="/" render={() => (<HomePage />)} />}
-
-        <Route path="/origin" render={(props) => (
-          <Origin beers={this.state.beerOrigins}/>)} />
-
-        <Route path="/substyle/:index" render = {(props) => ( 
-          <Substyle id={props.match.params.index} substyles={this.state.beerSubstyles} beers={this.state.beerOrigins}/>)} />
-
-        <Route path="/brand/:index" render = {(props) => (
-           <Brand id={props.match.params.index} brands={this.state.allBrands} breweries={this.state.allBreweries} />)} />
-
-        <Route path="/brewery/:index" render = {(props) => (
-           <Brewery id={props.match.params.index} brands={this.state.allBrands} breweries={this.state.allBreweries}/>)} />
-
-        <Route path="/user/login" render={(props) => (
-        <Login logged={this.state.loggedIn} />)} />
-
-        <Route path="/user/signup" render={() => (<Signup/>)} />
-        <Route path="user/profile" render = {(props) => ( <Profile loggedUser={this.state.loggedUser}/>)} />
-          
-
-        <div className="login">
+          <div className="login">
                 {this.state.loggedIn ?
                 <div>
                     <h1>Welcome!</h1>
-                   
+
+                    <Nav.Item>
+                      <Nav.Link>
+                        <Link to = "/origin" eventKey="link-1" className="topLinks">Beer Origin</Link>
+                      </Nav.Link>
+                    </Nav.Item>
 
                 </div>
-                : <div>  
-                <h1>Login</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <InputGroup className="mb-3">
-                        <FormControl
-                            type="text"
-                            name="username"
-                            placeholder="Username"
-                            aria-label="username"
-                            aria-describedby="basic-addon1"
-                            value={this.state.username} 
-                            onChange={this.handleData}
-                        />
-                    </InputGroup>
+                
+                : <div>
+                    <Form inline onSubmit={this.handleSubmit}>
+                        <Form.Label className="my-2 mr-2">Login</Form.Label>
 
-                    <InputGroup className="mb-3">
-                        <FormControl
+                        <InputGroup className="mb-0 mr-sm-2">
+                          <FormControl size="sm"
+                              type="text"
+                              name="username"
+                              placeholder="Username"
+                              aria-label="username"
+                              aria-describedby="basic-addon1"
+                              value={this.state.username} 
+                              onChange={this.handleData}
+                          />
+                        </InputGroup>
+
+                        <InputGroup className="mb-0 mr-sm-2">
+                          <FormControl size="sm"
                             type="password"
                             name="password"
                             placeholder="Password"
@@ -184,18 +157,43 @@ class App extends Component {
                             aria-describedby="basic-addon1"
                             value={this.state.password} 
                             onChange={this.handleData}
-                        />
-                    </InputGroup>
+                          />
+                        </InputGroup>
 
-                    <InputGroup>
-                        <Button variant="outline-success"
+                        <InputGroup>
+                          <Button 
+                            variant="light"
                             type="submit"
-                        >Log In </Button>
-                    </InputGroup>
-                </form>
+                            size="sm"
+                          >Log In </Button>
+                        </InputGroup>
+                  </Form>         
                 </div>
                 }
             </div>
+        </Nav>
+        </div>
+
+        {<Route exact path="/" render={(props) => (<HomePage logged={this.state.loggedIn}/>)} />}
+
+        <Route path="/origin" render={(props) => (
+          <Origin beers={this.state.beerOrigins} logged={this.state.loggedIn}/>)} />
+
+        <Route path="/substyle/:index" render = {(props) => ( 
+          <Substyle id={props.match.params.index} substyles={this.state.beerSubstyles} beers={this.state.beerOrigins} logged={this.state.loggedIn}/>)} />
+
+        <Route path="/brand/:index" render = {(props) => (
+           <Brand id={props.match.params.index} brands={this.state.allBrands} breweries={this.state.allBreweries} logged={this.state.loggedIn} />)} />
+
+        <Route path="/brewery/:index" render = {(props) => (
+           <Brewery id={props.match.params.index} brands={this.state.allBrands} breweries={this.state.allBreweries} logged={this.state.loggedIn}/>)} />
+
+        <Route path="/user/login" render={(props) => (
+        <Login logged={this.state.loggedIn} />)} />
+
+        <Route path="/user/signup" render={() => (<Signup/>)} />
+        <Route path="user/profile" render = {(props) => ( <Profile loggedUser={this.state.loggedUser} logged={this.state.loggedIn}/>)} />
+          
       </div>
     );
   }
