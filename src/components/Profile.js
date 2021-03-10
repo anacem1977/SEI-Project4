@@ -6,20 +6,20 @@ import { FormControl } from "react-bootstrap";
 class Profile extends Component {
     constructor(props) {
         super(props)
-
+        console.log(props)
     }
 
     render() {
         console.log("anace")
         return(
             <div className="profile">
-                <h1>Profile anance</h1>
+                <h1>Profile</h1>
                 <InputGroup className="mb-3">
                         <InputGroup.Prepend>
                             <InputGroup.Text id="basic-addon1">Username</InputGroup.Text>
                         </InputGroup.Prepend>
                         <FormControl
-                            value= {this.state.loggedUser.username}
+                            value= {this.props.loggedUser.username}
                             aria-label="username"
                             aria-describedby="basic-addon1"
                         />
@@ -30,7 +30,7 @@ class Profile extends Component {
                             <InputGroup.Text id="basic-addon1">Password</InputGroup.Text>
                         </InputGroup.Prepend>
                         <FormControl
-                            value= {this.state.loggedUser.password}
+                            value= {this.props.loggedUser.password}
                             aria-label="password"
                             aria-describedby="basic-addon1"
                             type= "password"
@@ -42,7 +42,7 @@ class Profile extends Component {
                             <InputGroup.Text id="basic-addon1">Your name</InputGroup.Text>
                         </InputGroup.Prepend>
                         <FormControl
-                            value= {this.state.loggedUser.name}
+                            value= {this.props.loggedUser.name}
                             aria-label="name"
                             aria-describedby="basic-addon1"
                         />
@@ -53,7 +53,7 @@ class Profile extends Component {
                             <InputGroup.Text id="basic-addon1">e-mail</InputGroup.Text>
                         </InputGroup.Prepend>
                         <FormControl
-                            value= {this.state.loggedUser.email}
+                            value= {this.props.loggedUser.email}
                             aria-label="email"
                             aria-describedby="basic-addon1"
                         />

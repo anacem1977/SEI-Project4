@@ -98,6 +98,13 @@ class App extends Component {
     this.getAllBreweries();
   }
 
+  signOut = () => {
+    this.setState({
+      loggedIn: false,
+      loggedUser: [],
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -126,6 +133,10 @@ class App extends Component {
                       </Nav.Link>
                     </Nav.Item>
                     </Nav>
+
+                    <Button variant="warning" onClick={this.signOut}>
+                      <Link to ="/">Sign Out</Link>
+                    </Button>
 
                     <h5>Welcome!</h5>
                 </div>
@@ -201,8 +212,9 @@ class App extends Component {
            <Brewery id={props.match.params.index} brands={this.state.allBrands} breweries={this.state.allBreweries} logged={this.state.loggedIn}/>)} />
 
         <Route path="/user/signup" render={() => (<Signup/>)} />
-        
-        <Route path="user/profile" render = {(props) => ( <Profile loggedUser={this.state.loggedUser} logged={this.state.loggedIn}/>)} />
+
+        <Route path="/profile" render = {(props) => ( 
+          <Profile loggedUser={this.state.loggedUser} logged={this.state.loggedIn}/>)} />
           
       </div>
     );
