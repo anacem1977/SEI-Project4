@@ -33,7 +33,7 @@ class Signup extends Component {
         };
         console.log(userDetails);
         const response = await axios.post("http://localhost:3005/user/signup", userDetails);
-        console.log(response)
+        console.log(response.data)
     }
 
     render () {
@@ -92,7 +92,7 @@ class Signup extends Component {
                     <InputGroup>
                         <Button variant="outline-success"
                             type="submit"
-                        >Log In </Button>
+                        >Sign Up </Button>
                     </InputGroup>
 
                 </form>

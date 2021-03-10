@@ -10,6 +10,10 @@ header {
     padding: 1rem;
 }
 
+p {
+    font-size: 18px;
+}
+
 .mainTitle {
     font-family: 'Fascinate', cursive;
     text-align: center;
@@ -21,14 +25,16 @@ header {
     font-size: 34px;
     text-align: center;
     padding: 1rem;
+    color: #2e3444;
 }
 
 .navBar {
     background-color: #f6b31b;
     font-size: 22px;
+    padding: 0.5rem 0 0.5rem 0;
 }
 
-a, a:link, a:visited, a:hover, a:active {
+a.topLinks, a.topLinks:link, a.topLinks:visited, a.topLinks:hover, a.topLinks:active {
     color: #1f2c3d;
     text-decoration: none;
     padding: 0.75rem;
@@ -41,10 +47,36 @@ a.topLinks:hover {
     text-decoration: none;
     border: 3px solid #fffdff;
     border-radius: 10px;
-
 }
 
 .nav-link:hover {
-
     color:#f6b31b;
+}
+
+.origins {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.list-group-item.substyle {
+    background-color: #f6b31b;
+}
+
+.list-group-item:last-child {
+    background-color: #2e3444;
+    color: #fffdff;
+}
+
+.styleLink {
+    font-size: 28px;
+    text-decoration: none;
+}
+
+a.styleLink, a.styleLink:link, a.styleLink:visited{
+    color: #1f2c3d;
+}
+
+a.styleLink:hover, a.styleLink:active {
+    color: #fffdff;
+    text-decoration: none;
 }
