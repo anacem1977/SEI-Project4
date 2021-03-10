@@ -9,37 +9,38 @@ import Profile from "./Profile";
 class Login extends Component {
     constructor(props) {
         super(props);
+        console.log(props)
         this.state= {
-            username: "",
-            password: "",
-            loggedIn: false,
-            loggedUser: []
+            // username: "",
+            // password: "",
+            // loggedIn: false,
+            // loggedUser: []
         }
     }
 
-    //This function records the changes being made to the fields where it is applied
-    handleLogin = (event) => {
-        event.preventDefault();
-        this.setState({
-            [event.target.name]: event.target.value
-        })
-    }
+    // //This function records the changes being made to the fields where it is applied
+    // handleLogin = (event) => {
+    //     event.preventDefault();
+    //     this.setState({
+    //         [event.target.name]: event.target.value
+    //     })
+    // }
 
-    //This function changes the state and makes the axios request with the information from the updated state
-    handleSubmit = async (event) => {
-        event.preventDefault();
-        const userDetails = {
-            username: this.state.username,
-            password: this.state.password,
-        };
-        //console.log(userDetails);
-        const response = await axios.post("http://localhost:3005/user/login", userDetails);
-        console.log(response.data)
-        this.setState({
-            loggedUser: response.data,
-            loggedIn: true
-        })
-    }
+    // //This function changes the state and makes the axios request with the information from the updated state
+    // handleSubmit = async (event) => {
+    //     event.preventDefault();
+    //     const userDetails = {
+    //         username: this.state.username,
+    //         password: this.state.password,
+    //     };
+    //     //console.log(userDetails);
+    //     const response = await axios.post("http://localhost:3005/user/login", userDetails);
+    //     console.log(response.data)
+    //     this.setState({
+    //         loggedUser: response.data,
+    //         loggedIn: true
+    //     })
+    // }
 
     render () {
         return (

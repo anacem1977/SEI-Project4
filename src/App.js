@@ -14,6 +14,9 @@ import HomePage from "./components/HomePage";
 import Profile from "./components/Profile";
 
 import Nav from "react-bootstrap/Nav"
+import InputGroup from "react-bootstrap/InputGroup"
+import Button from "react-bootstrap/Button"
+import { FormControl } from "react-bootstrap";
 
 class App extends Component {
   constructor(props) {
@@ -23,16 +26,44 @@ class App extends Component {
       beerSubstyles: [],
       allBrands: [],
       allBreweries: [],
+      username: "",
+      password: "",
+      loggedIn: false,
+      loggedUser: [],
     }
+  }
+
+      //This function records the changes being made to the fields where it is applied
+    handleData = (event) => {
+        event.preventDefault();
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+    //This function changes the state and makes the axios request with the information from the updated state
+    handleSubmit = async (event) => {
+      event.preventDefault();
+      const userDetails = {
+          username: this.state.username,
+          password: this.state.password,
+      };
+      //console.log(userDetails);
+      const response = await axios.post("http://localhost:3005/user/login", userDetails);
+      console.log(response.data)
+      this.setState({
+          loggedUser: response.data,
+          loggedIn: true
+      })
   }
 
   getAllOrigins = async () => {
     const response = await axios.get("http://localhost:3005/origin");
-    console.log(response.data)
+    //console.log(response.data)
     this.setState({
       beerOrigins: response.data,
     })
-    console.log(this.state.beerOrigins)
+    //console.log(this.state.beerOrigins)
   };
 
   getAllSubstyles = async () => {
@@ -40,7 +71,7 @@ class App extends Component {
     this.setState({
         beerSubstyles: response.data,
     })
-    console.log(this.state.beerOrigins)
+    //console.log(this.state.beerOrigins)
   };
 
   getAllBrands = async () => {
@@ -48,7 +79,7 @@ class App extends Component {
     this.setState({
         allBrands: response.data
     })
-    console.log(this.state.allBrands)
+    //console.log(this.state.allBrands)
   };
 
   getAllBreweries = async () => {
@@ -56,7 +87,7 @@ class App extends Component {
     this.setState({
         allBreweries: response.data
     })
-    console.log(this.state.allBreweries)
+    //console.log(this.state.allBreweries)
   };
 
   componentDidMount = () => {
@@ -115,10 +146,56 @@ class App extends Component {
         <Route path="/brewery/:index" render = {(props) => (
            <Brewery id={props.match.params.index} brands={this.state.allBrands} breweries={this.state.allBreweries}/>)} />
 
-        <Route path="/user/login" render={() => (<Login/>)} />
+        <Route path="/user/login" render={(props) => (
+        <Login logged={this.state.loggedIn} />)} />
+
         <Route path="/user/signup" render={() => (<Signup/>)} />
-        <Route path="user/profile" render = {(routerProps) => ( <Profile {...routerProps}/>)} />
+        <Route path="user/profile" render = {(props) => ( <Profile loggedUser={this.state.loggedUser}/>)} />
           
+
+        <div className="login">
+                {this.state.loggedIn ?
+                <div>
+                    <h1>Welcome!</h1>
+                   
+
+                </div>
+                : <div>  
+                <h1>Login</h1>
+                <form onSubmit={this.handleSubmit}>
+                    <InputGroup className="mb-3">
+                        <FormControl
+                            type="text"
+                            name="username"
+                            placeholder="Username"
+                            aria-label="username"
+                            aria-describedby="basic-addon1"
+                            value={this.state.username} 
+                            onChange={this.handleData}
+                        />
+                    </InputGroup>
+
+                    <InputGroup className="mb-3">
+                        <FormControl
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            aria-label="password"
+                            aria-describedby="basic-addon1"
+                            value={this.state.password} 
+                            onChange={this.handleData}
+                        />
+                    </InputGroup>
+
+                    <InputGroup>
+                        <Button variant="outline-success"
+                            type="submit"
+                        >Log In </Button>
+                    </InputGroup>
+                </form>
+                </div>
+                }
+            </div>
       </div>
     );
   }
