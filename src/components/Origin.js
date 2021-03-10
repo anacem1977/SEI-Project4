@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 
 import ListGroup from "react-bootstrap/ListGroup"
 import { ListGroupItem } from "react-bootstrap";
@@ -9,29 +9,30 @@ import Substyle from "./Substyle";
 class Origins extends Component {
     constructor(props) {
         super(props);
-
+        console.log(props)
         this.state = {
-            beerOrigins: [],
-            substyleName:"",
+            // beerOrigins: [],
+            // substyleName:"",
         }
     }
 
-    getAllOrigins = async () => {
-        const response = await axios.get("http://localhost:3005/origin");
-        console.log(response.data)
-        this.setState({
-          beerOrigins: response.data,
-        })
-      };
+    // getAllOrigins = async () => {
+    //     const response = await axios.get("http://localhost:3005/origin");
+    //     console.log(response.data)
+    //     this.setState({
+    //       beerOrigins: response.data,
+    //     })
+    //   };
 
-      componentDidMount = () => {
-        this.getAllOrigins();
-      }
+    //   componentDidMount = () => {
+    //     this.getAllOrigins();
+    //   }
+
 
     render () {
-        const beerOrigins = this.state.beerOrigins.map((origin) => {
+        const beerOrigins = this.props.beers.map((origin) => {
             return (
-              <div key={origin.id}>
+              <div key={origin.style}>
                   <ListGroup>
                     <ListGroup.Item className="substyle">
                       <h2> <Link to= {"/substyle/" + origin.id} className = "styleLink"> 

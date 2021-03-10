@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom"
 import { ListGroup } from "react-bootstrap";
+import Origins from "./Origin"
 
 
 class Substyles extends Component {
     constructor(props) {
         super(props);
-
+        console.log(props)
         this.state = {
             allBeerSubstyles: []
         }
@@ -25,7 +26,7 @@ class Substyles extends Component {
       }
 
     render () {
-        const currentStyle = this.props.match.params.index
+        const currentStyle = this.props.id
         const styleId = parseInt(currentStyle)
         const beerStyles = this.state.allBeerSubstyles.filter(oneBeerStyle => oneBeerStyle.styleId === styleId).map((subStyle) => {
           return (

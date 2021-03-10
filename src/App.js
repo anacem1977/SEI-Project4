@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Component } from "react";
 import { Link, Route } from "react-router-dom";
+import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css"
 
 import Origin from "./components/Origin";
@@ -18,8 +19,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      beerOrigins: []
     }
+  }
+
+  getAllOrigins = async () => {
+    const response = await axios.get("http://localhost:3005/origin");
+    console.log(response.data)
+    this.setState({
+      beerOrigins: response.data,
+    })
+    console.log(this.state.beerOrigins)
+  };
+
+  componentDidMount = () => {
+    this.getAllOrigins();
   }
 
   render() {
@@ -58,8 +72,12 @@ class App extends Component {
         </div>
 
         {<Route exact path="/" render={() => (<HomePage />)} />}
-        <Route path="/origin" render={() => (<Origin/>)} />
-        <Route path="/substyle/:index" render = {(routerProps) => ( <Substyle {...routerProps} />)} />
+
+        <Route path="/origin" render={(props) => (
+          <Origin beers={this.state.beerOrigins}/>)} />
+
+        <Route path="/substyle/:index" render = {(props) => ( <Substyle index={props.match.params.index}/>)} />
+
         <Route path="/brand/:index" render = {(routerProps) => ( <Brand {...routerProps} />)} />
         <Route path="/brewery/:index" render = {(routerProps) => ( <Brewery {...routerProps}/>)} />
         <Route path="/user/login" render={() => (<Login/>)} />
