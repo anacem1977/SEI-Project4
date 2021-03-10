@@ -8,29 +8,30 @@ import Origins from "./Origin"
 class Substyles extends Component {
     constructor(props) {
         super(props);
-        console.log(props)
+        //console.log(props.beers)
         this.state = {
-            allBeerSubstyles: []
+            // allBeerSubstyles: []
         }
     }
 
-    getAllSubstyles = async () => {
-        const response = await axios.get("http://localhost:3005/substyle");
-        this.setState({
-            allBeerSubstyles: response.data,
-        })
-      };
+    // getAllSubstyles = async () => {
+    //     const response = await axios.get("http://localhost:3005/substyle");
+    //     this.setState({
+    //         allBeerSubstyles: response.data,
+    //     })
+    //   };
 
-      componentDidMount = () => {
-        this.getAllSubstyles();
-      }
+      // componentDidMount = () => {
+      //   this.getAllSubstyles();
+      // }
 
     render () {
         const currentStyle = this.props.id
         const styleId = parseInt(currentStyle)
-        const beerStyles = this.state.allBeerSubstyles.filter(oneBeerStyle => oneBeerStyle.styleId === styleId).map((subStyle) => {
+        const beerName = this.props.beers[styleId-1].style
+        const beerStyles = this.props.substyles.filter(oneBeerStyle => oneBeerStyle.styleId === styleId).map((subStyle) => {
           return (
-            console.log(subStyle),
+            //console.log(subStyle),
             <div>
               <ListGroup>
                 <ListGroup.Item className="substyle">
@@ -55,8 +56,7 @@ class Substyles extends Component {
         
         return (
             <div className="substyles">
-                <h1> Substyle</h1>
-                <p>Ana{this.props.style}</p>
+                <h1>{beerName}</h1>
                 {beerStyles}
             </div>
         )

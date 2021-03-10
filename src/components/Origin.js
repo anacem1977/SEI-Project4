@@ -9,25 +9,8 @@ import Substyle from "./Substyle";
 class Origins extends Component {
     constructor(props) {
         super(props);
-        console.log(props)
-        this.state = {
-            // beerOrigins: [],
-            // substyleName:"",
-        }
+        //console.log(props)
     }
-
-    // getAllOrigins = async () => {
-    //     const response = await axios.get("http://localhost:3005/origin");
-    //     console.log(response.data)
-    //     this.setState({
-    //       beerOrigins: response.data,
-    //     })
-    //   };
-
-    //   componentDidMount = () => {
-    //     this.getAllOrigins();
-    //   }
-
 
     render () {
         const beerOrigins = this.props.beers.map((origin) => {

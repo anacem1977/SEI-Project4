@@ -19,7 +19,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      beerOrigins: []
+      beerOrigins: [],
+      beerSubstyles: []
     }
   }
 
@@ -32,8 +33,17 @@ class App extends Component {
     console.log(this.state.beerOrigins)
   };
 
+  getAllSubstyles = async () => {
+    const response = await axios.get("http://localhost:3005/substyle");
+    this.setState({
+        beerSubstyles: response.data,
+    })
+    console.log(this.state.beerOrigins)
+  };
+
   componentDidMount = () => {
     this.getAllOrigins();
+    this.getAllSubstyles();
   }
 
   render() {
@@ -76,7 +86,7 @@ class App extends Component {
         <Route path="/origin" render={(props) => (
           <Origin beers={this.state.beerOrigins}/>)} />
 
-        <Route path="/substyle/:index" render = {(props) => ( <Substyle index={props.match.params.index}/>)} />
+        <Route path="/substyle/:index" render = {(props) => ( <Substyle id={props.match.params.index} substyles={this.state.beerSubstyles} beers={this.state.beerOrigins}/>)} />
 
         <Route path="/brand/:index" render = {(routerProps) => ( <Brand {...routerProps} />)} />
         <Route path="/brewery/:index" render = {(routerProps) => ( <Brewery {...routerProps}/>)} />
