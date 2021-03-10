@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom"
+import { ListGroup } from "react-bootstrap";
 
 
 class Substyles extends Component {
@@ -30,11 +31,11 @@ class Substyles extends Component {
           return (
             console.log(subStyle),
             <div>
-                  <h2>
-                    <Link to = {"/brand/" + subStyle.id}>
-                      Substyle: {subStyle.substyle}
-                      </Link>
-                    </h2>
+              <ListGroup>
+                <ListGroup.Item className="substyle">
+                  <h2><Link to = {"/brand/" + subStyle.id} className= "styleLink">{subStyle.substyle}</Link></h2>
+                </ListGroup.Item>
+                <ListGroup.Item>
                   <h3>Glassware: {subStyle.glassware}</h3>
                   <p>{subStyle.description}</p>
                   <p><b>Pairing: </b>{subStyle.pairing}</p>
@@ -44,13 +45,16 @@ class Substyles extends Component {
                     <li><b>Color: </b>{subStyle.color}</li>
                     <li><b>Flavor: </b>{subStyle.flavor}</li>
                   </ul>
+                  </ListGroup.Item>
+                  </ListGroup>
+                  <br></br>
             </div>
           )
         })
         
         return (
             <div className="substyles">
-                <h1> Substyles</h1>
+                <h1> Substyle</h1>
                 <p>Ana{this.props.style}</p>
                 {beerStyles}
             </div>

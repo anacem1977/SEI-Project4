@@ -33,7 +33,7 @@ class Origins extends Component {
             return (
               <div key={origin.id}>
                   <ListGroup>
-                    <ListGroup.Item className="substyle" onClick={this.passData}>
+                    <ListGroup.Item className="substyle">
                       <h2> <Link to= {"/substyle/" + origin.id} className = "styleLink"> 
                       {origin.style} - {origin.origin}</Link></h2> 
                     </ListGroup.Item>
