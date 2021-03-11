@@ -33,6 +33,7 @@ class App extends Component {
       loggedUser: [],
       wronginfo:"",
       newUser: false,
+      showHome: true,
     }
   }
 
@@ -87,6 +88,7 @@ class App extends Component {
         loggedUser: response.data,
         wronginfo: false,
         newUser: false,
+        showHome: true,
     })
 }
 
@@ -142,6 +144,7 @@ class App extends Component {
   signUp = () => {
     this.setState({
       newUser: true,
+      showHome: false,
     })
     console.log(this.state.newUser)
   }
@@ -295,11 +298,14 @@ class App extends Component {
                         >Sign Up </Button>
                       </InputGroup>
                     </form>
+
                   </div>
                 : <p></p>}
         </div>
-
-        {<Route exact path="/" render={(props) => (<HomePage logged={this.state.loggedIn}/>)} />}
+        {this.state.showHome ?
+          <Route exact path="/" render={(props) => (<HomePage logged={this.state.loggedIn}/>)} />
+      : <p></p>}
+        
 
         <Route path="/origin" render={(props) => (
           <Origin beers={this.state.beerOrigins} logged={this.state.loggedIn}/>)} />
