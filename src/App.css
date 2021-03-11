@@ -37,7 +37,7 @@ h5 {
 .navBar {
     background-color: #f6b31b;
     font-size: 22px;
-    padding: 0.5rem 0 0.5rem 0;
+    padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
 a.topLinks, a.topLinks:link, a.topLinks:visited, a.topLinks:hover, a.topLinks:active {
@@ -59,9 +59,15 @@ a.topLinks:hover {
     color:#f6b31b;
 }
 
-.origins, .substyles, .brands, .brewery {
+.origins, .substyles, .brands, .brewery, .homePage {
     width: 75%;
     margin: 0 auto;
+}
+
+.homePage p {
+    color: #fffdff;
+    text-align: justify;
+    text-indent: 1rem;
 }
 
 .list-group-item.substyle {
@@ -75,6 +81,10 @@ a.topLinks:hover {
 
 .brandLink {
     color: #1f2c3d;
+    cursor: pointer;
+}
+
+.icons {
     cursor: pointer;
 }
 

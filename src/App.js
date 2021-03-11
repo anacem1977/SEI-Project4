@@ -18,6 +18,12 @@ import Form from "react-bootstrap/Form"
 import { FormControl } from "react-bootstrap";
 import Alert from 'react-bootstrap/Alert';
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {faSignInAlt, faSignOutAlt, faUserPlus, faBeer} from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+
+library.add(faSignInAlt, faSignOutAlt, faUserPlus, faBeer)
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -178,19 +184,28 @@ class App extends Component {
                         <Link to = "/profile" eventKey="link-1" className="topLinks">Profile</Link>
                       </Nav.Link>
                     </Nav.Item>
-                    </Nav>
 
-                    <Button variant="warning" onClick={this.signOut}>
-                      <Link to ="/">Sign Out</Link>
-                    </Button>
+                    <Nav.Item>
+                      <Nav.Link>
+                          <FontAwesomeIcon icon="sign-out-alt" className="icons" onClick={this.signOut}>
+                              <Link to ="/">
+                                Sign Out</Link>
+                          </FontAwesomeIcon>
+                      </Nav.Link>
+                    </Nav.Item>
 
-                    <h5>Welcome!</h5>
+                    <Nav.Item>
+                      <p>Logged in as: {this.state.loggedUser.name}</p>
+                    </Nav.Item>
+                  </Nav>
                 </div>
                 
                 : //NAV BAR TO DISPLAY IF THE USER IS NOT LOGGED IN
                   <div className="navBar">
                     <Form inline onSubmit={this.handleSubmit}>
-                        <Form.Label className="my-2 mr-2">Login</Form.Label>
+                        <Form.Label className="my-2 mr-2">
+                          <FontAwesomeIcon icon="sign-in-alt" />
+                        </Form.Label>
 
                         <InputGroup className="mb-0 mr-sm-2">
                           <FormControl size="sm"
@@ -224,10 +239,9 @@ class App extends Component {
                           >Log In </Button>
                         </InputGroup>
 
-                        <Button variant="outline-success" onClick={this.signUp}>
-                          {/* <Link to = "/user/signup">Signup</Link> */}
-                          SignUp
-                        </Button>
+                        <p>Not a member?</p>
+                        <FontAwesomeIcon icon="user-plus" className="icons" onClick={this.signUp} />
+
                   </Form> 
                 </div>
                 }
