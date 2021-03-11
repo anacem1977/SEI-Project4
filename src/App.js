@@ -17,6 +17,7 @@ import Button from "react-bootstrap/Button"
 import Form from "react-bootstrap/Form"
 import { FormControl } from "react-bootstrap";
 import Alert from 'react-bootstrap/Alert';
+import Col from "react-bootstrap/Col"
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {faSignInAlt, faSignOutAlt, faUserPlus, faBeer, faLevelUpAlt} from "@fortawesome/free-solid-svg-icons"
@@ -202,13 +203,11 @@ class App extends Component {
                 
                 : //NAV BAR TO DISPLAY IF THE USER IS NOT LOGGED IN
                   <div className="navBar">
-                    <Form inline onSubmit={this.handleSubmit}>
-                        <Form.Label className="my-2 mr-2">
-                          <FontAwesomeIcon icon="sign-in-alt" />
-                        </Form.Label>
-
-                        <InputGroup className="mb-0 mr-sm-2">
-                          <FormControl size="sm"
+                    <Form onSubmit={this.handleSubmit}>
+                      <Form.Row>
+                        <Col xs={2}>
+                          <InputGroup className="mb-0 mr-sm-2">
+                            <FormControl size="sm"
                               type="text"
                               name="username"
                               placeholder="Username"
@@ -216,33 +215,49 @@ class App extends Component {
                               aria-describedby="basic-addon1"
                               value={this.state.username} 
                               onChange={this.handleData}
-                          />
-                        </InputGroup>
+                            />
+                          </InputGroup>
+                        </Col>
 
-                        <InputGroup className="mb-0 mr-sm-2">
-                          <FormControl size="sm"
-                            type="password"
-                            name="password"
-                            placeholder="Password"
-                            aria-label="password"
-                            aria-describedby="basic-addon1"
-                            value={this.state.password} 
-                            onChange={this.handleData}
-                          />
-                        </InputGroup>
+                        <Col>
+                          <InputGroup className="mb-0 mr-sm-2">
+                            <FormControl size="sm"
+                              type="password"
+                              name="password"
+                              placeholder="Password"
+                              aria-label="password"
+                              aria-describedby="basic-addon1"
+                              value={this.state.password} 
+                              onChange={this.handleData}
+                            />
+                          </InputGroup>
+                        </Col>
 
-                        <InputGroup>
-                          <Button 
-                            variant="light"
-                            type="submit"
-                            size="sm"
-                          >Log In </Button>
-                        </InputGroup>
+                        <Col>
+                          <InputGroup>
+                            <Button 
+                              variant="light"
+                              type="submit"
+                              size="sm">
+                              <FontAwesomeIcon icon="sign-in-alt" />
+                            </Button>
+                          </InputGroup>
+                        </Col>
 
-                        <p>Not a member?</p>
-                        <FontAwesomeIcon icon="user-plus" className="icons" onClick={this.signUp} />
+                        <Col>
+                          <Form.Label></Form.Label>
+                        </Col>
 
-                  </Form> 
+                        <Col>
+                          <Form.Label>Not a member?</Form.Label>
+                        </Col>
+
+                        <Col xs="auto">
+                          <FontAwesomeIcon icon="user-plus" className="icons topnav" onClick={this.signUp} />
+                        </Col>
+                        
+                      </Form.Row>
+                    </Form>
                 </div>
                 }
 

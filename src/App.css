@@ -136,3 +136,12 @@ a.styleLink:hover, a.styleLink:active {
 .allbreweries {
     padding-bottom: 2rem;
 }
+
+.member {
+    margin: -2.5rem 2rem 0 80%;
+    color: #fffdff;
+}
+
+.topnav {
+    margin: -2.5rem 0 0 0 ;
+}

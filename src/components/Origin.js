@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import ListGroup from "react-bootstrap/ListGroup"
 import { ListGroupItem } from "react-bootstrap";
 
-import {faBeer, faLevelUpAlt} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 

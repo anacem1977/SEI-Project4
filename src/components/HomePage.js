@@ -1,12 +1,11 @@
 import React from "react";
-import {faBeer, faLevelUpAlt} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const HomePage = (props) => {
     return (
         <div className="homePage">
             <h1>Welcome to the Beer Encyclopedia</h1>
-            <h3>Once you are logged in, you can click wherever you see the  ' <FontAwesomeIcon icon="beer" /> ' to learn more!</h3>
+            <h3>Once you're logged in, you can click wherever you see the  ' <FontAwesomeIcon icon="beer" /> ' to learn more!</h3>
             
             <br></br>
             <div className="whatIsBeer">

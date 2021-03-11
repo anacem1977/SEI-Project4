@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 import { Card } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
 
-import {faBeer, faLevelUpAlt} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Substyles extends Component {

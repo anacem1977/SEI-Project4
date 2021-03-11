@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom"
 import { ListGroup } from "react-bootstrap";
 
-import {faBeer, faLevelUpAlt} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Brands extends Component {

@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button"
 import { FormControl } from "react-bootstrap";
 import axios from "axios";
 import Alert from 'react-bootstrap/Alert';
-import { Route, Redirect, Switch } from "react-router-dom"
+import { Redirect } from "react-router-dom"
 import HomePage from "./HomePage"
 
 class Profile extends Component {
