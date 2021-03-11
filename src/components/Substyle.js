@@ -17,7 +17,7 @@ class Substyles extends Component {
               <Accordion>
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey={subStyle.id} className="substyle list-group-item">
-                    <h2>{subStyle.substyle}</h2>
+                    <h2 className="brandLink">{subStyle.substyle}</h2>
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey={subStyle.id}>
                     <Card.Body className="accordionCard">
@@ -45,6 +45,7 @@ class Substyles extends Component {
                 <h1 className="subTitle">{beerStyle} Style </h1>
                 <h5>Click on any of the Beer Styles below to learn more.</h5>
                 {beerSubstyles}
+                <a className="backToTop" href="#top">Back to top</a>
             </div>
         )
     }

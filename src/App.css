@@ -12,6 +12,7 @@ header {
 
 p {
     font-size: 18px;
+    color: #1f2c3d;
 }
 
 h5 {
@@ -58,7 +59,7 @@ a.topLinks:hover {
     color:#f6b31b;
 }
 
-.origins, .substyles {
+.origins, .substyles, .brands, .brewery {
     width: 75%;
     margin: 0 auto;
 }
@@ -70,6 +71,11 @@ a.topLinks:hover {
 .list-group-item:last-child {
     background-color: #fffdff;
     color: #1f2c3d;
+}
+
+.brandLink {
+    color: #1f2c3d;
+    cursor: pointer;
 }
 
 .styleLink {
@@ -88,4 +94,23 @@ a.styleLink:hover, a.styleLink:active {
 
 .accordionCard {
     color: #1f2c3d;
+}
+
+.backToTop {
+    position: fixed;
+    bottom: 0.5rem;
+    left: 0.5rem;
+  }
+
+  .webaddress {
+      font-size: 26px;
+  }
+
+  a.webaddress, a.webaddress:link, a.webaddress:visited{
+    color: #fffdff;
+    text-decoration: none;
+}
+
+.allbreweries {
+    padding-bottom: 2rem;
 }

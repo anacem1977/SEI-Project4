@@ -184,7 +184,7 @@ class App extends Component {
                   </Form> 
                 </div>
                 }
-        </div>
+                </div>
 
         {<Route exact path="/" render={(props) => (<HomePage logged={this.state.loggedIn}/>)} />}
 
@@ -195,7 +195,7 @@ class App extends Component {
           <Substyle id={props.match.params.index} substyles={this.state.beerSubstyles} beers={this.state.beerOrigins} logged={this.state.loggedIn}/>)} />
 
         <Route path="/brand/:index" render = {(props) => (
-           <Brand id={props.match.params.index} brands={this.state.allBrands} breweries={this.state.allBreweries} logged={this.state.loggedIn} />)} />
+           <Brand id={props.match.params.index} brands={this.state.allBrands} breweries={this.state.allBreweries} substyles={this.state.beerSubstyles} beers={this.state.beerOrigins} logged={this.state.loggedIn} />)} />
 
         <Route path="/brewery/:index" render = {(props) => (
            <Brewery id={props.match.params.index} brands={this.state.allBrands} breweries={this.state.allBreweries} logged={this.state.loggedIn}/>)} />

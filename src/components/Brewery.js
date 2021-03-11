@@ -8,17 +8,17 @@ class Brewery extends Component {
         const breweryId = parseInt(currentBrewery)
         const breweries = this.props.breweries.filter(oneBrewery => oneBrewery.id === breweryId).map((brewery) => {
             return (
-                <div>
-                    <h2>Brewery: {brewery.name}</h2>
+                <div className="allbreweries">
+                    <h1 className="subtitle">{brewery.name}</h1>
                     <h3>{brewery.address}</h3>
-                    <a href={`https://${brewery.url}`}target="_blank" rel="noreferrer">{brewery.url}</a>
+                    <a href={`https://${brewery.url}`}target="_blank" rel="noreferrer" className="webaddress">{brewery.url}</a>
                 </div>
             )
         })
 
         const brands = this.props.brands.filter(oneBrand => oneBrand.breweryId === breweryId).map((brand) => {
             return (
-                <div>
+                <div className="allbrands">
                     <ul>
                         <li>{brand.brand}</li>
                     </ul>
@@ -28,7 +28,7 @@ class Brewery extends Component {
 
         return (
             <div className="brewery">
-                <h1>Brewery</h1>
+                <h1></h1>
                 {breweries}
                 {brands}
             </div>
