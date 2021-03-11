@@ -17,6 +17,7 @@ import InputGroup from "react-bootstrap/InputGroup"
 import Button from "react-bootstrap/Button"
 import Form from "react-bootstrap/Form"
 import { FormControl } from "react-bootstrap";
+import Alert from 'react-bootstrap/Alert';
 
 class App extends Component {
   constructor(props) {
@@ -30,6 +31,8 @@ class App extends Component {
       password: "",
       loggedIn: false,
       loggedUser: [],
+      wronginfo:"",
+      newUser: false,
     }
   }
 
@@ -51,11 +54,41 @@ class App extends Component {
       //console.log(userDetails);
       const response = await axios.post("http://localhost:3005/user/login", userDetails);
       console.log(response.data);
-      this.setState({
+      if (response.data === null) {
+        this.setState ({
+          wronginfo : true,
+          loggedIn: false,
+          loggedUser: [],
+          username: "",
+          password: "",
+        })
+      } else {
+        this.setState({
           loggedUser: response.data,
-          loggedIn: true
-      })
+          loggedIn: true,
+          wronginfo: false,
+        })
+      }
   }
+
+  handleSignup = async (event) => {
+    event.preventDefault();
+    const userDetails = {
+        username: this.state.username,
+        password: this.state.password,
+        name: this.state.name,
+        email: this.state.email
+    };
+    console.log(userDetails);
+    const response = await axios.post("http://localhost:3005/user/signup", userDetails);
+    console.log(response.data)
+    this.setState({
+        loggedIn: true,
+        loggedUser: response.data,
+        wronginfo: false,
+        newUser: false,
+    })
+}
 
   getAllOrigins = async () => {
     const response = await axios.get("http://localhost:3005/origin");
@@ -106,6 +139,13 @@ class App extends Component {
     })
   }
 
+  signUp = () => {
+    this.setState({
+      newUser: true,
+    })
+    console.log(this.state.newUser)
+  }
+
   render() {
     return (
       <div className="App">
@@ -114,6 +154,7 @@ class App extends Component {
         </header>
           <div className="login">
                 {this.state.loggedIn ?
+                //NAV BAR TO DISPLAY WHEN THE USER IS LOGGED IN
                 <div className="navBar">
                   <Nav className="justify-content-center" defaultActiveKey="/">
                       <Nav.Item>
@@ -142,7 +183,8 @@ class App extends Component {
                     <h5>Welcome!</h5>
                 </div>
                 
-                : <div className="navBar">
+                : //NAV BAR TO DISPLAY IF THE USER IS NOT LOGGED IN
+                  <div className="navBar">
                     <Form inline onSubmit={this.handleSubmit}>
                         <Form.Label className="my-2 mr-2">Login</Form.Label>
 
@@ -178,13 +220,84 @@ class App extends Component {
                           >Log In </Button>
                         </InputGroup>
 
-                        <Button variant="outline-success" type="submit">
-                          <Link to = "/user/signup">Signup</Link>
+                        <Button variant="outline-success" onClick={this.signUp}>
+                          {/* <Link to = "/user/signup">Signup</Link> */}
+                          SignUp
                         </Button>
                   </Form> 
                 </div>
                 }
-                </div>
+
+                {this.state.wronginfo ? 
+                <Alert variant="danger">
+                  <Alert.Heading>
+                    Something went wrong!
+                  </Alert.Heading>
+                  <p>You entered an incorrect username or password. Please check your credentials or Singup</p>
+                </Alert>
+                : <p></p>}
+
+                {this.state.newUser ?
+                  <div className="signup">
+                    <h1> Sign Up </h1>
+                    <form onSubmit={this.handleSignup}>
+                      <InputGroup className="mb-3">
+                        <FormControl
+                            type="text"
+                            name="username"
+                            placeholder="Username"
+                            aria-label="username"
+                            aria-describedby="basic-addon1"
+                            value={this.state.username} 
+                            onChange={this.handleData}
+                        />
+                      </InputGroup>
+                    
+                      <InputGroup className="mb-3">
+                        <FormControl
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            aria-label="password"
+                            aria-describedby="basic-addon1"
+                            value={this.state.password} 
+                            onChange={this.handleData}
+                        />
+                      </InputGroup>
+
+                      <InputGroup className="mb-3">
+                        <FormControl
+                            type="text"
+                            name="name"
+                            placeholder="Your Name"
+                            aria-label="name"
+                            aria-describedby="basic-addon1"
+                            value={this.state.name} 
+                            onChange={this.handleData}
+                        />
+                      </InputGroup>
+
+                      <InputGroup className="mb-3">
+                        <FormControl
+                            type="email"
+                            name="email"
+                            placeholder="Your e-mail"
+                            aria-label="e-mail"
+                            aria-describedby="basic-addon1"
+                            value={this.state.email} 
+                            onChange={this.handleData}
+                        />
+                      </InputGroup>
+
+                      <InputGroup>
+                        <Button variant="outline-success"
+                            type="submit"
+                        >Sign Up </Button>
+                      </InputGroup>
+                    </form>
+                  </div>
+                : <p></p>}
+        </div>
 
         {<Route exact path="/" render={(props) => (<HomePage logged={this.state.loggedIn}/>)} />}
 
@@ -199,8 +312,6 @@ class App extends Component {
 
         <Route path="/brewery/:index" render = {(props) => (
            <Brewery id={props.match.params.index} brands={this.state.allBrands} breweries={this.state.allBreweries} logged={this.state.loggedIn}/>)} />
-
-        <Route path="/user/signup" render={() => (<Signup/>)} />
 
         <Route path="/profile" render = {(props) => ( 
           <Profile loggedUser={this.state.loggedUser} logged={this.state.loggedIn}/>)} />
