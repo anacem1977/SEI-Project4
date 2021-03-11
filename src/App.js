@@ -8,7 +8,6 @@ import Origin from "./components/Origin";
 import Substyle from "./components/Substyle";
 import Brand from "./components/Brand";
 import Brewery from "./components/Brewery";
-import Signup from "./components/Signup";
 import HomePage from "./components/HomePage";
 import Profile from "./components/Profile";
 
@@ -37,7 +36,7 @@ class App extends Component {
     }
   }
 
-      //This function records the changes being made to the fields where it is applied
+      //This function records the changes being made to the fields where it is applied (Login and Signup)
     handleData = (event) => {
         event.preventDefault();
         this.setState({
@@ -45,7 +44,7 @@ class App extends Component {
         })
     }
 
-    //This function changes the state and makes the axios request with the information from the updated state
+    //This function changes the state and makes the axios request with the information from the updated state (LOGIN ONLY)
     handleSubmit = async (event) => {
       event.preventDefault();
       const userDetails = {
@@ -71,26 +70,26 @@ class App extends Component {
         })
       }
   }
-
-  handleSignup = async (event) => {
-    event.preventDefault();
-    const userDetails = {
+    //This function changes the state and makes the axios request with the information from the updated state (SIGNUP ONLY)
+    handleSignup = async (event) => {
+      event.preventDefault();
+      const userDetails = {
         username: this.state.username,
         password: this.state.password,
         name: this.state.name,
         email: this.state.email
-    };
-    console.log(userDetails);
-    const response = await axios.post("http://localhost:3005/user/signup", userDetails);
-    console.log(response.data)
-    this.setState({
+      };
+      console.log(userDetails);
+      const response = await axios.post("http://localhost:3005/user/signup", userDetails);
+      console.log(response.data)
+      this.setState({
         loggedIn: true,
         loggedUser: response.data,
         wronginfo: false,
         newUser: false,
         showHome: true,
-    })
-}
+      })
+    }
 
   getAllOrigins = async () => {
     const response = await axios.get("http://localhost:3005/origin");
@@ -138,6 +137,8 @@ class App extends Component {
       loggedUser: [],
       username: "",
       password: "",
+      name: "",
+      email: "",
     })
   }
 
@@ -231,15 +232,17 @@ class App extends Component {
                 </div>
                 }
 
-                {this.state.wronginfo ? 
+                {/* DISPLAYS ALERT WHEN USER ENTERS INCORRECT INFORMATION */}
+                {this.state.wronginfo ?
                 <Alert variant="danger">
                   <Alert.Heading>
                     Something went wrong!
                   </Alert.Heading>
-                  <p>You entered an incorrect username or password. Please check your credentials or Singup</p>
+                  <p>You entered an incorrect username or password. Please check your credentials or Sign Up</p>
                 </Alert>
                 : <p></p>}
 
+                {/* DISPLAYS SIGNUP FORM AND HIDES HOMEPAGE */}
                 {this.state.newUser ?
                   <div className="signup">
                     <h1> Sign Up </h1>
@@ -302,6 +305,8 @@ class App extends Component {
                   </div>
                 : <p></p>}
         </div>
+
+        {/* SHOWS HOME PAGE */}
         {this.state.showHome ?
           <Route exact path="/" render={(props) => (<HomePage logged={this.state.loggedIn}/>)} />
       : <p></p>}

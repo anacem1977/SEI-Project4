@@ -3,21 +3,30 @@ import InputGroup from "react-bootstrap/InputGroup"
 import Button from "react-bootstrap/Button"
 import { FormControl } from "react-bootstrap";
 import axios from "axios";
+import Alert from 'react-bootstrap/Alert';
+import { Route, Redirect, Switch } from "react-router-dom"
+import HomePage from "./HomePage"
 
 class Profile extends Component {
     constructor(props) {
         super(props)
         console.log(props)
         this.state = {
-            
+            deletedUser: false,
         }
     }
 
     deleteUser = async (event) => {
         event.preventDefault();
         console.log(this.props.loggedUser.id)
-        const response = await axios.delete("http://localhost:3005/user/:index", this.props.loggedUser.id);
-        console.log(response)
+        const response = await axios.delete(`http://localhost:3005/user/${this.props.loggedUser.id}`);
+        console.log(response.data)
+        if (response.data === "successfully deleted") {
+            this.setState({
+                deletedUser: true,
+                loggedIn: false,
+            })
+        } console.log(this.state.loggedIn)
     }
 
     render() {
@@ -73,6 +82,17 @@ class Profile extends Component {
                         <Button variant="outline-success">Edit</Button>
                         <Button variant="outline-danger" onClick={this.deleteUser}>Delete</Button>
                     </InputGroup>
+
+                    {this.state.deletedUser ? 
+                          <Redirect exact path="/" render ={(props) => (<HomePage logged={this.state.loggedIn}/>)}>
+                          </Redirect>
+                    : <Alert variant="danger">
+                        <Alert.Heading>
+                            Something went wrong!
+                        </Alert.Heading>
+                        <p>We were not able to delete your Profile. Please try again.</p>
+                    </Alert> 
+                    }
             </div>
         )
     }
