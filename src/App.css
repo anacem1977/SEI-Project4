@@ -59,7 +59,7 @@ a.topLinks:hover {
     color:#f6b31b;
 }
 
-.origins, .substyles, .brands, .brewery, .homePage {
+.origins, .substyles, .brands, .brewery, .homePage, .signup {
     width: 75%;
     margin: 0 auto;
 }
@@ -142,6 +142,13 @@ a.styleLink:hover, a.styleLink:active {
     color: #fffdff;
 }
 
-.topnav {
-    margin: -2.5rem 0 0 0 ;
+.signup h1 {
+    background-color: #f6b31b;
+    padding-left: 10%;
+}
+
+.signupBar {
+    width: 133.7%;
+    margin-left: -17%;
+    margin-top: -2rem;
 }

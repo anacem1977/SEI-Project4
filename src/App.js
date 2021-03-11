@@ -204,7 +204,7 @@ class App extends Component {
                 : //NAV BAR TO DISPLAY IF THE USER IS NOT LOGGED IN
                   <div className="navBar">
                     <Form onSubmit={this.handleSubmit}>
-                      <Form.Row>
+                      <Form.Row style={{display: this.state.newUser ? "none" : "row"}}>
                         <Col xs={2}>
                           <InputGroup className="mb-0 mr-sm-2">
                             <FormControl size="sm"
@@ -274,7 +274,10 @@ class App extends Component {
                 {/* DISPLAYS SIGNUP FORM AND HIDES HOMEPAGE */}
                 {this.state.newUser ?
                   <div className="signup">
-                    <h1> Sign Up </h1>
+                    <div className="signupBar">
+                      <h1> Sign Up Form</h1>
+                    </div>
+                    <br></br>
                     <form onSubmit={this.handleSignup}>
                       <InputGroup className="mb-3">
                         <FormControl
@@ -329,6 +332,7 @@ class App extends Component {
                             type="submit"
                         >Sign Up </Button>
                       </InputGroup>
+                      <br></br>
                     </form>
 
                   </div>
