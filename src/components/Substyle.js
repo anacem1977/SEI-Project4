@@ -3,6 +3,9 @@ import { Link } from "react-router-dom"
 import { Card } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
 
+import {faBeer, faLevelUpAlt} from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 class Substyles extends Component {
         //console.log(props.beers)
 
@@ -45,7 +48,9 @@ class Substyles extends Component {
                 <h1 className="subTitle">{beerStyle} Style </h1>
                 <h5>Click on any of the Beer Styles below to learn more.</h5>
                 {beerSubstyles}
-                <a className="backToTop" href="#top">Back to top</a>
+                <a href="#top">
+                  <FontAwesomeIcon icon = "level-up-alt" href="#top" className="backToTop" size="3x" as="link"/>
+                </a>
             </div>
         )
     }

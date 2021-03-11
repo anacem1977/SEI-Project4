@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import ListGroup from "react-bootstrap/ListGroup"
 import { ListGroupItem } from "react-bootstrap";
 
+import {faBeer, faLevelUpAlt} from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 class Origins extends Component {
         //console.log(props)
@@ -31,7 +34,9 @@ class Origins extends Component {
                 <h1 className="subTitle"> Where was your favorite beer created? </h1>
                 <h5>A beer style is a label given to a beer that describes its overall character and often, its place of origin. Click on any of the Beer Styles below to learn more.</h5>
                 {beerOrigins}
-                <a className="backToTop" href="#top">Back to top</a>
+                <a href="#top">
+                  <FontAwesomeIcon icon = "level-up-alt" href="#top" className="backToTop" size="3x" as="link"/>
+                </a>
             </div>
         )
     }

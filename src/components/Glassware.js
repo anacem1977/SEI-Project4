@@ -1,5 +1,8 @@
  import React, { Component } from "react";
 
+ import {faBeer, faLevelUpAlt} from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
  const Glassware = (props) => {
      return (
          <div className="glass">
@@ -37,6 +40,9 @@
                 <p>An oversized 22oz wine glass will be most suitable for serving most Belgian Ales. Its size allows for headspace, while the open bowl creates an amazing nose.</p>
                 <p>Benefits: Replacement for a Tulip or Goblet.</p>
                 </div>
+                <a href="#top">
+                    <FontAwesomeIcon icon = "level-up-alt" href="#top" className="backToTop" size="3x" as="link"/>
+                </a>
          </div>
      )
  }

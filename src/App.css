@@ -70,6 +70,16 @@ a.topLinks:hover {
     text-indent: 1rem;
 }
 
+.homePage h2, .homePage h1 {
+    font-family: 'Fascinate', cursive;
+    padding-top: 1rem;
+    text-align: center
+}
+
+.homePage h3 {
+    text-align: center;
+}
+
 .list-group-item.substyle {
     background-color: #f6b31b;
 }
@@ -108,8 +118,10 @@ a.styleLink:hover, a.styleLink:active {
 
 .backToTop {
     position: fixed;
-    bottom: 0.5rem;
-    left: 0.5rem;
+    bottom: 1rem;
+    left: 2rem;
+    color: #f6b31b;
+    cursor: pointer;
   }
 
   .webaddress {

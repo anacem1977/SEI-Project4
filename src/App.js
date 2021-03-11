@@ -19,10 +19,10 @@ import { FormControl } from "react-bootstrap";
 import Alert from 'react-bootstrap/Alert';
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import {faSignInAlt, faSignOutAlt, faUserPlus, faBeer} from "@fortawesome/free-solid-svg-icons"
+import {faSignInAlt, faSignOutAlt, faUserPlus, faBeer, faLevelUpAlt} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 
-library.add(faSignInAlt, faSignOutAlt, faUserPlus, faBeer)
+library.add(faSignInAlt, faSignOutAlt, faUserPlus, faBeer, faLevelUpAlt)
 
 class App extends Component {
   constructor(props) {

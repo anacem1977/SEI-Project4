@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom"
 import { ListGroup } from "react-bootstrap";
 
+import {faBeer, faLevelUpAlt} from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 class Brands extends Component {
         
 
@@ -34,7 +37,9 @@ class Brands extends Component {
             <div>
                 <h1 className="subTitle">{beerSubstyle} Beers</h1>
                 {beerBrands}
-                <a className="backToTop" href="#top">Back to top</a>
+                <a href="#top">
+                  <FontAwesomeIcon icon = "level-up-alt" href="#top" className="backToTop" size="3x" as="link"/>
+                </a>
             </div>
         )
     }

@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+import {faBeer, faLevelUpAlt} from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 class Brewery extends Component {
         //console.log(props.brands)
 
@@ -31,6 +34,11 @@ class Brewery extends Component {
                 <h1></h1>
                 {breweries}
                 {brands}
+
+                <a href="#top">
+                  <FontAwesomeIcon icon = "level-up-alt" href="#top" className="backToTop" size="3x" as="link"/>
+                </a>
+                
             </div>
         )
     }
