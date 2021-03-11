@@ -29,6 +29,7 @@ class Origins extends Component {
         return (
             <div className="origins">
                 <h1 className="subTitle"> Where was your favorite beer created? </h1>
+                <h5>A beer style is a label given to a beer that describes its overall character and often, its place of origin. Click on any of the Beer Styles below to learn more.</h5>
                 {beerOrigins}
             </div>
         )

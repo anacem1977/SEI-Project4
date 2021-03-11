@@ -14,6 +14,11 @@ p {
     font-size: 18px;
 }
 
+h5 {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
 .mainTitle {
     font-family: 'Fascinate', cursive;
     text-align: center;
@@ -25,7 +30,7 @@ p {
     font-size: 34px;
     text-align: center;
     padding: 1rem;
-    color: #2e3444;
+    color: #fffdff;
 }
 
 .navBar {
@@ -53,7 +58,7 @@ a.topLinks:hover {
     color:#f6b31b;
 }
 
-.origins {
+.origins, .substyles {
     width: 75%;
     margin: 0 auto;
 }
@@ -79,4 +84,8 @@ a.styleLink, a.styleLink:link, a.styleLink:visited{
 a.styleLink:hover, a.styleLink:active {
     color: #fffdff;
     text-decoration: none;
+}
+
+.accordionCard {
+    color: #1f2c3d;
 }

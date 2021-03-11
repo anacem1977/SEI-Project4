@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom"
-import { ListGroup } from "react-bootstrap";
-
+import { Card } from "react-bootstrap";
+import Accordion from "react-bootstrap/Accordion";
 
 class Substyles extends Component {
         //console.log(props.beers)
-
 
     render () {
         const currentStyle = this.props.id
@@ -15,30 +14,36 @@ class Substyles extends Component {
           return (
             //console.log(subStyle),
             <div>
-              <ListGroup>
-                <ListGroup.Item className="substyle">
-                  <h2><Link to = {"/brand/" + subStyle.id} className= "styleLink">{subStyle.substyle}</Link></h2>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <h3>Glassware: {subStyle.glassware}</h3>
-                  <p>{subStyle.description}</p>
-                  <p><b>Pairing: </b>{subStyle.pairing}</p>
-                  <ul>
-                    <li><b>ABV: </b>{subStyle.abv}</li>
-                    <li><b>IBU: </b>{subStyle.ibu}</li>
-                    <li><b>Color: </b>{subStyle.color}</li>
-                    <li><b>Flavor: </b>{subStyle.flavor}</li>
-                  </ul>
-                  </ListGroup.Item>
-                  </ListGroup>
-                  <br></br>
+              <Accordion>
+                <Card>
+                  <Accordion.Toggle as={Card.Header} eventKey={subStyle.id} className="substyle list-group-item">
+                    <h2>{subStyle.substyle}</h2>
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey={subStyle.id}>
+                    <Card.Body className="accordionCard">
+                      <p>{subStyle.description}</p>
+                      <p><b>Pairing: </b>{subStyle.pairing}</p>
+                      <p><b>Glassware: </b>{subStyle.glassware}</p>
+                      <ul>
+                        <li><b>ABV: </b>{subStyle.abv}</li>
+                        <li><b>IBU: </b>{subStyle.ibu}</li>
+                        <li><b>Color: </b>{subStyle.color}</li>
+                        <li><b>Flavor: </b>{subStyle.flavor}</li>
+                      </ul>
+                      <p><Link to = {"/brand/" + subStyle.id}>Check out these {subStyle.substyle} brands! </Link></p>
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+              </Accordion>
+              <br></br>
             </div>
           )
         })
         
         return (
             <div className="substyles">
-                <h1>{beerStyle}</h1>
+                <h1 className="subTitle">{beerStyle} Style </h1>
+                <h5>Click on any of the Beer Styles below to learn more.</h5>
                 {beerSubstyles}
             </div>
         )

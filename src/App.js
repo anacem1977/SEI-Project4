@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component } from "react";
-import { Link, Route, Redirect } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css"
 
@@ -8,7 +8,6 @@ import Origin from "./components/Origin";
 import Substyle from "./components/Substyle";
 import Brand from "./components/Brand";
 import Brewery from "./components/Brewery";
-import Login from "./components/Login";
 import Signup from "./components/Signup";
 import HomePage from "./components/HomePage";
 import Profile from "./components/Profile";
@@ -125,7 +124,7 @@ class App extends Component {
 
                     <Nav.Item>
                       <Nav.Link>
-                        <Link to = "/origin" eventKey="link-1" className="topLinks">Beer Origin</Link>
+                        <Link to = "/origin" eventKey="link-1" className="topLinks">Beers!</Link>
                       </Nav.Link>
                     </Nav.Item>
 
@@ -143,7 +142,7 @@ class App extends Component {
                     <h5>Welcome!</h5>
                 </div>
                 
-                : <div>
+                : <div className="navBar">
                     <Form inline onSubmit={this.handleSubmit}>
                         <Form.Label className="my-2 mr-2">Login</Form.Label>
 
@@ -178,23 +177,11 @@ class App extends Component {
                             size="sm"
                           >Log In </Button>
                         </InputGroup>
+
+                        <Button variant="outline-success" type="submit">
+                          <Link to = "/user/signup">Signup</Link>
+                        </Button>
                   </Form> 
-                  
-                  <div className="navBar">
-                    <Nav className="justify-content-center" defaultActiveKey="/">
-                      <Nav.Item>
-                        <Nav.Link>
-                          <Link to = "/" className="topLinks">Home Page</Link>
-                        </Nav.Link>
-                      </Nav.Item>  
-                  
-                      <Nav.Item>
-                        <Nav.Link>
-                          <Link to = "/user/signup" className="topLinks">Signup</Link>
-                        </Nav.Link>
-                      </Nav.Item>  
-                    </Nav>   
-                  </div>
                 </div>
                 }
         </div>
