@@ -14,7 +14,7 @@ class Profile extends Component {
         super(props)
         console.log(props.loggedUser)
         this.state = {
-            deletedUser: false,
+            deletedUser: "pending",
             password: this.props.loggedUser.password,
             name: this.props.loggedUser.name,
             email: this.props.loggedUser.email
@@ -23,6 +23,7 @@ class Profile extends Component {
 
     handleData = (event) => {
         event.preventDefault();
+        console.log(event.target.value)
         this.setState({
             [event.target.name]: event.target.value
         })
@@ -35,10 +36,19 @@ class Profile extends Component {
         console.log(response.data)
         if (response.data === "successfully deleted") {
             this.setState({
-                deletedUser: true,
+                deletedUser: "yes",
                 loggedIn: false,
+                username: "",
+                password: "",
+                name: "",
+                email: "",
             })
-        } console.log(this.state.loggedIn)
+        } else {
+            this.setState({
+                deletedUser: "no"
+            })
+        } 
+        console.log(this.state.loggedIn)
     }
 
     editProfile = async (event) => {
@@ -50,7 +60,11 @@ class Profile extends Component {
           };
           console.log(userDetails)
         const response = await axios.put(`http://localhost:3005/user/${this.props.loggedUser.id}`, userDetails)
-          console.log(response.data)
+          if (response.status === 200) {
+            this.setState({
+                updatedUser: true,
+            })
+        } console.log(this.state.updatedUser)
     }
 
     render() {
@@ -74,10 +88,19 @@ class Profile extends Component {
                             <InputGroup.Text id="basic-addon1">Password</InputGroup.Text>
                         </InputGroup.Prepend>
                         <FormControl
-                            value= {this.props.loggedUser.password}
+                            type= "password"
+                            name="password"
+                            placeholder="password"
                             aria-label="password"
                             aria-describedby="basic-addon1"
+                            value= {this.state.password}
+                        />
+                        <FormControl
                             type= "password"
+                            name="password"
+                            placeholder="New Password"
+                            aria-label="password"
+                            aria-describedby="basic-addon1"
                             onChange={this.handleData}
                         />
                     </InputGroup>
@@ -87,7 +110,17 @@ class Profile extends Component {
                             <InputGroup.Text id="basic-addon1">Your name</InputGroup.Text>
                         </InputGroup.Prepend>
                         <FormControl
-                            value= {this.props.loggedUser.name}
+                            type="text"
+                            name="name"
+                            placeholder="Your Name"
+                            aria-label="name"
+                            aria-describedby="basic-addon1"
+                            value={this.state.name} 
+                        />
+                        <FormControl
+                            type= "text"
+                            name="name"
+                            placeholder="New Name"
                             aria-label="name"
                             aria-describedby="basic-addon1"
                             onChange={this.handleData}
@@ -99,7 +132,16 @@ class Profile extends Component {
                             <InputGroup.Text id="basic-addon1">e-mail</InputGroup.Text>
                         </InputGroup.Prepend>
                         <FormControl
-                            value= {this.props.loggedUser.email}
+                            value= {this.state.email}
+                            aria-label="email"
+                            aria-describedby="basic-addon1"
+                            type="email"
+                            name="email"
+                        />
+                        <FormControl
+                            type= "email"
+                            name="email"
+                            placeholder="New e-mail"
                             aria-label="email"
                             aria-describedby="basic-addon1"
                             onChange={this.handleData}
@@ -112,16 +154,30 @@ class Profile extends Component {
                         <Button variant="outline-danger" onClick={this.deleteUser}>Delete</Button>
                     </InputGroup>
 
-                    {this.state.deletedUser ? 
+                    {this.state.deletedUser === "yes" ? 
                           <Redirect exact path="/" render ={(props) => (<HomePage logged={this.state.loggedIn}/>)}>
                           </Redirect>
-                    : <Alert variant="danger">
+                    : <p></p>
+                    }
+
+                    {this.state.deletedUser === "no" ?
+                        <Alert variant="danger">
                         <Alert.Heading>
                             Something went wrong!
                         </Alert.Heading>
                         <p>We were not able to delete your Profile. Please try again.</p>
                     </Alert> 
+                    : <p></p>    
                     }
+
+                    {this.state.updatedUser ?
+                        <Alert variant="success">
+                        <Alert.Heading>
+                            Awesome
+                        </Alert.Heading>
+                        <p>Your profile was updated successfully!</p>
+                    </Alert> 
+                    : <p></p>}
             </div>
         )
     }
