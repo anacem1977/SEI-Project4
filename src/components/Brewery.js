@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ListGroup } from "react-bootstrap";
 
 class Brewery extends Component {
         //console.log(props.brands)

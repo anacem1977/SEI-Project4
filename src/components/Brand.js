@@ -1,11 +1,34 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom"
 import { ListGroup } from "react-bootstrap";
+import Modal from "react-bootstrap/Modal"
+import Button from "react-bootstrap/Button"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Brands extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            show: false,
+            setShow: false
+        }
+    }
         
+    showModal = () => {
+        this.setState ({
+            setShow: true,
+            show: true
+        })
+    }
+
+    hideModal = () => {
+        this.setState ({
+            setShow: false,
+            show: false
+        })
+    }
 
     render () {
         console.log(this.props);
@@ -27,6 +50,25 @@ class Brands extends Component {
                         </ListGroup.Item>
                         <br></br>
                     </ListGroup>
+
+                    <Button variant="primary" onClick={this.showModal}>Modal</Button>
+
+                    <Modal
+                    show={this.state.show}
+                    onHide={this.hideModal}
+                    backdrop="static"
+                    keyboard={false}
+                    >
+                        <Modal.Header closeButton>
+                            <Modal.Title>Modal Title</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>Modal Body</Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={this.hideModal}>
+                                Close
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
                 </div>
             )
         })
