@@ -13,7 +13,7 @@ class Brewery extends Component {
                 <div className="allbreweries">
                     <h1 className="subtitle">{brewery.name}</h1>
                     <h3>{brewery.address}</h3>
-                    <a href={`https://${brewery.url}`}target="_blank" rel="noreferrer" className="webaddress">{brewery.url}</a>
+                    <a href={`https://${brewery.url}`}target="_blank" rel="noreferrer" className="webaddress"> <FontAwesomeIcon icon="beer" fixedWidth/>{brewery.url}</a>
                 </div>
             )
         })

@@ -16,8 +16,9 @@ class Origins extends Component {
               <div key={origin.style}>
                   <ListGroup>
                     <ListGroup.Item className="substyle">
-                      <h2> <Link to= {"/substyle/" + origin.id} className = "styleLink"> 
-                      {origin.style} - {origin.origin}</Link></h2> 
+                      <h2> <Link to= {"/substyle/" + origin.id} className = "styleLink"> <FontAwesomeIcon icon="beer" fixedWidth/>
+                      {origin.style} - {origin.origin}
+                      </Link></h2> 
                     </ListGroup.Item>
                     <ListGroupItem>
                       <p>{origin.description}</p>

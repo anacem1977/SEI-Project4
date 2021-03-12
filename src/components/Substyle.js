@@ -19,7 +19,8 @@ class Substyles extends Component {
               <Accordion>
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey={subStyle.id} className="substyle list-group-item">
-                    <h2 className="brandLink">{subStyle.substyle}</h2>
+                    <h2 className="brandLink"><FontAwesomeIcon icon="beer" fixedWidth/>
+                    {subStyle.substyle} </h2>
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey={subStyle.id}>
                     <Card.Body className="accordionCard">
@@ -32,7 +33,7 @@ class Substyles extends Component {
                         <li><b>Color: </b>{subStyle.color}</li>
                         <li><b>Flavor: </b>{subStyle.flavor}</li>
                       </ul>
-                      <p><Link to = {"/brand/" + subStyle.id}>Check out these {subStyle.substyle} brands! </Link></p>
+                      <Link to = {"/brand/" + subStyle.id} className="cardLinks"><FontAwesomeIcon icon="beer" fixedWidth/> {subStyle.substyle} brands</Link>
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
@@ -45,7 +46,6 @@ class Substyles extends Component {
         return (
             <div className="substyles">
                 <h1 className="subTitle">{beerStyle} Style </h1>
-                <h5>Click on any of the Beer Styles below to learn more.</h5>
                 {beerSubstyles}
                 <a href="#top">
                   <FontAwesomeIcon icon = "level-up-alt" href="#top" className="backToTop" size="3x" as="link"/>
