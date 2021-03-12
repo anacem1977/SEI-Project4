@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Flute Glass",
+        "description": "Long and narrow bodies ensure that carbonation doesn't dissipate too quickly and showcase a lively carbonation or sparkling color. Stems will often be a bit shorter than the traditional champagne glass, but not necessarily.",
+        "benefits": "Enhances and showcases carbonation. Releases volatiles quickly for a more intense upfront aroma.",
+        "image": "https://i.imgur.com/BfvxRoU.jpg"
+    },
+    {
+        "name": "Goblet (or Chalice",
+        "description": "Goblets and chalices are great choices for heavy, malty beers. This type of glassware has a wide opening that assists a beer drinker in analyzing the overall flavor profile and aromas. Some are designed to maintain a 2-centimeter head. This is achieved by scoring the inside bottom of the glass, which creates a CO2 nucleation point, and a stream of eternal bubbles and perfect head retention as a result.",
+        "benefits": "Eye candy. Designed to maintain head. Wide-mouthed for deep sips.",
+        "image": "https://i.imgur.com/9AmmEPs.jpg"
+    },
+    {
+        "name": "Mug",
+        "description": "Heavy, sturdy, large and with handle, the mug is a piece of glassware that comes in many sizes and shapes. The thick glass walls helps insulate the brew to keep it cool, while the handle helps prevent from inadvertently warming up the beer",
+        "benefits": "Easy to drink out of. Holds plenty of volume.",
+        "image": "https://i.imgur.com/t3iJSaM.jpg"
+    },
+    {
+        "name": "Pilsner Glass",
+        "description": "Typically a tall, slender and tapered 12-ounce glass, shaped like a trumpet at times. The slender design allows drinkers to appreciate the colors and carbonation bubbles within their beer. The slightly wider top of the glass also helps retain the foam head of the beer, and bring out its true flavor profile and aromas.",
+        "benefits": "Showcases color, clarity and carbonation. Promotes head retention. Enhances volatiles.",
+        "image": "https://i.imgur.com/CT5gdxc.jpg"
+    },
+    {
+        "name": "Pint Glass",
+        "description": "Near cylindrical, with a slight taper and wide-mouth. There are two standard sizes, the 16-ounce or the 20-ounce Imperial.",
+        "benefits": "Cheap to make. Easy to store. Easy to drink out of.",
+        "image": "https://i.imgur.com/Dz3RR7M.png"
+    },
+    {
+        "name": "Snifter",
+        "description": "Used for brandy and cognac, these wide-bowled and stemmed glasses with their tapered mouths are perfect for capturing the aromas of strong ales.",
+        "benefits": "Captures and enhances volatiles.",
+        "image": "https://i.imgur.com/GGimFSp.jpg"
+    },
+    {
+        "name": "Stange",
+        "description": "A traditional German glass, stange means 'stick' and these tall, slender cylinders are used to serve more delicate beers, amplifying malt and hop nuances and to help intensify the flavors and aromas. The main benefit of this type of beer glass is that it has a firmer concentration of the important volatiles within the beer, allowing to get a real sense of its flavor.",
+        "benefits": "Tighter concentration of volatiles.",
+        "image": "https://i.imgur.com/eFtipxg.jpg"
+    },
+    {
+        "name": "Tulip",
+        "description": "A stemmed glass, tulip-shaped, wherein the top of the glass pushes out a bit to form a lip designed to trap and maintain the foam head, and to help enhance the flavor and aromatics of hoppy and malty brews. Much like the goblets and snifters, these types of beer glasses have a small stem and footer with a unique, tulip-like bowl on top.",
+        "benefits": "Captures and enhances volatiles, while it induces and supports large foamy heads.",
+        "image": "https://i.imgur.com/b8mqwRN.jpg"
+    },
+    {
+        "name": "Weizen Glass",
+        "description": "Designed for and primarily used for wheat beers (Weizenbier). These classy glasses, with their thin walls and length have a curved lip at the top of the glass that helps trap and encourage a thick foam head, allowing to appreciate the full aroma and flavor that comes along with wheat beers as well as to showcase the beer's color. Most are 0.5L in size, with slight variations in sizes.",
+        "benefits": "Specifically produced to take on volume and head.",
+        "image": "https://i.imgur.com/LYMn0Co.jpg"
+    },
+    {
+        "name": "Oversized Wine Glass",
+        "description": "An oversized 22oz wine glass will be most suitable for serving most Belgian Ales. Its size allows for headspace, while the open bowl creates an amazing nose.",
+        "benefits": "Replacement for a Tulip or Goblet.",
+        "image": "https://i.imgur.com/d2rBu9H.jpg"
+    }
+]

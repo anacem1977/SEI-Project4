@@ -21,7 +21,6 @@ class Profile extends Component {
     }
 
     handleData = (event) => {
-        event.preventDefault();
         //console.log(event.target.value)
         this.setState({
             [event.target.name]: event.target.value
@@ -42,6 +41,7 @@ class Profile extends Component {
                 name: "",
                 email: "",
             })
+            window.location.reload();
         } else {
             this.setState({
                 deletedUser: "no"
@@ -93,13 +93,6 @@ class Profile extends Component {
                             aria-label="password"
                             aria-describedby="basic-addon1"
                             value= {this.state.password}
-                        />
-                        <FormControl
-                            type= "password"
-                            name="password"
-                            placeholder="New Password"
-                            aria-label="password"
-                            aria-describedby="basic-addon1"
                             onChange={this.handleData}
                         />
                     </InputGroup>
@@ -115,13 +108,6 @@ class Profile extends Component {
                             aria-label="name"
                             aria-describedby="basic-addon1"
                             value={this.state.name} 
-                        />
-                        <FormControl
-                            type= "text"
-                            name="name"
-                            placeholder="New Name"
-                            aria-label="name"
-                            aria-describedby="basic-addon1"
                             onChange={this.handleData}
                         />
                     </InputGroup>
@@ -136,13 +122,6 @@ class Profile extends Component {
                             aria-describedby="basic-addon1"
                             type="email"
                             name="email"
-                        />
-                        <FormControl
-                            type= "email"
-                            name="email"
-                            placeholder="New e-mail"
-                            aria-label="email"
-                            aria-describedby="basic-addon1"
                             onChange={this.handleData}
                         />
                     </InputGroup>

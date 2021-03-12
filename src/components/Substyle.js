@@ -8,6 +8,8 @@ import Button from "react-bootstrap/Button"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import Glassware from "./Glassware";
+
 class Substyles extends Component {
   constructor(props) {
     super(props);
