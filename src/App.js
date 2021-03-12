@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component } from "react";
-import { Link, Route } from "react-router-dom";
+import { Link, Route, Redirect } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css"
 
@@ -187,10 +187,8 @@ class App extends Component {
                     </Nav.Item>
 
                     <Nav.Item>
-                      <Nav.Link>
+                      <Nav.Link href="/">
                           <FontAwesomeIcon icon="sign-out-alt" className="icons" onClick={this.signOut}>
-                              <Link to ="/">
-                                Sign Out</Link>
                           </FontAwesomeIcon>
                       </Nav.Link>
                     </Nav.Item>
@@ -198,6 +196,7 @@ class App extends Component {
                     <Nav.Item>
                       <p>Logged in as: {this.state.loggedUser.name}</p>
                     </Nav.Item>
+
                   </Nav>
                 </div>
                 
