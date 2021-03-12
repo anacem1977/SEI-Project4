@@ -10,6 +10,7 @@ import Brand from "./components/Brand";
 import Brewery from "./components/Brewery";
 import HomePage from "./components/HomePage";
 import Profile from "./components/Profile";
+import AllSubstyles from "./components/AllSubstyles";
 
 import Nav from "react-bootstrap/Nav"
 import InputGroup from "react-bootstrap/InputGroup"
@@ -176,7 +177,13 @@ class App extends Component {
 
                     <Nav.Item>
                       <Nav.Link>
-                        <Link to = "/origin" eventKey="link-1" className="topLinks">Beers!</Link>
+                        <Link to = "/origin" eventKey="link-1" className="topLinks">Beers</Link>
+                      </Nav.Link>
+                    </Nav.Item>
+
+                    <Nav.Item>
+                      <Nav.Link>
+                        <Link to = "/substyles" eventKey="link-1" className="topLinks">Beer Styles</Link>
                       </Nav.Link>
                     </Nav.Item>
 
@@ -358,6 +365,9 @@ class App extends Component {
 
         <Route path="/profile" render = {(props) => ( 
           <Profile loggedUser={this.state.loggedUser} logged={this.state.loggedIn}/>)} />
+
+        <Route path="/substyles" render = {(props) => ( 
+          <AllSubstyles substyles={this.state.beerSubstyles} beers={this.state.beerOrigins} logged={this.state.loggedIn}/>)} />
           
       </div>
     );

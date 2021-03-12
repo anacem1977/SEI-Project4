@@ -70,7 +70,7 @@ a.topLinks:hover {
     text-indent: 1rem;
 }
 
-.homePage h2, .homePage h1, .origins h1, .substyles h1, .brandsSub h1 {
+.homePage h2, .homePage h1, .origins h1, .substyles h1, .brandsSub h1, .allbreweries h1 {
     font-family: 'Fascinate', cursive;
     padding-top: 1rem;
     text-align: center
@@ -150,6 +150,7 @@ a.styleLink:hover, a.styleLink:active {
 .signup h1 {
     background-color: #f6b31b;
     padding-left: 10%;
+    font-family: 'Fascinate', cursive;
 }
 
 .signupBar {

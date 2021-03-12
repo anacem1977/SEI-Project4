@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ListGroup } from "react-bootstrap";
 
 class Brewery extends Component {
         //console.log(props.brands)
@@ -12,6 +13,7 @@ class Brewery extends Component {
             return (
                 <div className="allbreweries">
                     <h1 className="subtitle">{brewery.name}</h1>
+                    <br></br>
                     <h3>{brewery.address}</h3>
                     <a href={`https://${brewery.url}`}target="_blank" rel="noreferrer" className="webaddress"> <FontAwesomeIcon icon="beer" fixedWidth/>{brewery.url}</a>
                 </div>

@@ -19,7 +19,6 @@ class Brands extends Component {
                     <ListGroup>
                         <ListGroup.Item className="substyle">
                             <h2>{brand.brand}</h2>
-                            
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <p><b>ABV: </b>{brand.abv}</p>
