@@ -40,6 +40,12 @@ h5 {
     padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
+.newNavBar {
+    background-color: #fffdff;
+    font-size: 22px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
 a.topLinks, a.topLinks:link, a.topLinks:visited, a.topLinks:hover, a.topLinks:active {
     color: #1f2c3d;
     text-decoration: none;
@@ -55,16 +61,31 @@ a.topLinks:hover {
     border-radius: 10px;
 }
 
+a.newTopLinks, a.newTopLinks:link, a.newTopLinks:visited, a.newTopLinks:hover, a.newTopLinks:active {
+    color: #1f2c3d;
+    text-decoration: none;
+    padding: 0.75rem;
+    border: 3px solid #fffdff;
+}
+
+a.newTopLinks:hover {
+    background-color: #2e3444;
+    color:#f6b31b;
+    text-decoration: none;
+    border: 3px solid #f6b31b;
+    border-radius: 10px;
+}
+
 .nav-link:hover {
     color:#f6b31b;
 }
 
-.origins, .substyles, .brands, .brewery, .homePage, .signup {
+.origins, .substyles, .brands, .brewery, .homePage, .signup, .glass {
     width: 75%;
     margin: 0 auto;
 }
 
-.homePage p {
+.homePage p, .glass p {
     color: #fffdff;
     text-align: justify;
     text-indent: 1rem;

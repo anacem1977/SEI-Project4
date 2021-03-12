@@ -11,6 +11,7 @@ import Brewery from "./components/Brewery";
 import HomePage from "./components/HomePage";
 import Profile from "./components/Profile";
 import AllSubstyles from "./components/AllSubstyles";
+import Glassware from "./components/Glassware"
 
 import Nav from "react-bootstrap/Nav"
 import InputGroup from "react-bootstrap/InputGroup"
@@ -21,10 +22,10 @@ import Alert from 'react-bootstrap/Alert';
 import Col from "react-bootstrap/Col"
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import {faSignInAlt, faSignOutAlt, faUserPlus, faBeer, faLevelUpAlt} from "@fortawesome/free-solid-svg-icons"
+import {faSignInAlt, faSignOutAlt, faUserPlus, faBeer, faLevelUpAlt, faLaughBeam} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 
-library.add(faSignInAlt, faSignOutAlt, faUserPlus, faBeer, faLevelUpAlt)
+library.add(faSignInAlt, faSignOutAlt, faUserPlus, faBeer, faLevelUpAlt, faLaughBeam)
 
 class App extends Component {
   constructor(props) {
@@ -167,8 +168,8 @@ class App extends Component {
           <div className="login">
                 {this.state.loggedIn ?
                 //NAV BAR TO DISPLAY WHEN THE USER IS LOGGED IN
-                <div className="navBar">
-                  <Nav className="justify-content-center" defaultActiveKey="/">
+                <div>
+                  <Nav className="justify-content-center navBar" defaultActiveKey="/">
                       <Nav.Item>
                         <Nav.Link>
                           <Link to = "/" className="topLinks">Home Page</Link>
@@ -177,30 +178,34 @@ class App extends Component {
 
                     <Nav.Item>
                       <Nav.Link>
-                        <Link to = "/origin" eventKey="link-1" className="topLinks">Beers</Link>
-                      </Nav.Link>
-                    </Nav.Item>
-
-                    <Nav.Item>
-                      <Nav.Link>
-                        <Link to = "/substyles" eventKey="link-1" className="topLinks">Beer Styles</Link>
-                      </Nav.Link>
-                    </Nav.Item>
-
-                    <Nav.Item>
-                      <Nav.Link>
                         <Link to = "/profile" eventKey="link-1" className="topLinks">Profile</Link>
                       </Nav.Link>
                     </Nav.Item>
 
                     <Nav.Item>
-                      <p className="logInfo">Logged in as: {this.state.loggedUser.name}</p>
+                      <Nav.Link>
+                        <Link to = "/" eventKey="link-1" className="topLinks" onClick={this.signOut}>Sign Out</Link>
+                      </Nav.Link>
+                    </Nav.Item>
+                  </Nav>
+
+                  {/* NEW NAV BAR WHEN USER IS LOGED IN */}
+                  <Nav className="justify-content-center newNavBar" defaultActiveKey="/">
+                    <Nav.Item>
+                      <Nav.Link>
+                        <Link to = "/origin" eventKey="link-1" className="newTopLinks">Origin</Link>
+                      </Nav.Link>
                     </Nav.Item>
 
+                    {/* <Nav.Item>
+                      <Nav.Link>
+                        <Link to = "/glassware" eventKey="link-1" className="newTopLinks">Breweries</Link>
+                      </Nav.Link>
+                    </Nav.Item> */}
+
                     <Nav.Item>
-                      <Nav.Link href="/">
-                          <FontAwesomeIcon icon="sign-out-alt" className="icons" onClick={this.signOut}>
-                          </FontAwesomeIcon>
+                      <Nav.Link>
+                        <Link to = "/glassware" eventKey="link-1" className="newTopLinks">Glassware</Link>
                       </Nav.Link>
                     </Nav.Item>
 
@@ -353,6 +358,9 @@ class App extends Component {
 
         <Route path="/origin" render={(props) => (
           <Origin beers={this.state.beerOrigins} logged={this.state.loggedIn}/>)} />
+
+        <Route path="/glassware" render={(props) => (
+          <Glassware logged={this.state.loggedIn}/>)} />
 
         <Route path="/substyle/:index" render = {(props) => ( 
           <Substyle id={props.match.params.index} substyles={this.state.beerSubstyles} beers={this.state.beerOrigins} logged={this.state.loggedIn}/>)} />

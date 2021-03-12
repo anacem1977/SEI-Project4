@@ -6,11 +6,15 @@ import Accordion from "react-bootstrap/Accordion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Substyles extends Component {
-        //console.log(props.beers)
+    constructor(props) {
+      super(props);
+    }
 
     render () {
+        console.log(this.props)
         const beerSubstyles = this.props.substyles.map((subStyle) => {
           return (
+            
             //console.log(subStyle),
             <div>
               <Accordion>
@@ -42,7 +46,7 @@ class Substyles extends Component {
         
         return (
             <div className="substyles">
-                <h1 className="subTitle">Beer Styles</h1>
+                <h1 className="subTitle">All Beer Styles</h1>
                 {beerSubstyles}
                 <a href="#top">
                   <FontAwesomeIcon icon = "level-up-alt" href="#top" className="backToTop" size="3x" as="link"/>

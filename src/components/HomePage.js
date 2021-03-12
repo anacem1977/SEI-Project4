@@ -4,9 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const HomePage = (props) => {
     return (
         <div className="homePage">
-            <h1>Welcome to the Beer Encyclopedia</h1>
-            <h3>Once you're logged in, you can click wherever you see the  ' <FontAwesomeIcon icon="beer" /> ' to learn more!</h3>
-            
+            {props.logged ? <p></p>
+            : <div>
+                <h1>Welcome to the Beer Encyclopedia</h1>
+                <h3>Once you're logged in, you can click wherever you see the  ' <FontAwesomeIcon icon="beer" /> ' to learn more!</h3>
+            </div> }
+
             <br></br>
             <div className="whatIsBeer">
                 <h2> What is Beer? </h2>
