@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button"
 import { FormControl } from "react-bootstrap";
 import axios from "axios";
 import Alert from 'react-bootstrap/Alert';
-import { Redirect } from "react-router-dom"
+import { Redirect, Link } from "react-router-dom"
 
 import HomePage from "./HomePage"
 
@@ -65,6 +65,8 @@ class Profile extends Component {
             })
         } //console.log(this.state.updatedUser)
     }
+
+    goBack
 
     render() {
         return(
@@ -130,6 +132,9 @@ class Profile extends Component {
                     <InputGroup>
                         <Button variant="outline-success" onClick={this.editProfile}>Edit</Button>
                         <Button variant="outline-danger" onClick={this.deleteUser}>Delete</Button>
+                        <Button variant="outline-warning">
+                            <Link to="/">Cancel</Link>
+                        </Button>
                     </InputGroup>
 
                     {this.state.deletedUser === "yes" ? 
