@@ -5,14 +5,13 @@ import { FormControl } from "react-bootstrap";
 import axios from "axios";
 import Alert from 'react-bootstrap/Alert';
 import { Redirect } from "react-router-dom"
-import Form from "react-bootstrap/Form"
 
 import HomePage from "./HomePage"
 
 class Profile extends Component {
     constructor(props) {
         super(props)
-        console.log(props.loggedUser)
+        //console.log(props.loggedUser)
         this.state = {
             deletedUser: "pending",
             password: this.props.loggedUser.password,
@@ -23,7 +22,7 @@ class Profile extends Component {
 
     handleData = (event) => {
         event.preventDefault();
-        console.log(event.target.value)
+        //console.log(event.target.value)
         this.setState({
             [event.target.name]: event.target.value
         })
@@ -31,9 +30,9 @@ class Profile extends Component {
 
     deleteUser = async (event) => {
         event.preventDefault();
-        console.log(this.props.loggedUser.id)
+        //console.log(this.props.loggedUser.id)
         const response = await axios.delete(`http://localhost:3005/user/${this.props.loggedUser.id}`);
-        console.log(response.data)
+        //console.log(response.data)
         if (response.data === "successfully deleted") {
             this.setState({
                 deletedUser: "yes",
@@ -48,7 +47,7 @@ class Profile extends Component {
                 deletedUser: "no"
             })
         } 
-        console.log(this.state.loggedIn)
+        //console.log(this.state.loggedIn)
     }
 
     editProfile = async (event) => {
@@ -58,13 +57,13 @@ class Profile extends Component {
             name: this.state.name,
             email: this.state.email
           };
-          console.log(userDetails)
+        //   console.log(userDetails)
         const response = await axios.put(`http://localhost:3005/user/${this.props.loggedUser.id}`, userDetails)
           if (response.status === 200) {
             this.setState({
                 updatedUser: true,
             })
-        } console.log(this.state.updatedUser)
+        } //console.log(this.state.updatedUser)
     }
 
     render() {

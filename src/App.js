@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component } from "react";
-import { Link, Route, Redirect } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css"
 
