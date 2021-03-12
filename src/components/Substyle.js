@@ -1,14 +1,33 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom"
-import { Card } from "react-bootstrap";
+import { Card, OverlayTrigger } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
+import Tooltip from "react-bootstrap/Tooltip"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Substyles extends Component {
-        //console.log(props.beers)
-
+  
     render () {
+
+        const abv = (
+          <Tooltip id="tooltip-abv" className="tooltips">
+            Alcohol by volume
+          </Tooltip>
+        );
+
+        const ibu = (
+          <Tooltip id="tooltip-ibu" className="tooltips">
+            International Bitterness Units
+          </Tooltip>
+        );
+
+        const srm = (
+          <Tooltip id="tooltip-srm" className="tooltips">
+            Standard Reference Method
+          </Tooltip>
+        );
+
         const currentStyle = this.props.id
         const styleId = parseInt(currentStyle)
         const beerStyle = this.props.beers[styleId-1].style
@@ -26,19 +45,27 @@ class Substyles extends Component {
                     <Card.Body className="accordionCard">
                       <p>{subStyle.description}</p>
                       <p><b>Pairing: </b>{subStyle.pairing}</p>
-                      <p><b>Glassware: </b>{subStyle.glassware}</p>
+                      <p><b>Glassware: </b>{subStyle.glassware} <FontAwesomeIcon icon="beer" fixedWidth/></p>
                       <ul>
-                        <li><b>ABV: </b>{subStyle.abv}</li>
-                        <li><b>IBU: </b>{subStyle.ibu}</li>
-                        <li><b>Color: </b>{subStyle.color}</li>
-                        <li><b>Flavor: </b>{subStyle.flavor}</li>
+                          <OverlayTrigger trigger="hover" placement="left" overlay={abv}>
+                            <li><b>ABV: </b>{subStyle.abv}</li>
+                          </OverlayTrigger>
+                          <OverlayTrigger trigger="hover" placement="left" overlay={ibu}>
+                            <li><b>ABV: </b>{subStyle.ibu}</li>
+                          </OverlayTrigger>
+                          <OverlayTrigger trigger="hover" placement="left" overlay={srm}>
+                            <li><b>ABV: </b>{subStyle.color}</li>
+                          </OverlayTrigger>
+                          <li><b>Flavor: </b>{subStyle.flavor}</li>
                       </ul>
+
                       <Link to = {"/brand/" + subStyle.id} className="cardLinks"><FontAwesomeIcon icon="beer" fixedWidth/> {subStyle.substyle} brands</Link>
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
               </Accordion>
               <br></br>
+
             </div>
           )
         })
