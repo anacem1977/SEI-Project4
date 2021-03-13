@@ -80,18 +80,18 @@ a.newTopLinks:hover {
     color:#f6b31b;
 }
 
-.origins, .substyles, .brands, .brewery, .homePage, .signup, .glass {
+.origins, .substyles, .brands, .brewery, .homePage, .signup, .glass, .quantInfo {
     width: 75%;
     margin: 0 auto;
 }
 
-.homePage p, .glass p {
+.homePage p, .glass p, .quantInfo p {
     color: #fffdff;
     text-align: justify;
     text-indent: 1rem;
 }
 
-.homePage h2, .homePage h1, .origins h1, .substyles h1, .brandsSub h1, .allbreweries h1, .glass h1, .profile h1 {
+.homePage h2, .homePage h1, .origins h1, .substyles h1, .brandsSub h1, .allbreweries h1, .glass h1, .profile h1, .quantInfo h1 {
     font-family: 'Fascinate', cursive;
     padding-top: 1rem;
     text-align: center
@@ -129,7 +129,7 @@ a.newTopLinks:hover {
     text-decoration: none;
 }
 
-a.styleLink, a.styleLink:link, a.styleLink:visited {
+a.styleLink, a.styleLink:link, a.styleLink:visited, .accordionCard, .modalLink, .quantInfoList, .quantInfo p {
     color: #1f2c3d;
 }
 
@@ -146,10 +146,6 @@ a.cancel, a.cancel:link, a.cancel:visited {
 a.cancel:hover, a.cancel:active {
     color: #fffdff;
     text-decoration: none;
-}
-
-.accordionCard {
-    color: #1f2c3d;
 }
 
 .backToTop {
@@ -228,8 +224,4 @@ p.howToServe {
 .bottom {
     padding-bottom: 2rem;
     padding-top: 1rem;
-}
-
-.modalLink {
-    color: #1f2c3d;
 }

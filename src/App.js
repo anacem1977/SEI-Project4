@@ -12,6 +12,7 @@ import HomePage from "./components/HomePage";
 import Profile from "./components/Profile";
 import AllSubstyles from "./components/AllSubstyles";
 import Glassware from "./components/Glassware"
+import QuantInfo from "./components/QuantInfo"
 
 import Nav from "react-bootstrap/Nav"
 import InputGroup from "react-bootstrap/InputGroup"
@@ -62,7 +63,7 @@ class App extends Component {
       };
       //console.log(userDetails);
       const response = await axios.post("http://localhost:3005/user/login", userDetails);
-      console.log(response.data);
+      //console.log(response.data);
       if (response.data === null) {
         this.setState ({
           wronginfo : true,
@@ -205,7 +206,7 @@ class App extends Component {
 
                     <Nav.Item>
                       <Nav.Link>
-                        <Link to = "/glassware" eventKey="link-1" className="newTopLinks">Quantitative Info</Link>
+                        <Link to = "/quantitative" eventKey="link-1" className="newTopLinks">Beer Study Guide</Link>
                       </Nav.Link>
                     </Nav.Item>
 
@@ -361,6 +362,9 @@ class App extends Component {
 
         <Route path="/glassware" render={(props) => (
           <Glassware logged={this.state.loggedIn}/>)} />
+
+        <Route path="/quantitative" render={(props) => (
+          <QuantInfo logged={this.state.loggedIn}/>)} />
 
         <Route path="/substyle/:index" render = {(props) => ( 
           <Substyle id={props.match.params.index} substyles={this.state.beerSubstyles} beers={this.state.beerOrigins} logged={this.state.loggedIn}/>)} />
