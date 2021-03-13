@@ -197,15 +197,15 @@ class App extends Component {
                       </Nav.Link>
                     </Nav.Item>
 
-                    {/* <Nav.Item>
-                      <Nav.Link>
-                        <Link to = "/glassware" eventKey="link-1" className="newTopLinks">Breweries</Link>
-                      </Nav.Link>
-                    </Nav.Item> */}
-
                     <Nav.Item>
                       <Nav.Link>
                         <Link to = "/glassware" eventKey="link-1" className="newTopLinks">How to Serve</Link>
+                      </Nav.Link>
+                    </Nav.Item>
+
+                    <Nav.Item>
+                      <Nav.Link>
+                        <Link to = "/glassware" eventKey="link-1" className="newTopLinks">Quantitative Info</Link>
                       </Nav.Link>
                     </Nav.Item>
 

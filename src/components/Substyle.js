@@ -3,9 +3,7 @@ import { Link } from "react-router-dom"
 import { Card, OverlayTrigger } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
 import Tooltip from "react-bootstrap/Tooltip"
-import Modal from "react-bootstrap/Modal"
-import Button from "react-bootstrap/Button"
-import allGlasses from "./glassware.json";
+import Modals from "./Modals"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -22,13 +20,6 @@ class Substyles extends Component {
     this.setState ({
         setShow: true,
         show: true
-    })
-}
-
-  hideModal = () => {
-    this.setState ({
-        setShow: false,
-        show: false
     })
 }
 
@@ -54,23 +45,12 @@ class Substyles extends Component {
         const currentStyle = this.props.id
         const styleId = parseInt(currentStyle)
         const beerStyle = this.props.beers[styleId-1].style
-         
-        const beerGlassName = allGlasses.filter(oneBeerGlass => oneBeerGlass.name === "Tulip").map((oneGlass) => {
-          return (
-            <p>{oneGlass.name}</p>
-          )
-        })
-
-        const beerGlassDescr = allGlasses.filter(oneBeerGlass => oneBeerGlass.name === "Tulip").map((oneGlass) => {
-          return (
-            <p>{oneGlass.description}</p>
-          )
-        })
 
         const beerSubstyles = this.props.substyles.filter(oneBeerStyle => oneBeerStyle.styleId === styleId).map((subStyle) => {
           return (
             //console.log(subStyle),
             <div>
+              {this.state.show ? <Modals showModal={this.showModal} glassType={subStyle.glassware} {...this.state}/> : <p></p>}
               <Accordion>
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey={subStyle.id} className="substyle list-group-item">
@@ -83,7 +63,9 @@ class Substyles extends Component {
                       <p><b>Pairing: </b>{subStyle.pairing}</p>
                       <p><b>Glassware: </b>
                         {subStyle.glassware} 
-                        <Link onClick={this.showModal}><FontAwesomeIcon icon="beer" fixedWidth className="modalLink"/></Link>
+                        <button onClick={(props) => this.showModal()}>
+                          <FontAwesomeIcon icon="beer" fixedWidth className="modalLink"/>
+                        </button>
                       </p>
                       
                       <ul>
@@ -117,20 +99,6 @@ class Substyles extends Component {
                   <FontAwesomeIcon icon = "level-up-alt" href="#top" className="backToTop" size="3x" as="link"/>
                 </a>
 
-                <Modal
-                  show={this.state.show}
-                  onHide={this.hideModal}
-                  backdrop="static"
-                  keyboard={false}
-                >
-                  <Modal.Header closeButton>
-                    <Modal.Title>{beerGlassName}</Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body>{beerGlassDescr}</Modal.Body>
-                  <Modal.Footer>
-                    <Button variant="secondary" onClick={this.hideModal}>Close</Button>
-                  </Modal.Footer>
-                </Modal>
             </div>
         )
     }

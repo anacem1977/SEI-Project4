@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom"
 import { ListGroup } from "react-bootstrap";
-import Modal from "react-bootstrap/Modal"
-import Button from "react-bootstrap/Button"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
