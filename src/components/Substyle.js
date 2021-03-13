@@ -5,6 +5,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Tooltip from "react-bootstrap/Tooltip"
 import Modal from "react-bootstrap/Modal"
 import Button from "react-bootstrap/Button"
+import allGlasses from "./glassware.json";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -16,7 +17,7 @@ class Substyles extends Component {
       setShow: false,
     }
   }
-  
+ 
   showModal = () => {
     this.setState ({
         setShow: true,
@@ -32,7 +33,6 @@ class Substyles extends Component {
 }
 
     render () {
-
         const abv = (
           <Tooltip id="tooltip-abv" className="tooltips">
             Alcohol by volume
@@ -54,6 +54,19 @@ class Substyles extends Component {
         const currentStyle = this.props.id
         const styleId = parseInt(currentStyle)
         const beerStyle = this.props.beers[styleId-1].style
+         
+        const beerGlassName = allGlasses.filter(oneBeerGlass => oneBeerGlass.name === "Tulip").map((oneGlass) => {
+          return (
+            <p>{oneGlass.name}</p>
+          )
+        })
+
+        const beerGlassDescr = allGlasses.filter(oneBeerGlass => oneBeerGlass.name === "Tulip").map((oneGlass) => {
+          return (
+            <p>{oneGlass.description}</p>
+          )
+        })
+
         const beerSubstyles = this.props.substyles.filter(oneBeerStyle => oneBeerStyle.styleId === styleId).map((subStyle) => {
           return (
             //console.log(subStyle),
@@ -70,26 +83,8 @@ class Substyles extends Component {
                       <p><b>Pairing: </b>{subStyle.pairing}</p>
                       <p><b>Glassware: </b>
                         {subStyle.glassware} 
-                        <Link to="/glassware"><FontAwesomeIcon icon="beer" fixedWidth/></Link>
+                        <Link onClick={this.showModal}><FontAwesomeIcon icon="beer" fixedWidth className="modalLink"/></Link>
                       </p>
-
-                      <Button variant="primary" onClick={this.showModal}>Modal</Button>
-                      <Modal
-                        show={this.state.show}
-                        onHide={this.hideModal}
-                        backdrop="static"
-                        keyboard={false}
-                      >
-                        <Modal.Header closeButton>
-                          <Modal.Title>Modal Title</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>Modal Body</Modal.Body>
-                        <Modal.Footer>
-                          <Button variant="secondary" onClick={this.hideModal}>
-                          Close
-                          </Button>
-                        </Modal.Footer>
-                      </Modal>
                       
                       <ul>
                           <OverlayTrigger trigger="hover" placement="left" overlay={abv}>
@@ -103,7 +98,7 @@ class Substyles extends Component {
                           </OverlayTrigger>
                           <li><b>Flavor: </b>{subStyle.flavor}</li>
                       </ul>
-
+                      <br></br>
                       <Link to = {"/brand/" + subStyle.id} className="cardLinks"><FontAwesomeIcon icon="beer" fixedWidth/> {subStyle.substyle} brands</Link>
                     </Card.Body>
                   </Accordion.Collapse>
@@ -121,6 +116,21 @@ class Substyles extends Component {
                 <a href="#top">
                   <FontAwesomeIcon icon = "level-up-alt" href="#top" className="backToTop" size="3x" as="link"/>
                 </a>
+
+                <Modal
+                  show={this.state.show}
+                  onHide={this.hideModal}
+                  backdrop="static"
+                  keyboard={false}
+                >
+                  <Modal.Header closeButton>
+                    <Modal.Title>{beerGlassName}</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>{beerGlassDescr}</Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="secondary" onClick={this.hideModal}>Close</Button>
+                  </Modal.Footer>
+                </Modal>
             </div>
         )
     }

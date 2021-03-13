@@ -205,7 +205,7 @@ class App extends Component {
 
                     <Nav.Item>
                       <Nav.Link>
-                        <Link to = "/glassware" eventKey="link-1" className="newTopLinks">Glassware</Link>
+                        <Link to = "/glassware" eventKey="link-1" className="newTopLinks">How to Serve</Link>
                       </Nav.Link>
                     </Nav.Item>
 

@@ -71,7 +71,7 @@ class Profile extends Component {
     render() {
         return(
             <div className="profile">
-                <h1>Profile</h1>
+                <h1>Your Profile</h1>
                 <form>
                 <InputGroup className="mb-3">
                         <InputGroup.Prepend>
@@ -129,11 +129,11 @@ class Profile extends Component {
                     </InputGroup>
                     </form>
 
-                    <InputGroup>
-                        <Button variant="outline-success" onClick={this.editProfile}>Edit</Button>
-                        <Button variant="outline-danger" onClick={this.deleteUser}>Delete</Button>
-                        <Button variant="outline-warning">
-                            <Link to="/">Cancel</Link>
+                    <InputGroup className="bottom">
+                        <Button variant="outline-success" className="btnProfile" onClick={this.editProfile}>Edit</Button>
+                        <Button variant="outline-danger" className="btnProfile" onClick={this.deleteUser}>Delete</Button>
+                        <Button variant="outline-warning" className="btnProfile">
+                            <Link to="/" className="cancel">Cancel</Link>
                         </Button>
                     </InputGroup>
 

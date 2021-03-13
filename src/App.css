@@ -91,7 +91,7 @@ a.newTopLinks:hover {
     text-indent: 1rem;
 }
 
-.homePage h2, .homePage h1, .origins h1, .substyles h1, .brandsSub h1, .allbreweries h1 {
+.homePage h2, .homePage h1, .origins h1, .substyles h1, .brandsSub h1, .allbreweries h1, .glass h1, .profile h1 {
     font-family: 'Fascinate', cursive;
     padding-top: 1rem;
     text-align: center
@@ -129,11 +129,21 @@ a.newTopLinks:hover {
     text-decoration: none;
 }
 
-a.styleLink, a.styleLink:link, a.styleLink:visited{
+a.styleLink, a.styleLink:link, a.styleLink:visited {
     color: #1f2c3d;
 }
 
 a.styleLink:hover, a.styleLink:active {
+    color: #fffdff;
+    text-decoration: none;
+}
+
+a.cancel, a.cancel:link, a.cancel:visited {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+a.cancel:hover, a.cancel:active {
     color: #fffdff;
     text-decoration: none;
 }
@@ -195,5 +205,31 @@ a.styleLink:hover, a.styleLink:active {
 }
 
 .glassPics {
-    width: 200px;
+    width: 175px;
+}
+
+.glass p {
+    text-indent: 0;
+    color: #1f2c3d;
+}
+
+.benefits {
+    margin-left: 1rem;
+}
+
+p.howToServe {
+    color: #fffdff;
+}
+
+.btnProfile {
+    margin-left: 1rem;
+}
+
+.bottom {
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+}
+
+.modalLink {
+    color: #1f2c3d;
 }
