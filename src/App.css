@@ -105,9 +105,10 @@ a.newTopLinks:hover {
     background-color: #f6b31b;
 }
 
-.list-group-item:last-child {
+.list-group-item:last-child, .list-group-item {
     background-color: #fffdff;
     color: #1f2c3d;
+    margin-bottom: 2rem;
 }
 
 .brandLink {
@@ -215,6 +216,7 @@ a.cancel:hover, a.cancel:active {
 
 p.howToServe {
     color: #fffdff;
+    text-indent: 1rem;
 }
 
 .btnProfile {
@@ -224,4 +226,54 @@ p.howToServe {
 .bottom {
     padding-bottom: 2rem;
     padding-top: 1rem;
+}
+
+.beerColorIndex {
+    font-size: 14px;
+    text-align: center;
+}
+
+.container.colorsContainer {
+    width: 90%;
+}
+
+#black {
+    background-color: rgba(52, 1, 2);
+}
+
+#darkBrown {
+    background-color: rgba(75, 4, 2);
+}
+
+#brown {
+    background-color: rgba(119, 46, 10);
+}
+
+#lightBrown {
+    background-color: rgba(142, 69, 19);
+}
+
+#copper {
+    background-color: rgba(194, 118, 42);
+}
+
+#mediumAmber {
+    background-color: rgba(214, 143, 50);
+}
+
+#gold{
+    background-color: rgba(235, 187, 68);
+}
+
+#pale{
+    background-color: rgba(254, 216, 99);
+}
+
+#straw{
+    background-color: rgba(255, 231, 122);
+}
+
+#lightYellow{
+    background-color: rgba(254, 250, 196);
+    color: rgba(254, 250, 196);
 }

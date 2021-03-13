@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { ListGroupItem } from "react-bootstrap";
 import ListGroup from "react-bootstrap/ListGroup"
+import Container from "react-bootstrap/Container"
+import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class QuantInfo extends Component {
@@ -17,7 +20,33 @@ class QuantInfo extends Component {
                     </ListGroup.Item>
                     <ListGroup.Item>
                         <p><b>Standard Reference Method (SRM): </b>Provides a numerical range representing the color of a beer. The common range is 2-50. The higher the SRM, the darker the beer. SRM represents the absorption of specific wavelengths of light. It provides an analytical method that brewers use to measure and quantify the color of a beer. The SRM concept was originally published by the American Society of Brewing Chemists.</p>
-                        <p>See Guide</p>
+                        <p><b>Color (SRM): </b>Light Yellow (1-1.5) / Straw (2-3) / Pale (4) / Gold (5-6) / Light Amber (7) / Amber (8) / Medium Amber (9) / Copper (10-12) / Light Brown (13-15) / Saddle Brown (16-17) / Brown (18-24) / Dark Brown (25-39) / Black (40+)</p>
+                        <Container className="colorsContainer">
+                            <Row>
+                                <Col className="beerColor" id ="lightYellow">1</Col>
+                                <Col className="beerColor" id ="straw"></Col>
+                                <Col className="beerColor" id ="pale"></Col>
+                                <Col className="beerColor" id ="gold"></Col>
+                                <Col className="beerColor" id ="mediumAmber"></Col>
+                                <Col className="beerColor" id ="copper"></Col>
+                                <Col className="beerColor" id ="lightBrown"></Col>
+                                <Col className="beerColor" id ="brown"></Col>
+                                <Col className="beerColor" id ="darkBrown"></Col>
+                                <Col className="beerColor" id="black"></Col>
+                            </Row>
+                            <Row>
+                                <Col className="beerColorIndex">2</Col>
+                                <Col className="beerColorIndex">3</Col>
+                                <Col className="beerColorIndex">4</Col>
+                                <Col className="beerColorIndex">6</Col>
+                                <Col className="beerColorIndex">9</Col>
+                                <Col className="beerColorIndex">12</Col>
+                                <Col className="beerColorIndex">15</Col>
+                                <Col className="beerColorIndex">20</Col>
+                                <Col className="beerColorIndex">30</Col>
+                                <Col className="beerColorIndex">40+</Col>
+                            </Row>
+                        </Container>
                     </ListGroup.Item>
                     <ListGroup.Item>
                         <p><b>Clarity: </b>The degree to which solids in suspension are absent in beer; different from color and brightness.</p>
