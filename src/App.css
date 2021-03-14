@@ -10,6 +10,11 @@ header {
     padding: 1rem;
 }
 
+footer {
+    background-color: #f6b31b;
+    padding: 1rem;
+}
+
 p {
     font-size: 18px;
     color: #1f2c3d;
@@ -149,9 +154,21 @@ a.cancel:hover, a.cancel:active {
     text-decoration: none;
 }
 
+a.footerLink, a.footerLink:link, a.footerLink:visited {
+    color: #fffdff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+a.footerLink:hover, a.footerLink:active {
+    color: #2e3444;
+    text-decoration: none;
+    font-size: 18px;
+}
+
 .backToTop {
     position: fixed;
-    bottom: 1rem;
+    bottom: 6rem;
     left: 2rem;
     color: #f6b31b;
     cursor: pointer;
@@ -235,6 +252,7 @@ p.howToServe {
 
 .container.colorsContainer {
     width: 90%;
+    max-width: 720px;
 }
 
 #black {
@@ -276,4 +294,20 @@ p.howToServe {
 #lightYellow{
     background-color: rgba(254, 250, 196);
     color: rgba(254, 250, 196);
+}
+
+.footerCont li{
+    list-style: none;
+}
+
+.footerCont h1 {
+    font-family: 'Fascinate', cursive;
+}
+
+.footerCont p {
+    color: #fffdff
+}
+
+.footerCont ul {
+    color: #2e3444
 }

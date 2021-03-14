@@ -20,13 +20,15 @@ import Button from "react-bootstrap/Button"
 import Form from "react-bootstrap/Form"
 import { FormControl } from "react-bootstrap";
 import Alert from 'react-bootstrap/Alert';
-import Col from "react-bootstrap/Col"
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import {faSignInAlt, faSignOutAlt, faUserPlus, faBeer, faLevelUpAlt, faLaughBeam} from "@fortawesome/free-solid-svg-icons"
+import {faSignInAlt, faSignOutAlt, faUserPlus, faBeer, faLevelUpAlt, faEnvelope} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 
-library.add(faSignInAlt, faSignOutAlt, faUserPlus, faBeer, faLevelUpAlt, faLaughBeam)
+library.add(faSignInAlt, faSignOutAlt, faUserPlus, faBeer, faLevelUpAlt, faEnvelope)
 
 class App extends Component {
   constructor(props) {
@@ -351,6 +353,7 @@ class App extends Component {
                 : <p></p>}
         </div>
 
+
         {/* SHOWS HOME PAGE */}
         {this.state.showHome ?
           <Route exact path="/" render={(props) => (<HomePage logged={this.state.loggedIn}/>)} />
@@ -380,7 +383,39 @@ class App extends Component {
 
         <Route path="/substyles" render = {(props) => ( 
           <AllSubstyles substyles={this.state.beerSubstyles} beers={this.state.beerOrigins} logged={this.state.loggedIn}/>)} />
+                  
+                  
+        <footer>
+          <Container className="footerCont">
+            <Row>
+              <Col xs={9}>
+                <h1>BEER ENCYCLOPEDIA</h1>
+                <br></br>
+                <p>By Ana Cecilia Maldonado 
+                  <a href="mailto:anace_m@yahoo.com"className="footerLink"><FontAwesomeIcon icon="envelope" fixedWidth/></a>
+                </p>
+              </Col>
+              <Col>
+                <ul><b>Resources:</b>
+                  <li>
+                    <a href="https://beeradvocate.com" target="_blank" className="footerLink">beeradvocate.com</a>
+                  </li>
+                  <li>
+                    <a href="https://craftbeer.com" target="_blank" className="footerLink">craftbeer.com</a>
+                  </li>
+                  <li>
+                    <a href="https://learn.kegerator.com" target="_blank" className="footerLink">kegerator.com</a>
+                  </li>
+                  <li>
+                    <a href="https://wikipedia.org" target="_blank" className="footerLink">Wikipedia</a>
+                  </li>
+                </ul>
+              </Col>
+            </Row>
+          </Container>
           
+        </footer>
+
       </div>
     );
   }
