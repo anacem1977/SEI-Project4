@@ -23,6 +23,7 @@ import Alert from 'react-bootstrap/Alert';
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
+import NavBar from "react-bootstrap/Navbar"
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {faSignInAlt, faSignOutAlt, faUserPlus, faBeer, faLevelUpAlt, faEnvelope} from "@fortawesome/free-solid-svg-icons"
@@ -165,14 +166,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>
+        <header className="topTitle">
           <h1 className="mainTitle"> BEER ENCYCLOPEDIA </h1>
         </header>
           <div className="login">
                 {this.state.loggedIn ?
                 //NAV BAR TO DISPLAY WHEN THE USER IS LOGGED IN
                 <div>
-                  <Nav className="justify-content-center navBar" defaultActiveKey="/">
+                  <NavBar className="justify-content-center navBar" defaultActiveKey="/">
                       <Nav.Item>
                         <Nav.Link>
                           <Link to = "/" className="topLinks">Home Page</Link>
@@ -190,10 +191,10 @@ class App extends Component {
                         <Link to = "/" eventKey="link-1" className="topLinks" onClick={this.signOut}>Sign Out</Link>
                       </Nav.Link>
                     </Nav.Item>
-                  </Nav>
+                  </NavBar>
 
                   {/* NEW NAV BAR WHEN USER IS LOGED IN */}
-                  <Nav className="justify-content-center newNavBar" defaultActiveKey="/">
+                  <NavBar className="justify-content-center newNavBar" defaultActiveKey="/">
                     <Nav.Item>
                       <Nav.Link>
                         <Link to = "/origin" eventKey="link-1" className="newTopLinks">Origin</Link>
@@ -211,8 +212,7 @@ class App extends Component {
                         <Link to = "/quantitative" eventKey="link-1" className="newTopLinks">Beer Study Guide</Link>
                       </Nav.Link>
                     </Nav.Item>
-
-                  </Nav>
+                  </NavBar>
                 </div>
                 
                 : //NAV BAR TO DISPLAY IF THE USER IS NOT LOGGED IN

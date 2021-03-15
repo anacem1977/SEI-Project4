@@ -8,6 +8,7 @@
 header {
     background-color: #1f2c3d;
     padding: 1rem;
+    width: 100%
 }
 
 footer {
@@ -110,7 +111,7 @@ a.newTopLinks:hover {
     background-color: #f6b31b;
 }
 
-.list-group-item:last-child, .list-group-item {
+.list-group-item:last-child {
     background-color: #fffdff;
     color: #1f2c3d;
     margin-bottom: 2rem;
@@ -311,3 +312,4 @@ p.howToServe {
 .footerCont ul {
     color: #2e3444
 }
+

@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom"
+import allGlasses from "./glassware.json";
 import { Card, OverlayTrigger } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
 import Tooltip from "react-bootstrap/Tooltip"
-import Modals from "./Modals"
+import Modal from "react-bootstrap/Modal"
+import Button from "react-bootstrap/Button"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -21,8 +23,24 @@ class Substyles extends Component {
         setShow: true,
         show: true
     })
-}
+  }
 
+  hideModal = () => {
+    this.setState ({
+        setShow: false,
+        show: false
+    })
+  }
+
+  // // myModal = (glassType) => {
+  //   const beerGlassName = allGlasses.filter(oneBeerGlass => oneBeerGlass.name === glassType).map((oneGlass) => {
+  //     console.log(oneGlass.description)
+  //     return (
+  //         oneGlass.description
+  //     )
+  //   })
+  // // }
+    
     render () {
         const abv = (
           <Tooltip id="tooltip-abv" className="tooltips">
@@ -47,10 +65,30 @@ class Substyles extends Component {
         const beerStyle = this.props.beers[styleId-1].style
 
         const beerSubstyles = this.props.substyles.filter(oneBeerStyle => oneBeerStyle.styleId === styleId).map((subStyle) => {
+             const beerGlassName = allGlasses.filter(oneBeerGlass => oneBeerGlass.name === subStyle.glassware).map((oneGlass) => {
+                  return(
+                    oneGlass = oneGlass.description
+                  )
+            })
           return (
             //console.log(subStyle),
             <div>
-              {this.state.show ? <Modals showModal={this.showModal} glassType={subStyle.glassware} {...this.state}/> : <p></p>}
+              
+              <Modal
+                show={this.state.show}
+                onHide={this.hideModal}
+                backdrop="static"
+                keyboard={false}
+              >
+                <Modal.Header closeButton>
+                  <Modal.Title>{subStyle.glassware}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>{beerGlassName}</Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={this.hideModal}>Close</Button>
+                </Modal.Footer>
+              </Modal>
+
               <Accordion>
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey={subStyle.id} className="substyle list-group-item">
@@ -63,9 +101,9 @@ class Substyles extends Component {
                       <p><b>Pairing: </b>{subStyle.pairing}</p>
                       <p><b>Glassware: </b>
                         {subStyle.glassware} 
-                        <button onClick={(props) => this.showModal()}>
+                        <Link onClick={() => this.showModal()}>
                           <FontAwesomeIcon icon="beer" fixedWidth className="modalLink"/>
-                        </button>
+                        </Link>
                       </p>
                       
                       <ul>
