@@ -388,7 +388,7 @@ class App extends Component {
         <footer>
           <Container className="footerCont">
             <Row>
-              <Col xs={9}>
+              <Col xs={7}>
                 <h1>BEER ENCYCLOPEDIA</h1>
                 <br></br>
                 <p>By Ana Cecilia Maldonado 
@@ -398,16 +398,16 @@ class App extends Component {
               <Col>
                 <ul><b>Resources:</b>
                   <li>
-                    <a href="https://beeradvocate.com" target="_blank" className="footerLink">beeradvocate.com</a>
+                    <a href="https://beeradvocate.com" target="_blank" rel="noreferrer" className="footerLink">beeradvocate.com</a>
                   </li>
                   <li>
-                    <a href="https://craftbeer.com" target="_blank" className="footerLink">craftbeer.com</a>
+                    <a href="https://craftbeer.com" target="_blank" rel="noreferrer" className="footerLink">craftbeer.com</a>
                   </li>
                   <li>
-                    <a href="https://learn.kegerator.com" target="_blank" className="footerLink">kegerator.com</a>
+                    <a href="https://learn.kegerator.com" target="_blank" rel="noreferrer" className="footerLink">kegerator.com</a>
                   </li>
                   <li>
-                    <a href="https://wikipedia.org" target="_blank" className="footerLink">Wikipedia</a>
+                    <a href="https://wikipedia.org" target="_blank" rel="noreferrer" className="footerLink">wikipedia</a>
                   </li>
                 </ul>
               </Col>

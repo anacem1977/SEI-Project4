@@ -8,10 +8,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 class Origins extends Component {
-        //console.log(props)
-
     render () {
-        const beerOrigins = this.props.beers.map((origin) => {
+       
+      const beerOrigins = this.props.beers.map((origin) => {
             return (
               <div key={origin.style}>
                   <ListGroup>
@@ -37,7 +36,9 @@ class Origins extends Component {
                 <a href="#top">
                   <FontAwesomeIcon icon = "level-up-alt" href="#top" className="backToTop" size="3x" as="link"/>
                 </a>
+                {this.wrap}
             </div>
+            
         )
     }
 }

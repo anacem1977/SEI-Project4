@@ -19,7 +19,7 @@ class Brands extends Component {
                         <ListGroup.Item className="substyle">
                             <h2>{brand.brand}</h2>
                         </ListGroup.Item>
-                        <ListGroup.Item>
+                        <ListGroup.Item className="beerBrand">
                             <p><b>ABV: </b>{brand.abv}</p>
                             <p><b>Likes: </b>{brand.likes}</p>
                             <Link to = {"/brewery/" + brand.breweryId} className="cardLinks"><FontAwesomeIcon icon="beer" fixedWidth/> Brewery for {brand.brand} and others</Link>

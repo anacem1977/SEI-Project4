@@ -6,9 +6,6 @@ import Accordion from "react-bootstrap/Accordion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Substyles extends Component {
-    constructor(props) {
-      super(props);
-    }
 
     render () {
         console.log(this.props)
