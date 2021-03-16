@@ -98,12 +98,10 @@ class Substyles extends Component {
                       <p><b>Pairing: </b>{subStyle.pairing}</p>
                       <p><b>Glassware: </b>
                         {subStyle.glassware} 
-                        <Link id={subStyle.glassware} onClick={() => this.showModal()}>
-                          <Button id={subStyle.glassware}>Glass</Button>
-                          {/* <FontAwesomeIcon icon="beer" fixedWidth className="modalLink"/> */}
+                        <Link to ="/glassware">
+                          <FontAwesomeIcon icon="beer" fixedWidth className="modalLink"/>
                         </Link>
                       </p>
-                      
                       <ul>
                           <OverlayTrigger trigger="hover" placement="left" overlay={abv}>
                             <li><b>ABV: </b>{subStyle.abv}</li>

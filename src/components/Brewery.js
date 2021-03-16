@@ -6,7 +6,6 @@ class Brewery extends Component {
     componentDidMount = () => {
         window.scrollTo(0,0)
     }
-        //console.log(props.brands)
 
     render () {
         const currentBrewery = this.props.id
@@ -18,6 +17,10 @@ class Brewery extends Component {
                     <br></br>
                     <h3>{brewery.address}</h3>
                     <a href={`https://${brewery.url}`}target="_blank" rel="noreferrer" className="webaddress"> <FontAwesomeIcon icon="beer" fixedWidth/>{brewery.url}</a>
+                    <section>
+                    <h3>Beers: </h3>
+                    </section>
+                    
                 </div>
             )
         })

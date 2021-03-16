@@ -43,9 +43,15 @@ class Brands extends Component {
                         </ListGroup.Item>
                         <ListGroup.Item className="beerBrand">
                             <p><b>ABV: </b>{brand.abv}</p>
-                            <p><FontAwesomeIcon icon = "heart" fixedWidth className="fa-spin likeLink"/> {brand.likes}</p>
+                            <p>
+                                <FontAwesomeIcon 
+                                    icon = "heart" 
+                                    fixedWidth />
+                                {brand.likes}
+                                <Button variant="outline-success" onClick={this.addLike} id={brand.id} className="likeLink">Like</Button>
+                            </p>
 
-                            <Button variant="success" onClick={this.addLike} id={brand.id}>Like</Button>
+                            
                             
                             <Link to = {"/brewery/" + brand.breweryId} className="cardLinks"><FontAwesomeIcon icon="beer" fixedWidth as="link"/> Brewery for {brand.brand} and others</Link>
                         </ListGroup.Item>
