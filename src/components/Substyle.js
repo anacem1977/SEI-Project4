@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class Substyles extends Component {
   constructor(props) {
     super(props);
-    console.log(props)
+    
     this.state= {
       show: false,
       setShow: false,

@@ -1,10 +1,32 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom"
+import axios from "axios";
 import { ListGroup } from "react-bootstrap";
+import Button from "react-bootstrap/Button"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Brands extends Component {
+
+    addLike = async (event) => {
+        // console.log(event)
+        const thisBeerId = event.target.id
+        // console.log(thisBeerId)
+        const response = await axios.get(`http://localhost:3005/brand/${thisBeerId}`);
+        console.log(response.data)
+        const newDetails = {
+            substyleId: response.data.substyleId,
+            brand: response.data.brand,
+            breweryId: response.data.breweryId,
+            abv: response.data.abv,
+            likes: response.data.likes +1
+        }
+        console.log(newDetails)
+        const responseBack = await axios.put(`http://localhost:3005/brand/${thisBeerId}`, newDetails)
+    }
+
+
+
     render () 
     {
         // console.log(this.props);
@@ -21,7 +43,10 @@ class Brands extends Component {
                         </ListGroup.Item>
                         <ListGroup.Item className="beerBrand">
                             <p><b>ABV: </b>{brand.abv}</p>
-                            <p><FontAwesomeIcon icon = "heart" fixedWidth className="fa-spin"/> {brand.likes}</p>
+                            <p><FontAwesomeIcon icon = "heart" fixedWidth className="fa-spin" as="link" className="likeLink"/> {brand.likes}</p>
+
+                            <Button variant="success" onClick={this.addLike} id={brand.id}>Like</Button>
+                            
                             <Link to = {"/brewery/" + brand.breweryId} className="cardLinks"><FontAwesomeIcon icon="beer" fixedWidth as="link"/> Brewery for {brand.brand} and others</Link>
                         </ListGroup.Item>
                         <br></br>
@@ -30,7 +55,6 @@ class Brands extends Component {
                 </div>
             )
         })
-
         return (
             <div className="brandsSub">
                 <h1 className="subTitle">"{beerSubstyle}" Beers</h1>

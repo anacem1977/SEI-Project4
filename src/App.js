@@ -24,6 +24,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import NavBar from "react-bootstrap/Navbar"
+import ScrollToTop from "./components/ScrollToTop"
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {faSignInAlt, faSignOutAlt, faUserPlus, faBeer, faLevelUpAlt, faEnvelope, faHeart} from "@fortawesome/free-solid-svg-icons"
@@ -388,14 +389,13 @@ class App extends Component {
         <footer>
           <Container className="footerCont">
             <Row>
-              <Col xs={7}>
+              <Col>
                 <h1>BEER ENCYCLOPEDIA</h1>
-                <br></br>
                 <p>By Ana Cecilia Maldonado 
                   <a href="mailto:anace_m@yahoo.com"className="footerLink"><FontAwesomeIcon icon="envelope" fixedWidth/></a>
                 </p>
               </Col>
-              <Col>
+              <Col xs={3}>
                 <ul><b>Resources:</b>
                   <li>
                     <a href="https://beeradvocate.com" target="_blank" rel="noreferrer" className="footerLink">beeradvocate.com</a>
@@ -403,6 +403,11 @@ class App extends Component {
                   <li>
                     <a href="https://craftbeer.com" target="_blank" rel="noreferrer" className="footerLink">craftbeer.com</a>
                   </li>
+                </ul>
+              </Col>
+              <Col xs={2}>
+                <ul>
+                  <li><p></p></li>
                   <li>
                     <a href="https://learn.kegerator.com" target="_blank" rel="noreferrer" className="footerLink">kegerator.com</a>
                   </li>
