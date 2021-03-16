@@ -26,10 +26,10 @@ import Row from "react-bootstrap/Row"
 import NavBar from "react-bootstrap/Navbar"
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import {faSignInAlt, faSignOutAlt, faUserPlus, faBeer, faLevelUpAlt, faEnvelope} from "@fortawesome/free-solid-svg-icons"
+import {faSignInAlt, faSignOutAlt, faUserPlus, faBeer, faLevelUpAlt, faEnvelope, faHeart} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 
-library.add(faSignInAlt, faSignOutAlt, faUserPlus, faBeer, faLevelUpAlt, faEnvelope)
+library.add(faSignInAlt, faSignOutAlt, faUserPlus, faBeer, faLevelUpAlt, faEnvelope, faHeart)
 
 class App extends Component {
   constructor(props) {

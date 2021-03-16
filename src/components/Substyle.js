@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class Substyles extends Component {
   constructor(props) {
     super(props);
+    console.log(props)
     this.state= {
       show: false,
       setShow: false,
@@ -21,25 +22,16 @@ class Substyles extends Component {
   showModal = () => {
     this.setState ({
         setShow: true,
-        show: true
+        show: true,
     })
   }
 
   hideModal = () => {
     this.setState ({
         setShow: false,
-        show: false
+        show: false,
     })
   }
-
-  // // myModal = (glassType) => {
-  //   const beerGlassName = allGlasses.filter(oneBeerGlass => oneBeerGlass.name === glassType).map((oneGlass) => {
-  //     console.log(oneGlass.description)
-  //     return (
-  //         oneGlass.description
-  //     )
-  //   })
-  // // }
     
     render () {
         const abv = (
@@ -67,27 +59,12 @@ class Substyles extends Component {
         const beerSubstyles = this.props.substyles.filter(oneBeerStyle => oneBeerStyle.styleId === styleId).map((subStyle) => {
              const beerGlassName = allGlasses.filter(oneBeerGlass => oneBeerGlass.name === subStyle.glassware).map((oneGlass) => {
                   return(
-                    oneGlass = oneGlass.description
+                    oneGlass.description
                   )
             })
           return (
             //console.log(subStyle),
             <div>
-              
-              <Modal
-                show={this.state.show}
-                onHide={this.hideModal}
-                backdrop="static"
-                keyboard={false}
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title>{subStyle.glassware}</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>{beerGlassName}</Modal.Body>
-                <Modal.Footer>
-                  <Button variant="secondary" onClick={this.hideModal}>Close</Button>
-                </Modal.Footer>
-              </Modal>
 
               <Accordion>
                 <Card>
@@ -97,6 +74,21 @@ class Substyles extends Component {
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey={subStyle.id}>
                     <Card.Body className="accordionCard">
+                   
+                    <Modal
+                      show={this.state.show}
+                      onHide={this.hideModal}
+                      backdrop="static"
+                      keyboard={false}>
+                      <Modal.Header closeButton>
+                        <Modal.Title>{subStyle.glassware}</Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body>{beerGlassName}</Modal.Body>
+                      <Modal.Footer>
+                        <Button variant="secondary" onClick={this.hideModal}>Close</Button>
+                      </Modal.Footer>
+                    </Modal>
+
                       <p>{subStyle.description}</p>
                       <p><b>Pairing: </b>{subStyle.pairing}</p>
                       <p><b>Glassware: </b>

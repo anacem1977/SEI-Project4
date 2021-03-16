@@ -66,8 +66,6 @@ class Profile extends Component {
         } //console.log(this.state.updatedUser)
     }
 
-    goBack
-
     render() {
         return(
             <div className="profile">

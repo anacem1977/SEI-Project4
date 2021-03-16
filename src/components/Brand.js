@@ -5,9 +5,9 @@ import { ListGroup } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Brands extends Component {
-
-    render () {
-        console.log(this.props);
+    render () 
+    {
+        // console.log(this.props);
         const currentSubstyle = this.props.id
         const substyleId = parseInt(currentSubstyle)
         const beerSubstyle = this.props.substyles[substyleId-1].substyle
@@ -21,8 +21,8 @@ class Brands extends Component {
                         </ListGroup.Item>
                         <ListGroup.Item className="beerBrand">
                             <p><b>ABV: </b>{brand.abv}</p>
-                            <p><b>Likes: </b>{brand.likes}</p>
-                            <Link to = {"/brewery/" + brand.breweryId} className="cardLinks"><FontAwesomeIcon icon="beer" fixedWidth/> Brewery for {brand.brand} and others</Link>
+                            <p><FontAwesomeIcon icon = "heart" fixedWidth className="fa-spin"/> {brand.likes}</p>
+                            <Link to = {"/brewery/" + brand.breweryId} className="cardLinks"><FontAwesomeIcon icon="beer" fixedWidth as="link"/> Brewery for {brand.brand} and others</Link>
                         </ListGroup.Item>
                         <br></br>
                     </ListGroup>
