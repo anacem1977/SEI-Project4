@@ -8,6 +8,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 class Origins extends Component {
+  componentDidMount = () => {
+    window.scrollTo(0,0)
+  }
+
     render () {
        
       const beerOrigins = this.props.beers.map((origin) => {

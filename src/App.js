@@ -24,7 +24,6 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import NavBar from "react-bootstrap/Navbar"
-import ScrollToTop from "./components/ScrollToTop"
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {faSignInAlt, faSignOutAlt, faUserPlus, faBeer, faLevelUpAlt, faEnvelope, faHeart} from "@fortawesome/free-solid-svg-icons"
@@ -219,7 +218,7 @@ class App extends Component {
                 : //NAV BAR TO DISPLAY IF THE USER IS NOT LOGGED IN
                   <div className="navBar">
                     <Form onSubmit={this.handleSubmit}>
-                      <Form.Row style={{display: this.state.newUser ? "none" : "row"}}>
+                      <Form.Row >
                         <Col xs={2}>
                           <InputGroup className="mb-0 mr-sm-2">
                             <FormControl size="sm"
@@ -289,9 +288,6 @@ class App extends Component {
                 {/* DISPLAYS SIGNUP FORM AND HIDES HOMEPAGE */}
                 {this.state.newUser ?
                   <div className="signup">
-                    <div className="signupBar">
-                      <h1> Sign Up Form</h1>
-                    </div>
                     <br></br>
                     <form onSubmit={this.handleSignup}>
                       <InputGroup className="mb-3">

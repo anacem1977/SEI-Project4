@@ -19,6 +19,10 @@ class Substyles extends Component {
     }
   }
  
+  componentDidMount = () => {
+    window.scrollTo(0,0)
+  }
+
   showModal = () => {
     this.setState ({
         setShow: true,
@@ -79,7 +83,8 @@ class Substyles extends Component {
                       show={this.state.show}
                       onHide={this.hideModal}
                       backdrop="static"
-                      keyboard={false}>
+                      keyboard={false}
+                      >
                       <Modal.Header closeButton>
                         <Modal.Title>{subStyle.glassware}</Modal.Title>
                       </Modal.Header>
@@ -93,8 +98,9 @@ class Substyles extends Component {
                       <p><b>Pairing: </b>{subStyle.pairing}</p>
                       <p><b>Glassware: </b>
                         {subStyle.glassware} 
-                        <Link onClick={() => this.showModal()}>
-                          <FontAwesomeIcon icon="beer" fixedWidth className="modalLink"/>
+                        <Link id={subStyle.glassware} onClick={() => this.showModal()}>
+                          <Button id={subStyle.glassware}>Glass</Button>
+                          {/* <FontAwesomeIcon icon="beer" fixedWidth className="modalLink"/> */}
                         </Link>
                       </p>
                       

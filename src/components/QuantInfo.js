@@ -6,6 +6,9 @@ import Row from "react-bootstrap/Row"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class QuantInfo extends Component {
+    componentDidMount = () => {
+        window.scrollTo(0,0)
+    }
     render() {
         return (
             <div className="quantInfo">

@@ -7,13 +7,14 @@ import Button from "react-bootstrap/Button"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Brands extends Component {
+ 
+    componentDidMount = () => {
+        window.scrollTo(0,0)
+    }
 
     addLike = async (event) => {
-        // console.log(event)
         const thisBeerId = event.target.id
-        // console.log(thisBeerId)
         const response = await axios.get(`http://localhost:3005/brand/${thisBeerId}`);
-        console.log(response.data)
         const newDetails = {
             substyleId: response.data.substyleId,
             brand: response.data.brand,
@@ -21,15 +22,14 @@ class Brands extends Component {
             abv: response.data.abv,
             likes: response.data.likes +1
         }
-        console.log(newDetails)
         const responseBack = await axios.put(`http://localhost:3005/brand/${thisBeerId}`, newDetails)
+        console.log(responseBack)
+        console.log(this.props)
     }
-
-
 
     render () 
     {
-        // console.log(this.props);
+        //console.log(this.props);
         const currentSubstyle = this.props.id
         const substyleId = parseInt(currentSubstyle)
         const beerSubstyle = this.props.substyles[substyleId-1].substyle
@@ -43,7 +43,7 @@ class Brands extends Component {
                         </ListGroup.Item>
                         <ListGroup.Item className="beerBrand">
                             <p><b>ABV: </b>{brand.abv}</p>
-                            <p><FontAwesomeIcon icon = "heart" fixedWidth className="fa-spin" as="link" className="likeLink"/> {brand.likes}</p>
+                            <p><FontAwesomeIcon icon = "heart" fixedWidth className="fa-spin likeLink"/> {brand.likes}</p>
 
                             <Button variant="success" onClick={this.addLike} id={brand.id}>Like</Button>
                             

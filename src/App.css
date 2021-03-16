@@ -202,18 +202,6 @@ a.footerLink:hover, a.footerLink:active {
     color: #fffdff;
 }
 
-.signup h1 {
-    background-color: #f6b31b;
-    padding-left: 10%;
-    font-family: 'Fascinate', cursive;
-}
-
-.signupBar {
-    width: 133.7%;
-    margin-left: -17%;
-    margin-top: -2rem;
-}
-
 .logInfo {
     font-size: 22px;
     margin-top: 0.45rem;

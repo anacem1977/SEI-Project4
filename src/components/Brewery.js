@@ -3,6 +3,9 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Brewery extends Component {
+    componentDidMount = () => {
+        window.scrollTo(0,0)
+    }
         //console.log(props.brands)
 
     render () {

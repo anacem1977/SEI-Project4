@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const HomePage = (props) => {
+    
     return (
         <div className="homePage">
             {props.logged ? <p></p>
