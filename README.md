@@ -44,6 +44,10 @@ The Beer Encyclopedia app uses API calls to the database for all requests:
 + Read only information accross the app.
 + Ability for user to "like" a beer brand.
 
+![Home Page](https://user-images.githubusercontent.com/74725198/111514693-980e3e80-8717-11eb-9465-100a274d64a2.png)
+
+![Screen Shot 2021-03-17 at 11 33 19 AM](https://user-images.githubusercontent.com/74725198/111514791-afe5c280-8717-11eb-9ddd-56e5766f771b.png)
+
 ![giphy](https://user-images.githubusercontent.com/74725198/111514087-06063600-8717-11eb-943a-82829f0cc419.gif)
 
 ## Technologies
