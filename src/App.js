@@ -212,6 +212,7 @@ class App extends Component {
                         <Link to = "/quantitative" eventKey="link-1" className="newTopLinks">Beer Study Guide</Link>
                       </Nav.Link>
                     </Nav.Item>
+                    
                   </NavBar>
                 </div>
                 
@@ -379,8 +380,7 @@ class App extends Component {
           <Profile loggedUser={this.state.loggedUser} logged={this.state.loggedIn}/>)} />
 
         <Route path="/substyles" render = {(props) => ( 
-          <AllSubstyles substyles={this.state.beerSubstyles} beers={this.state.beerOrigins} logged={this.state.loggedIn}/>)} />
-                  
+          <AllSubstyles substyles={this.state.beerSubstyles} beers={this.state.beerOrigins} logged={this.state.loggedIn}/>)} />            
                   
         <footer>
           <Container className="footerCont">
