@@ -9,8 +9,8 @@ To have available information to reserach about beers while drinking and learn m
 ## Table of Contents
 1. [General Info](#general-info)
 2. [Planning](#planning)
-    + [User Stories](#user-stories)
-    + [Goals](#goals)
+    + [User Stories](/planning/userstories.md)
+    + [Goals](/planning/goals.md)
     + [Wireframe](#wireframe)
     + [ERD](#erd)
 3. [Functionality](#functionality)
@@ -33,10 +33,6 @@ The Back-End of the app is built on a PostgresSQL database.  Tables included:
 + **Brands** (brand, abv, likes; foreign-keys: *substyleId, breweryId*)
 + **Breweries** (name, address, url)
 
-    ## [User Stories](/planning/userstories.md)
-
-    ## [Goals](/planning/goals.md)
-
     ## [Wireframe](/planning/wireframe.md)
 
     ## ERD
@@ -47,6 +43,8 @@ The Beer Encyclopedia app uses API calls to the database for all requests:
 + Full CRUD users (sign up, view/edit profile, delete user)
 + Read only information accross the app.
 + Ability for user to "like" a beer brand.
+
+![giphy](https://user-images.githubusercontent.com/74725198/111514087-06063600-8717-11eb-943a-82829f0cc419.gif)
 
 ## Technologies
 + Standard client-side technologies : HTML5, CSS3, JavaScript
