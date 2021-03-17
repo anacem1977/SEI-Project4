@@ -9,6 +9,6 @@
 ![IMG_8323](https://user-images.githubusercontent.com/74725198/111516519-99406b00-8719-11eb-9414-01edc94a5347.jpeg)
 ![IMG_8324](https://user-images.githubusercontent.com/74725198/111516527-9ba2c500-8719-11eb-9b59-862e91455ac8.jpeg)
 
-[Back to ReadMe](../readme.md)
+[Back to ReadMe](../README.md)
 
 Ana Cecilia Maldonado - March 2021

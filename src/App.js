@@ -93,7 +93,7 @@ class App extends Component {
         email: this.state.email
       };
       console.log(userDetails);
-      const response = await axios.post("http://localhost:3005/user/signup", userDetails);
+      const response = await axios.post("http://localhost:3005/user/signup"|| "http://beer-encyclopaedia.herokuapp.com/user/signup", userDetails);
       console.log(response.data)
       this.setState({
         loggedIn: true,

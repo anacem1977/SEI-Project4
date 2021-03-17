@@ -1,7 +1,12 @@
 # Software Engineer Immersive Program - Final Project
 
-## Beer Encyclopedia
-An online app to learn interesting facts about beers.
+<div align="center">
+
+![Beer Encyclopedia](https://user-images.githubusercontent.com/74725198/111528708-17efd500-8727-11eb-9cc6-9cdeefd7b0c1.png)
+
+</div>
+
+An online app to learn interesting facts about beers. Cheers! 🍻
 
 ## Description & Motivation
 To have available information to reserach about beers while drinking and learn more about its origins, styles, flavor, color, glassware to use and breweries.
@@ -40,14 +45,19 @@ The Beer Encyclopedia app uses API calls to the database for all requests:
 + Read only information accross the app.
 + Ability for user to "like" a beer brand.
 
+### Land Page
 ![Home Page](https://user-images.githubusercontent.com/74725198/111514693-980e3e80-8717-11eb-9465-100a274d64a2.png)
 
+### Origin Page
 ![Origin](https://user-images.githubusercontent.com/74725198/111514791-afe5c280-8717-11eb-9ddd-56e5766f771b.png)
 
+### Beer Study Guide Page
 ![Beer Study](https://user-images.githubusercontent.com/74725198/111515282-37cbcc80-8718-11eb-9840-075a3295b708.png)
 
+### Breweries 
 ![Breweries](https://user-images.githubusercontent.com/74725198/111515386-5631c800-8718-11eb-88c5-bd692f8f96c3.png)
 
+### Tooltips & Link
 ![giphy](https://user-images.githubusercontent.com/74725198/111514087-06063600-8717-11eb-943a-82829f0cc419.gif)
 
 ## Technologies

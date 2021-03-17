@@ -16,6 +16,6 @@ As a user, I want to:
 9. Learn which type of glass shold I use to drink beer and why.
 10. Access some information about beers without having to sign up.
 
-[Back to ReadMe](../readme.md)
+[Back to ReadMe](../README.md)
 
 Ana Cecilia Maldonado - March 2021
