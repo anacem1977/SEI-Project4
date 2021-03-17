@@ -46,9 +46,13 @@ The Beer Encyclopedia app uses API calls to the database for all requests:
 
 ![Home Page](https://user-images.githubusercontent.com/74725198/111514693-980e3e80-8717-11eb-9465-100a274d64a2.png)
 
-![Screen Shot 2021-03-17 at 11 33 19 AM](https://user-images.githubusercontent.com/74725198/111514791-afe5c280-8717-11eb-9ddd-56e5766f771b.png)
+![Origin](https://user-images.githubusercontent.com/74725198/111514791-afe5c280-8717-11eb-9ddd-56e5766f771b.png)
 
 ![giphy](https://user-images.githubusercontent.com/74725198/111514087-06063600-8717-11eb-943a-82829f0cc419.gif)
+
+![Beer Study](https://user-images.githubusercontent.com/74725198/111515282-37cbcc80-8718-11eb-9840-075a3295b708.png)
+
+![Breweries](https://user-images.githubusercontent.com/74725198/111515386-5631c800-8718-11eb-88c5-bd692f8f96c3.png)
 
 ## Technologies
 + Standard client-side technologies : HTML5, CSS3, JavaScript
