@@ -25,4 +25,6 @@
 ### Strecth Goal 4
 + Display where to purchase beers depending on user's location.
 
+[Back to ReadMe](../readme.md)
+
 Ana Cecilia Maldonado - March 2021

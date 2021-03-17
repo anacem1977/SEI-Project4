@@ -11,8 +11,8 @@ To have available information to reserach about beers while drinking and learn m
 2. [Planning](#planning)
     + [User Stories](/planning/userstories.md)
     + [Goals](/planning/goals.md)
-    + [Wireframe](#wireframe)
-    + [ERD](#erd)
+    + [Wireframe](/planning/wireframes.md)
+    + [ERD](/planning/erd.md)
 3. [Functionality](#functionality)
 4. [Technologies](#technologies)
 5. [Dependencies](#dependencies)
@@ -33,10 +33,6 @@ The Back-End of the app is built on a PostgresSQL database.  Tables included:
 + **Brands** (brand, abv, likes; foreign-keys: *substyleId, breweryId*)
 + **Breweries** (name, address, url)
 
-    ## [Wireframe](/planning/wireframe.md)
-
-    ## ERD
-
 ## Functionality
 The Beer Encyclopedia app uses API calls to the database for all requests:
 + Basic user authentication to access app.
@@ -48,11 +44,11 @@ The Beer Encyclopedia app uses API calls to the database for all requests:
 
 ![Origin](https://user-images.githubusercontent.com/74725198/111514791-afe5c280-8717-11eb-9ddd-56e5766f771b.png)
 
-![giphy](https://user-images.githubusercontent.com/74725198/111514087-06063600-8717-11eb-943a-82829f0cc419.gif)
-
 ![Beer Study](https://user-images.githubusercontent.com/74725198/111515282-37cbcc80-8718-11eb-9840-075a3295b708.png)
 
 ![Breweries](https://user-images.githubusercontent.com/74725198/111515386-5631c800-8718-11eb-88c5-bd692f8f96c3.png)
+
+![giphy](https://user-images.githubusercontent.com/74725198/111514087-06063600-8717-11eb-943a-82829f0cc419.gif)
 
 ## Technologies
 + Standard client-side technologies : HTML5, CSS3, JavaScript
