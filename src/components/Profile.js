@@ -30,7 +30,7 @@ class Profile extends Component {
     deleteUser = async (event) => {
         event.preventDefault();
         //console.log(this.props.loggedUser.id)
-        const response = await axios.delete(`http://localhost:3005/user/${this.props.loggedUser.id}`);
+        const response = await axios.delete(`http://localhost:3005/user/${this.props.loggedUser.id}` || `http://beer-encyclopaedia.herokuapp.com/user/${this.props.loggedUser.id}`);
         //console.log(response.data)
         if (response.data === "successfully deleted") {
             this.setState({
@@ -58,7 +58,7 @@ class Profile extends Component {
             email: this.state.email
           };
         //   console.log(userDetails)
-        const response = await axios.put(`http://localhost:3005/user/${this.props.loggedUser.id}`, userDetails)
+        const response = await axios.put(`http://localhost:3005/user/${this.props.loggedUser.id}` || `http://beer-encyclopaedia.herokuapp.com/user/${this.props.loggedUser.id}`, userDetails)
           if (response.status === 200) {
             this.setState({
                 updatedUser: true,

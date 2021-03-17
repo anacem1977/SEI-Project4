@@ -14,7 +14,7 @@ class Brands extends Component {
 
     addLike = async (event) => {
         const thisBeerId = event.target.id
-        const response = await axios.get(`http://localhost:3005/brand/${thisBeerId}`);
+        const response = await axios.get(`http://localhost:3005/brand/${thisBeerId}` || `http://beer-encyclopaedia.herokuapp.com/brand/${thisBeerId}`);
         const newDetails = {
             substyleId: response.data.substyleId,
             brand: response.data.brand,
@@ -22,7 +22,7 @@ class Brands extends Component {
             abv: response.data.abv,
             likes: response.data.likes +1
         }
-        const responseBack = await axios.put(`http://localhost:3005/brand/${thisBeerId}`, newDetails)
+        const responseBack = await axios.put(`http://localhost:3005/brand/${thisBeerId}` || `http://beer-encyclopaedia.herokuapp.com/brand/${thisBeerId}`, newDetails)
         console.log(responseBack)
         console.log(this.props)
     }

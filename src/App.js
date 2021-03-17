@@ -65,7 +65,7 @@ class App extends Component {
           password: this.state.password,
       };
       //console.log(userDetails);
-      const response = await axios.post("http://localhost:3005/user/login", userDetails);
+      const response = await axios.post("http://localhost:3005/user/login" || "http://beer-encyclopaedia.herokuapp.com/user/login", userDetails);
       //console.log(response.data);
       if (response.data === null) {
         this.setState ({
@@ -105,7 +105,7 @@ class App extends Component {
     }
 
   getAllOrigins = async () => {
-    const response = await axios.get("http://localhost:3005/origin");
+    const response = await axios.get("http://localhost:3005/origin" || "http://beer-encyclopaedia.herokuapp.com/origin");
     //console.log(response.data)
     this.setState({
       beerOrigins: response.data,
@@ -114,7 +114,7 @@ class App extends Component {
   };
 
   getAllSubstyles = async () => {
-    const response = await axios.get("http://localhost:3005/substyle");
+    const response = await axios.get("http://localhost:3005/substyle" || "http://beer-encyclopaedia.herokuapp.com/substyle");
     this.setState({
         beerSubstyles: response.data,
     })
@@ -122,7 +122,7 @@ class App extends Component {
   };
 
   getAllBrands = async () => {
-    const response = await axios.get("http://localhost:3005/brand");
+    const response = await axios.get("http://localhost:3005/brand" || "http://beer-encyclopaedia.herokuapp.com/brand");
     this.setState({
         allBrands: response.data
     })
@@ -130,7 +130,7 @@ class App extends Component {
   };
 
   getAllBreweries = async () => {
-    const response = await axios.get("http://localhost:3005/brewery");
+    const response = await axios.get("http://localhost:3005/brewery" || "http://beer-encyclopaedia.herokuapp.com/brewery");
     this.setState({
         allBreweries: response.data
     })
