@@ -65,7 +65,9 @@ class App extends Component {
           password: this.state.password,
       };
       //console.log(userDetails);
-      const response = await axios.post("http://localhost:3005/user/login" || "https://beer-encyclopaedia.herokuapp.com/user/login", userDetails);
+      const response = await axios.post(
+        // "http://localhost:3005/user/login" || 
+        "https://beer-encyclopaedia.herokuapp.com/user/login", userDetails);
       //console.log(response.data);
       if (response.data === null) {
         this.setState ({
@@ -93,7 +95,9 @@ class App extends Component {
         email: this.state.email
       };
       console.log(userDetails);
-      const response = await axios.post("http://localhost:3005/user/signup"|| "https://beer-encyclopaedia.herokuapp.com/user/signup", userDetails);
+      const response = await axios.post(
+        // "http://localhost:3005/user/signup"|| 
+        "https://beer-encyclopaedia.herokuapp.com/user/signup", userDetails);
       console.log(response.data)
       this.setState({
         loggedIn: true,
@@ -105,7 +109,9 @@ class App extends Component {
     }
 
   getAllOrigins = async () => {
-    const response = await axios.get("http://localhost:3005/origin" || "https://beer-encyclopaedia.herokuapp.com/origin");
+    const response = await axios.get(
+      // "http://localhost:3005/origin" || 
+      "https://beer-encyclopaedia.herokuapp.com/origin");
     //console.log(response.data)
     this.setState({
       beerOrigins: response.data,
@@ -114,7 +120,9 @@ class App extends Component {
   };
 
   getAllSubstyles = async () => {
-    const response = await axios.get("http://localhost:3005/substyle" || "https://beer-encyclopaedia.herokuapp.com/substyle");
+    const response = await axios.get(
+      // "http://localhost:3005/substyle" || 
+      "https://beer-encyclopaedia.herokuapp.com/substyle");
     this.setState({
         beerSubstyles: response.data,
     })
@@ -122,7 +130,9 @@ class App extends Component {
   };
 
   getAllBrands = async () => {
-    const response = await axios.get("http://localhost:3005/brand" || "https://beer-encyclopaedia.herokuapp.com/brand");
+    const response = await axios.get(
+      // "http://localhost:3005/brand" || 
+      "https://beer-encyclopaedia.herokuapp.com/brand");
     this.setState({
         allBrands: response.data
     })
@@ -130,7 +140,9 @@ class App extends Component {
   };
 
   getAllBreweries = async () => {
-    const response = await axios.get("http://localhost:3005/brewery" || "https://beer-encyclopaedia.herokuapp.com/brewery");
+    const response = await axios.get(
+      // "http://localhost:3005/brewery" || 
+      "https://beer-encyclopaedia.herokuapp.com/brewery");
     this.setState({
         allBreweries: response.data
     })
