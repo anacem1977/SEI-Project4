@@ -11,8 +11,8 @@ To have available information to reserach about beers while drinking and learn m
 2. [Planning](#planning)
     + [User Stories](#user-stories)
     + [Goals](#goals)
-    + [Images](#images)
-    + [Gotchas](#gotchas)
+    + [Wireframe](#wireframe)
+    + [ERD](#erd)
 3. [Functionality](#functionality)
 4. [Technologies](#technologies)
 5. [Dependencies](#dependencies)
@@ -33,39 +33,13 @@ The Back-End of the app is built on a PostgresSQL database.  Tables included:
 + **Brands** (brand, abv, likes; foreign-keys: *substyleId, breweryId*)
 + **Breweries** (name, address, url)
 
+    ## [User Stories](/planning/userstories.md)
 
-## User Stories
-??
+    ## [Goals](/planning/goals.md)
 
-## Goals
-### Minimum Viable Product
-+ User model has full CRUD ✔︎
-+ Display information about beers ✔︎
-+ The user can add a new beer by name
-+ Use of new technology ✔︎
+    ## [Wireframe](/planning/wireframe.md)
 
-### Stretch Goal 1
-+ Rate/Like beers ✔︎
-+ Search beers by name
-+ Fill the database with at least 50 beer brands ✔︎
-
-### Stretch Goal 2
-+ Search for nutritional information via API
-+ Search beers by brand, style, substyle and/or country of origin
-
-### Strecth Goal 3
-+ Interactive designs/animations
-+ Post Comments
-
-### Strecth Goal 4
-+ Display where to purchase beers depending on user's location.
-
-## Images
-### Wireframe
-![WF](/readme_images/wireframe.png)
-
-## Gotchas
-???
+    ## ERD
 
 ## Functionality
 The Beer Encyclopedia app uses API calls to the database for all requests:
