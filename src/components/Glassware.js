@@ -8,7 +8,10 @@ import Col from "react-bootstrap/Col"
 import ListGroup from "react-bootstrap/ListGroup"
 
 class Glassware extends Component {
-   
+    componentDidMount = () => {
+        window.scrollTo(0,0)
+    }
+    
   render() {
     let glasses = allGlasses.map((item, index) => {
       return (
