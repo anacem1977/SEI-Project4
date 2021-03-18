@@ -89,11 +89,12 @@ The Beer Encyclopedia app uses API calls to the database for all requests:
     <li>Visual Studio Code: Coding on HTML, CSS, JavaScript, React and Express.</li>
     <li>Production Deployment: Pubished/deployed via Heroku (Back End) and Surge (Front End) </li>
     <li>Google Chrome Developer Tools & React Components: Debugging and solving problems in the code. </li>
-    <li>
-    <img src="https://https://img.shields.io/badge/New-Tech-purple" alt="New Tech" /> Bootstrap: CSS framework for developing responsive web sites.</li>
-</div>
+    </div>
 
----
+
++ ![NewTech](https://img.shields.io/badge/New-Tech-purple) Bootstrap: CSS framework for developing responsive web sites.
+
+ ---
 
 <br>
 
@@ -163,4 +164,4 @@ The Beer Encyclopedia app uses API calls to the database for all requests:
 ## Author
 Ana Cecilia Maldonado Cervantes
 
-![GitHub last commit](https://img.shields.io/github/last-commit/anacem1977/SEI-Project4-BackEnd)
+![GitHub last commit](https://img.shields.io/github/last-commit/anacem1977/SEI-Project4-FrontEnd)
