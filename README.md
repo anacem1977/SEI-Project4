@@ -4,9 +4,12 @@
 
 ![Beer Encyclopedia](https://user-images.githubusercontent.com/74725198/111528708-17efd500-8727-11eb-9cc6-9cdeefd7b0c1.png)
 
+An online app to learn interesting facts about beers. Cheers! 🍻
 </div>
 
-An online app to learn interesting facts about beers. Cheers! 🍻
+---
+
+<br>
 
 ## Description & Motivation
 To have available information to reserach about beers while drinking and learn more about its origins, styles, flavor, color, glassware to use and breweries.
@@ -28,6 +31,10 @@ To have available information to reserach about beers while drinking and learn m
 8. [Sources](#sources)
 9. [Author](#author)
 
+---
+
+<br>
+
 ## General Info
 The app allows for creation of new user accounts, login, editing, and deletion of the same.  Once logged in, the user will have access to display the information available for beers, as well as to "like" beers by brand. 
 
@@ -37,6 +44,16 @@ The Back-End of the app is built on a PostgresSQL database.  Tables included:
 + **Substyles** (substyle, description, abv, ibu, glassware, pairing, flavor, color; foreign-key: *styleId*)
 + **Brands** (brand, abv, likes; foreign-keys: *substyleId, breweryId*)
 + **Breweries** (name, address, url)
+
+See more:
++ [User Stories](/planning/userstories.md)
++ [Goals](/planning/goals.md)
++ [Wireframe](/planning/wireframes.md)
++ [ERD](/planning/erd.md)
+
+---
+
+<br>
 
 ## Functionality
 The Beer Encyclopedia app uses API calls to the database for all requests:
@@ -48,27 +65,37 @@ The Beer Encyclopedia app uses API calls to the database for all requests:
 ### Land Page
 ![Home Page](https://user-images.githubusercontent.com/74725198/111514693-980e3e80-8717-11eb-9465-100a274d64a2.png)
 
-### Origin Page
+### Origin/Styles Page
 ![Origin](https://user-images.githubusercontent.com/74725198/111514791-afe5c280-8717-11eb-9ddd-56e5766f771b.png)
 
-### Beer Study Guide Page
+### Beer Study Guide
 ![Beer Study](https://user-images.githubusercontent.com/74725198/111515282-37cbcc80-8718-11eb-9840-075a3295b708.png)
 
 ### Breweries 
 ![Breweries](https://user-images.githubusercontent.com/74725198/111515386-5631c800-8718-11eb-88c5-bd692f8f96c3.png)
 
-### Tooltips & Link
+### Tooltips
 ![giphy](https://user-images.githubusercontent.com/74725198/111514087-06063600-8717-11eb-943a-82829f0cc419.gif)
 
+---
+
+<br>
+
 ## Technologies
-+ Standard client-side technologies : HTML5, CSS3, JavaScript
-+ Command Line: Interaction with the computer and navigating the file system.
-+ Source Control: Interaction, management and uploading files and changes on code to Git repository.
-+ Visual Studio Code: Coding on HTML, CSS, JavaScript, React and Express.
-+ Production Deployment: Pubished/deployed via Heroku and Surge
-+ Google Chrome Web Browser: Launching the website
-+ Google Chrome Developer Tools: Debugging and solving problems in the code
-+ NEW Technology - Bootstrap: CSS framework for developing responsive web sites.
+<div>
+    <li> Standard client-side technologies : HTML5, CSS3, JavaScript</li>
+    <li>Command Line: Interaction with the computer and navigating the file system.</li>
+    <li>Source Control: Interaction, management and uploading files and changes on code to Git repository.</li>
+    <li>Visual Studio Code: Coding on HTML, CSS, JavaScript, React and Express.</li>
+    <li>Production Deployment: Pubished/deployed via Heroku (Back End) and Surge (Front End) </li>
+    <li>Google Chrome Developer Tools & React Components: Debugging and solving problems in the code. </li>
+    <li>
+    <img src="https://https://img.shields.io/badge/New-Tech-purple" alt="New Tech" /> Bootstrap: CSS framework for developing responsive web sites.</li>
+</div>
+
+---
+
+<br>
 
 ## Dependencies
 | Project      | Home Page                                    |
@@ -85,6 +112,9 @@ The Beer Encyclopedia app uses API calls to the database for all requests:
 | Bootstrap | <https://react-bootstrap.github.io/>                   |
 | Font Awesome         | <https://fontawesome.com/>                        |
 
+---
+
+<br>
 
 ## Structure
 ### Back End
@@ -107,10 +137,18 @@ The Beer Encyclopedia app uses API calls to the database for all requests:
 - `/src/components/Glassware.js` - Renders information about 'How to Serve' beers and specifics about the different beer glassware. Stand alone.
 - `/src/components/QuantInfo.js` - Renders the Beer Study Guide including more specific definitions about the terms used accross the app. Stand alone.
 - `/src/components/Profile.js` - Renders the logged user's profile with option to Edit and Delete.
+---
+
+<br>
+
 
 ## Installation
-+ Web Browser
-+ Internet Connectivity
++ No special installation required: [Go to App](http://beer-encyclopaedia.surge.sh)
+
+---
+
+<br>
+
 
 ## Sources
 + https://beeradvocate.com
@@ -118,5 +156,11 @@ The Beer Encyclopedia app uses API calls to the database for all requests:
 + https://learn.kegerator.com
 + https://wikipedia.org
 
+---
+
+<br>
+
 ## Author
 Ana Cecilia Maldonado Cervantes
+
+![GitHub last commit](https://img.shields.io/github/last-commit/anacem1977/SEI-Project4-BackEnd)
